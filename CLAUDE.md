@@ -70,6 +70,7 @@ Configured in `.claude/settings.json`, scripts in `.claude/hooks/`. They need `j
 
 | When | Hook | What it does |
 |---|---|---|
+| Session start | `health.sh` | Checks that `jq` and the `claude` CLI exist and leaves a heartbeat in `.claude/state/`. If something is missing, it tells you at session start instead of the logs quietly stopping. Needs only bash. |
 | Session start | `load-recent-logs.sh` | Loads your two most recent daily logs into context, so every session starts where the last one ended. |
 | Session start | `catch-up-logs.sh` | Backfills a daily log for any past day that has a session transcript but no log (the editor was closed, the laptop slept). Runs in the background. |
 | Session start | `lint-due.sh` | Prints a one-line reminder if `/lint` has not run in 7 days. Silent otherwise. |
@@ -78,9 +79,25 @@ Configured in `.claude/settings.json`, scripts in `.claude/hooks/`. They need `j
 | Before compaction | `preserve-state.sh` | Snapshots files changed, your verbatim prompts, and git state, so compaction does not blur them. |
 | Session end | `auto-shutdown.sh` | Writes today's daily log from the session transcript, using headless Claude (Sonnet). Appends if the day already has a log; never overwrites. |
 
+**Manual fallback (when hooks are not running).** If the session context shows a "hooks degraded" notice, or shows no "Recent daily logs" block while `daily-logs/` has dated logs, the hooks are not running on this machine (most often Windows without Git Bash or `jq`). Then:
+- Tell the user once, and point them to `/start` to fix it.
+- Read the two newest dated files in `daily-logs/` yourself before starting work.
+- Before the session ends, remind the user to run `/shutdown`. It writes the daily log itself and does not depend on hooks.
+
 **Daily logs vs Claude's built-in memory.** Built-in memory (`.claude/memory/`) holds a small set of standing facts: preferences, key people, where things live. Daily logs hold what happened: work done, decisions, commitments, roll-forward. Memory answers "what is always true", logs answer "where did we leave off". Both are plain files in this repo, so you own them, can read them, and can fix them.
 
 ---
+
+## Where you run it
+
+| Tool | Commands | Hooks and automatic daily logs |
+|---|---|---|
+| Claude Code (VS Code extension or terminal) | Type `/start`, `/shutdown`, and so on | Yes |
+| Cowork (Claude desktop app) | Ask in plain words: "Run the shutdown command from `.claude/commands/shutdown.md`" | Not guaranteed. Run `/shutdown` (by asking) at the end of each day, so the log is written |
+
+## GitHub is optional
+
+Without GitHub (a ZIP download, or a folder you never push), everything in this repo still works on one machine. What you give up: version history (no undoing a bad edit to a project file or memory), sync across machines, template updates from CXL, and the more complex setups later in the cohort that build on git, such as shared team repos and pull-request reviews. You can add GitHub later: `git init`, create a private repo, and push.
 
 ## Memory
 
