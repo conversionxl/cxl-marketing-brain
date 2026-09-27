@@ -6,7 +6,7 @@ Claude starts every session knowing nothing about the last one. This repo fixes 
 
 ## Set up (10 minutes)
 
-**1. Make your own private copy.** Your logs and projects are private, so do not work in a public fork.
+**1. Make your own private copy.** Your logs and projects are private, so do not work in a public fork. (No GitHub? Click **Code → Download ZIP** and unzip it. Everything works on one machine; see [Without GitHub](#without-github).)
 - Click **Use this template → Create a new repository**, choose **Private**, and create it.
 - Clone your new repo and open the folder:
   ```bash
@@ -22,7 +22,9 @@ Claude starts every session knowing nothing about the last one. This repo fixes 
 | `jq` | Every hook needs it | `brew install jq` | `winget install jqlang.jq` |
 | `gh` (optional) | Pushing to GitHub from `/shutdown` | `brew install gh` | `winget install GitHub.cli` |
 
-Without `jq` the daily logs are never written, and nothing tells you. On Windows, run Claude Code with Git Bash installed; the hooks are bash scripts.
+Without `jq` the daily logs are not written automatically. A health-check hook warns you at session start if it is missing, and `/start` walks you through the fix.
+
+**Windows:** install Git for Windows (`winget install Git.Git`) and `jq`, then fully quit and reopen VS Code so the new PATH is picked up. If you cannot install software on your laptop, the repo still works: run `/shutdown` at the end of each session and it writes the daily log without hooks.
 
 **3. Start Claude Code in the folder and run `/start`.**
 ```bash
@@ -31,6 +33,8 @@ claude
 ```
 /start
 ```
+**Using Cowork instead?** Point Cowork at the folder and ask: *"Run the start command from `.claude/commands/start.md`"*. Cowork does not show repo commands as `/` commands, so run each one by asking for it this way.
+
 `/start` checks your setup, links memory, explains the system, fills in the "About me" section of `CLAUDE.md`, and creates your first project files.
 
 **4. (Optional) Open the folder as an Obsidian vault** to browse your notes, follow `[[wikilinks]]`, and see the backlinks graph.
@@ -87,3 +91,14 @@ Both are plain files in your repo. You can read them, fix them, and take them wi
 ## Working across machines
 
 Run `bash .claude/link-memory.sh` once on each machine after cloning, so Claude's memory points at the repo copy instead of a machine-local folder. Push at the end of the day (`/shutdown` offers to), and pull at the start.
+
+## Without GitHub
+
+Fine to start without it. On one machine, every folder, command, and daily log works the same. What you give up:
+
+- **Version history.** No way to see or undo what changed in a project file, memory, or `CLAUDE.md`.
+- **Sync across machines.** Your laptop and desktop drift apart.
+- **Template updates** from CXL as the starter improves.
+- **The more complex setups later in the cohort** that build on git: shared team repos, pull-request reviews, automated team updates.
+
+You can add it any time: create an empty private repo on GitHub, then `git init`, `git add -A`, `git commit -m "Start"`, `git remote add origin <url>`, `git push -u origin main`.

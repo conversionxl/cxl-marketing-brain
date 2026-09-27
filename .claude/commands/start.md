@@ -20,7 +20,13 @@ Run these checks and show the result as one table (item | status | fix if missin
 | `claude` CLI | `command -v claude` | The daily log and team update hooks call headless Claude. |
 | `gh` (optional) | `gh auth status` | Only needed to push the repo to your own GitHub. |
 | Memory link | Is `~/.claude/projects/<slug>/memory` a symlink to this repo's `.claude/memory`? The slug is the repo's absolute path with every `/` replaced by `-`. | Without it, memory stays machine-local. |
-| Git remote | `git remote -v` | If `origin` still points at the CXL template, they should point it at their own repo. |
+| Git remote | `git remote -v` | If `origin` still points at the CXL template, they should point it at their own repo. No git at all is allowed; see step 2. |
+| Hooks running | Read `.claude/state/hooks-heartbeat`. It should exist, with `last_run` = today and `missing=` empty. | The heartbeat is written by `health.sh`, which needs only bash. No file means hooks never ran this session. A `missing=` value names what to install. |
+
+**Detect the OS first** (`uname -s`, or `$env:OS` / `ver` if bash is not available). On Windows, also check:
+- **Git Bash**: `where bash` or `command -v bash`. Claude Code on Windows needs Git for Windows, and every hook is a bash script. Install: `winget install Git.Git`.
+- **jq on the PATH that Git Bash sees**: `bash -c "command -v jq"`. Install: `winget install jqlang.jq`. winget adds it to PATH only for new processes, so **fully quit and reopen VS Code** afterwards, then re-run `/start`.
+- If `winget` itself is missing (older Windows or a locked-down work laptop), give the manual route: download `jq-windows-amd64.exe` from https://jqlang.org/download/, rename it `jq.exe`, and put it in `C:\Program Files\Git\usr\bin`.
 
 Install hints for anything missing: macOS `brew install jq gh`; Windows `winget install jqlang.jq GitHub.cli`; Linux via the package manager.
 
@@ -32,7 +38,14 @@ Install hints for anything missing: macOS `brew install jq gh`; Windows `winget 
   gh repo create <name> --private --source . --remote origin --push
   ```
   (After `git remote remove origin`. If they don't use `gh`, give the manual steps: create an empty private repo on GitHub, then `git remote set-url origin <url>` and `git push -u origin main`.)
+- If they downloaded a ZIP or do not want GitHub, that is fine: everything works on one machine. Say in two lines what they give up (version history, sync across machines, template updates, and the git-based setups later in the cohort) and that they can add it later. Do not push them.
 - Anything you cannot fix (a missing install), list it once with the command to run, and continue.
+
+**If the hooks are not running and cannot be fixed now** (no admin rights, a locked-down laptop), switch the user to the manual fallback and say so plainly:
+- Daily logs will not write themselves. Run `/shutdown` at the end of every session; it writes the log without hooks.
+- At the start of a session, Claude reads the newest logs itself (CLAUDE.md tells it to).
+- The weekly team update will not write itself either. Run `/team-update last-week` on Mondays.
+Nothing else in the repo depends on hooks.
 
 ## 3. Explain how it works
 
@@ -52,7 +65,7 @@ Explain in this order, briefly, using a table or short bullets for each part. Re
 - The daily log is written when the session **ends** (typing `/exit`, or closing the session cleanly). If the editor is killed instead, `catch-up-logs.sh` backfills that day the next time a session starts, so nothing is lost.
 - `/shutdown` is the richer, interactive version of the automatic log. When they run it, the automatic hook sees that and does not write a duplicate.
 
-**Commands** are triggered by name. Show the commands table from `CLAUDE.md`, then suggest a rhythm:
+**Commands** are triggered by name. In Claude Code, type `/` and the name. In Cowork, slash commands from the repo do not appear: ask in plain words instead, for example "Run the start command from `.claude/commands/start.md`". Show the commands table from `CLAUDE.md`, then suggest a rhythm:
 
 | When | Run |
 |---|---|
