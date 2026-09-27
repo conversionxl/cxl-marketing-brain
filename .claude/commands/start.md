@@ -33,7 +33,7 @@ Install hints for anything missing: macOS `brew install jq gh`; Windows `winget 
 ## 2. Fix what you can
 
 - If memory is not linked, run `bash .claude/link-memory.sh` and show its output.
-- If `origin` points at `conversionxl/cxl-personal-os`, explain that their daily logs, projects, and memory are private, so this should be **their own private repo**. Offer the commands, and run them only on a yes:
+- If `origin` points at `conversionxl/cxl-personal-os` or `conversionxl/cxl-marketing-brain`, explain that their daily logs, projects, and memory are private, so this should be **their own private repo**. Offer the commands, and run them only on a yes:
   ```
   gh repo create <name> --private --source . --remote origin --push
   ```
@@ -58,6 +58,7 @@ Explain in this order, briefly, using a table or short bullets for each part. Re
    Memory answers "what is always true". Logs answer "where did we leave off".
 3. **The folders.** Walk the folder table from `CLAUDE.md`: `projects/`, `raw/`, `daily-logs/`, `frameworks/`, `wiki/`, `drafts/`, `team-updates/`, and the `.claude/` folders (commands, skills, agents, hooks, memory). For each, give one line on what goes there and one example from marketing work (for example: "a pasted call transcript goes in `raw/`", "your campaign QA checklist goes in `frameworks/`").
 4. **Projects come first.** Every command, skill, or agent they build later should serve a project. That is why the next step creates projects.
+5. **The Marketing Brain module.** If `projects/marketing-brain/` exists, explain it in four lines: `wiki/brand/` holds four empty brand brain files; three exercises fill them (`/icp-dossier`, `/positioning-messaging`, `/brand-voice`); inputs go in `raw/voc/` (customer data, stays local) and `raw/brand/` (their own pages and samples); the `brand-brain` skill makes Claude read the brain before any customer-facing writing. Point to `projects/marketing-brain/marketing-brain.md` for what to prepare.
 
 ## 4. Explain the hooks and commands
 
@@ -103,4 +104,5 @@ Then:
 End with:
 - What was set up (a short checklist: ✅ done, ⚠️ needs their action).
 - Their first three moves: drop something into `raw/` and run `/ingest`; run `/brief` on one of their projects; run `/shutdown` at the end of today.
+- If `projects/marketing-brain/` exists: before the Marketing Brain workshop, fill `raw/voc/` and `raw/brand/` using the "Before the workshop" list in `projects/marketing-brain/marketing-brain.md`. The `marketing-brain` project already exists, so do not create a duplicate in step 5.
 - One line: "Run `/start tour` any time to see this explanation again."

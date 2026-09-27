@@ -29,3 +29,12 @@ daily-logs/.quarantine/
 # commit the Markdown you derive from them instead.
 *.csv
 *.xlsx
+
+# Marketing Brain: customer data in raw/voc/ stays on your machine. Only the
+# README, the review URL list, and the fictional Acme Deals example are
+# committed. These lines must stay below the *.csv rule above.
+raw/voc/*
+!raw/voc/README.md
+!raw/voc/review-urls.md
+!raw/voc/example/
+!raw/voc/example/*.csv

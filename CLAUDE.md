@@ -1,6 +1,6 @@
 # Personal OS
 
-> A personal operating system for working with Claude Code, from the CXL AI Native Marketer cohort. Claude reads this file at the start of every session. It explains how the repo runs and how to work with its owner.
+> A personal operating system for working with Claude Code, from the CXL AI Native Marketer cohort, with the Marketing Brain module built in. Claude reads this file at the start of every session. It explains how the repo runs and how to work with its owner.
 >
 > **New here? Run `/start`.** It walks you through setup and fills in the "About me" section below.
 
@@ -28,7 +28,10 @@ Claude has no memory between sessions by default. This repo fixes that with plai
 | Folder | What goes in it |
 |---|---|
 | `projects/` | One folder per active project, each with a canonical project file. The primary structure for all work. Start from `projects/_template.md`. |
-| `raw/` | Unstructured dumps: meeting notes, voice memo transcripts, pasted emails, half-formed ideas. `/ingest` processes and files them. |
+| `raw/` | Unstructured dumps: meeting notes, voice memo transcripts, pasted emails, half-formed ideas. `/ingest` processes and files them. Exception: `raw/voc/` and `raw/brand/` are Marketing Brain inputs that stay put. |
+| `raw/voc/` | Voice of customer: customer exports, reviews, tickets, call notes, survey answers. Gitignored except the README and the Acme Deals example. |
+| `raw/brand/` | The brand's own words: URLs, on-brand and off-brand samples, existing guides. Committed, so nothing confidential. |
+| `wiki/brand/` | The brand brain: `icp.md`, `positioning-messaging.md`, `voice-guide.md`, `vocabulary.md`. A fixed contract later workshops read. |
 | `daily-logs/` | One file per day, `YYYY-MM-DD-convo.md`, written automatically when a session ends. Claude's working memory across sessions. |
 | `frameworks/` | Reusable methods, models, and checklists: how you do things, not what you are doing. |
 | `wiki/` | Durable reference: people, tools, concepts, glossary. Facts that stay true for months. |
@@ -61,6 +64,34 @@ Claude has no memory between sessions by default. This repo fixes that with plai
 | `/shutdown` | End of the working day. | Reconciles what got done, routes new commitments into project files, writes a rich daily log, offers to push to GitHub. |
 | `/lint` | Weekly. A reminder appears at session start when it is overdue. | Health check: contradictions, stale claims, orphan notes, missing concepts, neglected projects, unsourced claims. Reports first, fixes on confirmation. |
 | `/team-update [this-week\|last-week\|today]` | When you owe someone a status update. | Turns your daily logs into a short standup update in `team-updates/`. |
+| `/icp-dossier [example]` | Marketing Brain exercise 1. | Builds `wiki/brand/icp.md` and a dossier page from `raw/voc/`. |
+| `/positioning-messaging [example]` | Marketing Brain exercise 2. | Scrapes your pages and fills `wiki/brand/positioning-messaging.md`. |
+| `/brand-voice [example]` | Marketing Brain exercise 3. | Drafts `wiki/brand/voice-guide.md` and `vocabulary.md` from your samples. |
+
+---
+
+## Marketing Brain
+
+The brand brain is four files in `wiki/brand/` that Claude reads before it writes anything customer-facing. Three exercises fill them, in order, because each feeds the next:
+
+| Exercise | Command | Reads | Writes | Framework |
+|---|---|---|---|---|
+| 1. ICP | `/icp-dossier` | `raw/voc/` only | `wiki/brand/icp.md`, `projects/marketing-brain/outputs/icp-dossier.html` | `icp-synthesis` skill (Nick Christensen) |
+| 2. Positioning and messaging | `/positioning-messaging` | ICP, `raw/brand/`, `raw/voc/` | `wiki/brand/positioning-messaging.md` | `frameworks/lion-words-positioning-messaging-hub.md` (Lion Words) |
+| 3. Brand voice | `/brand-voice` | ICP, hub, `raw/brand/`, `raw/voc/` | `wiki/brand/voice-guide.md`, `wiki/brand/vocabulary.md` | `frameworks/brand-voice-guide.md`, `frameworks/vocabulary.md` (Lion Words) |
+| Optional: campaign | Ask for "an example campaign from my ICP" | The brain | `projects/marketing-brain/outputs/campaign.html` | `ad-copy` skill (Nick Christensen) |
+
+Each command takes `example` to run on Acme Deals, the fictional brand in `raw/voc/example/` and `raw/brand/example/`. Example runs write to `drafts/example-brain/`, never to `wiki/brand/`.
+
+**Rules for the brand brain:**
+- **The (inferred) rule.** Every line in `wiki/brand/` traces to a scraped page, a file in `raw/brand/`, or a customer quote in `raw/voc/`. Any line that doesn't is tagged **(inferred)**. Metrics, customers, quotes, and case studies are never generated: missing means blank. A file with open tags is not finished.
+- **Customer words stay separate from brand words.** The ICP reads only `raw/voc/`, so the brand's own copy never leaks into "their words". Customer quotes are verbatim, grammar and slang intact.
+- **The paths are a contract.** Later workshops, starting with Campaign Engine, read `wiki/brand/` by these exact file names. Never rename or move them.
+- **When two files disagree:** wording follows `voice-guide` > `vocabulary` > `positioning-messaging` > `icp`; facts follow the reverse. Say when you hit a disagreement.
+- **Brand voice vs your voice.** Copy written for the brand follows `wiki/brand/` (the `brand-brain` skill loads it). Messages the owner writes as themselves follow the `my-voice` skill.
+- **Customer data stays local.** Never copy an email address from `raw/voc/` into any other file.
+
+Credits: the ICP workflow and the Acme Deals data are Nick Christensen's ([ship-icp-ads-automate-monitoring](https://github.com/nickyc1/ship-icp-ads-automate-monitoring), MIT). The positioning, messaging, and voice frameworks are Diane Wiredu's, [Lion Words](https://www.lionwords.com/).
 
 ---
 
