@@ -18,8 +18,6 @@ Your brand brain: four files Claude reads before it writes anything customer-fac
 
 So a customer quote in `icp.md` settles what the buyer cares about, and `voice-guide.md` settles how you phrase it. When Claude spots a disagreement, it says so rather than picking one silently.
 
-*This order is pending confirmation from Diane Wiredu (Lion Words).*
-
 ## The (inferred) rule
 
 Every line is traceable to a source: a scraped page, a file in `raw/brand/`, or a customer quote in `raw/voc/`. Any line Claude cannot trace is tagged **(inferred)**. Metrics, customers, quotes, and case studies are never generated: missing means blank.

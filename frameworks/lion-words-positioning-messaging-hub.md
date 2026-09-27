@@ -46,10 +46,8 @@ What buyers do today instead of buying you. Include doing nothing, doing it by h
 
 ### Problems we solve
 - **Core problem summary:** one or two sentences.
-- **Sub-problems 1 to 3:** the parts of the core problem.
+- **Sub-problems 1 to 3:** the parts of the core problem: what is broken.
 - **Struggles 1 to 3:** what living with the problem feels like day to day, in the customer's words where you have them.
-
-*Pending Diane's confirmation: the exact wording and split of the sub-problems row.*
 
 ### Unique attributes
 - **Differentiation:** what you have or do that the alternatives above don't. Each attribute must be true, provable, and something a buyer cares about.
@@ -91,5 +89,3 @@ The test: could a competitor copy this row onto their own page and have it still
 ## Feedback lens
 
 Critique every draft with the fluff matrix in [[frameworks/brand-voice-guide|brand-voice-guide]]. Most first drafts of a hub land in corporate blandspeak.
-
-*Pending Diane's confirmation: that these three Messaging House additions are the right ones to fold into the hub.*
