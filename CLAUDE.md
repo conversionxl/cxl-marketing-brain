@@ -65,7 +65,7 @@ Claude has no memory between sessions by default. This repo fixes that with plai
 | `/lint` | Weekly. A reminder appears at session start when it is overdue. | Health check: contradictions, stale claims, orphan notes, missing concepts, neglected projects, unsourced claims. Reports first, fixes on confirmation. |
 | `/team-update [this-week\|last-week\|today]` | When you owe someone a status update. | Turns your daily logs into a short standup update in `team-updates/`. |
 | `/icp-dossier [example]` | Marketing Brain exercise 1. | Builds `wiki/brand/icp.md` and a dossier page from `raw/voc/`. |
-| `/positioning-messaging [example]` | Marketing Brain exercise 2. | Scrapes your pages and fills `wiki/brand/positioning-messaging.md`. |
+| `/positioning-messaging [example]` | Marketing Brain exercise 2. | Scrapes your pages and fills `wiki/brand/positioning-messaging.md` in Diane's canvas format, plus an HTML canvas. |
 | `/brand-voice [example]` | Marketing Brain exercise 3. | Drafts `wiki/brand/voice-guide.md` and `vocabulary.md` from your samples. |
 
 ---
@@ -77,7 +77,7 @@ The brand brain is four files in `wiki/brand/` that Claude reads before it write
 | Exercise | Command | Reads | Writes | Framework |
 |---|---|---|---|---|
 | 1. ICP | `/icp-dossier` | `raw/voc/` only | `wiki/brand/icp.md`, `projects/marketing-brain/outputs/icp-dossier.html` | `icp-synthesis` skill (Nick Christensen) |
-| 2. Positioning and messaging | `/positioning-messaging` | ICP, `raw/brand/`, `raw/voc/` | `wiki/brand/positioning-messaging.md` | `frameworks/lion-words-positioning-messaging-hub.md` (Lion Words) |
+| 2. Positioning and messaging | `/positioning-messaging` | ICP, `raw/brand/`, `raw/voc/` | `wiki/brand/positioning-messaging.md` (Diane's canvas as a table), `projects/marketing-brain/outputs/positioning-messaging.html` | `frameworks/lion-words-positioning-messaging-hub.md`, `frameworks/lion-words-hub-canvas.html` (Lion Words) |
 | 3. Brand voice | `/brand-voice` | ICP, hub, `raw/brand/`, `raw/voc/` | `wiki/brand/voice-guide.md`, `wiki/brand/vocabulary.md` | `frameworks/brand-voice-guide.md`, `frameworks/vocabulary.md` (Lion Words) |
 | Optional: campaign | Ask for "an example campaign from my ICP" | The brain | `projects/marketing-brain/outputs/campaign.html` | `ad-copy` skill (Nick Christensen) |
 

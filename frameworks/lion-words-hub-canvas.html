@@ -1,0 +1,193 @@
+<title>COMPANY Messaging Hub</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap">
+<!--
+  Shell for the Lion Words positioning and messaging canvas (Diane Wiredu, lionwords.com):
+  her Lite canvas and Messaging House merged into one grid, in the Messaging House colour code.
+  /positioning-messaging copies this file and fills it from the Markdown hub. Do not change rows,
+  columns, or cell classes. Grid: section | row label | six content tracks. Three-column rows use
+  colspan="2" per cell, single-value rows colspan="6", the Customer rows label + value (2) twice.
+  Cell classes: anchor = pink, facing = grey, none = white. In a cell: sources go in
+  <span class="src">, the tag in <span class="inf">inferred</span> (and add has-inf to the td),
+  and an empty cell gets blank added to its class with the text "Blank." plus the reason.
+  Placeholder text uses class="ph": replace it when filling.
+-->
+<style>
+  /* Colour code from Diane Wiredu's Lion Words Messaging House:
+     black section labels, pale grey-blue row labels, pink anchor lines,
+     light grey customer-facing wording, white supporting detail. */
+  :root {
+    color-scheme: light;
+    --bg: #f5f6f6; --surface: #ffffff; --ink: #161819; --muted: #5a6166; --line: #d3d8da;
+    --sec: #000000; --sec-ink: #ffffff;
+    --rl: #ecf0f1; --rl-ink: #161819;
+    --anchor: #f4cccc; --anchor-ink: #2a0f0f;
+    --facing: #efefef;
+    --title: #990000;
+    --inf: #8f5200; --inf-bg: #fff3d6; --inf-line: #d9a441;
+    --blank: #f1f2f2; --blank-stripe: #e6e8e8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #101213; --surface: #181b1c; --ink: #e9ecec; --muted: #9aa2a6; --line: #30363a;
+      --sec: #000000; --sec-ink: #ffffff;
+      --rl: #242a2d; --rl-ink: #e9ecec;
+      --anchor: #4a2626; --anchor-ink: #fbe3e3;
+      --facing: #2a2d2f;
+      --title: #ec8a8a;
+      --inf: #f2bd62; --inf-bg: #3a2b10; --inf-line: #8a6320;
+      --blank: #1d2022; --blank-stripe: #23272a;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #101213; --surface: #181b1c; --ink: #e9ecec; --muted: #9aa2a6; --line: #30363a;
+    --sec: #000000; --sec-ink: #ffffff;
+    --rl: #242a2d; --rl-ink: #e9ecec;
+    --anchor: #4a2626; --anchor-ink: #fbe3e3;
+    --facing: #2a2d2f;
+    --title: #ec8a8a;
+    --inf: #f2bd62; --inf-bg: #3a2b10; --inf-line: #8a6320;
+    --blank: #1d2022; --blank-stripe: #23272a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 "IBM Plex Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 1320px; margin: 0 auto; padding-inline: 20px; padding-block: 36px 64px; }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; }
+  header { display: grid; gap: 10px; max-width: 900px; }
+  header .kicker { color: var(--title); margin: 0; }
+  h1 { font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.05; margin: 0; text-wrap: balance; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); font-size: 14px; margin: 4px 0 0; }
+  .meta b { color: var(--ink); font-weight: 600; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 26px 0 14px; font-size: 13.5px; color: var(--muted); align-items: center; }
+  .legend > span { display: inline-flex; align-items: center; gap: 8px; }
+  .sw { width: 16px; height: 16px; border-radius: 3px; display: inline-block; border: 1px solid var(--line); }
+  .sw.sec { background: var(--sec); } .sw.rl { background: var(--rl); } .sw.anchor { background: var(--anchor); }
+  .sw.facing { background: var(--facing); } .sw.white { background: var(--surface); }
+  .sw.blank { background: repeating-linear-gradient(135deg, var(--blank) 0 4px, var(--blank-stripe) 4px 8px); }
+
+  .canvas { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+  table { width: 100%; min-width: 1120px; border-collapse: collapse; table-layout: fixed; font-size: 14px; }
+  col.c-sec { width: 158px; } col.c-row { width: 168px; }
+  td, th { border: 1px solid var(--line); padding: 11px 13px; vertical-align: top; text-align: left; font-weight: 400; }
+  thead th { background: var(--surface); padding: 16px 14px; }
+  thead .title { font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif; font-size: 19px; font-weight: 700; color: var(--title); display: block; }
+  thead .by { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+  th.sec { color: var(--sec-ink); background: var(--sec); font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; line-height: 1.5; border-color: #3a3f42; }
+  th.sec small { display: block; text-transform: none; letter-spacing: 0; font-family: "IBM Plex Sans", sans-serif; font-size: 12.5px; opacity: .8; margin-top: 4px; }
+  th.rl, td.lab { background: var(--rl); color: var(--rl-ink); font-weight: 600; font-size: 13.5px; }
+  th.rl small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
+  td.anchor { background: var(--anchor); color: var(--anchor-ink); font-weight: 600; }
+  td.anchor .src { font-weight: 400; }
+  td.facing { background: var(--facing); }
+  tr.part td { background: var(--bg); border-inline: 0; padding: 18px 4px 8px; color: var(--muted); }
+  tr.part:first-child td { padding-top: 10px; }
+  tr.gap td { height: 8px; padding: 0; border-inline: 0; background: var(--bg); }
+  td ul { margin: 0; padding-left: 17px; } td li + li { margin-top: 3px; }
+  td blockquote { margin: 0; } td blockquote + blockquote { margin-top: 8px; }
+  .src { display: block; margin-top: 6px; color: var(--muted); font-size: 12.5px; }
+  td.anchor .src { color: inherit; opacity: .72; }
+  .inf { display: inline-block; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 500; color: var(--inf); background: var(--inf-bg); border: 1px solid var(--inf-line); border-radius: 3px; padding: 0 5px; margin: 0 2px; white-space: nowrap; vertical-align: 1px; }
+  td.has-inf { box-shadow: inset 4px 0 0 var(--inf-line); }
+  td.blank { background: repeating-linear-gradient(135deg, var(--blank) 0 6px, var(--blank-stripe) 6px 12px); color: var(--muted); font-style: italic; font-weight: 400; }
+  .ph { color: var(--muted); font-style: italic; font-weight: 400; }
+
+  .after { display: grid; gap: 16px; margin-top: 24px; max-width: 900px; }
+  .note { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; }
+  .note p { margin: 0; } .note p + p { margin-top: 10px; }
+  .open { background: var(--inf-bg); border: 1px solid var(--inf-line); border-radius: 6px; padding: 16px 18px; }
+  .open h2 { font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif; font-weight: 600; margin: 0; font-size: 20px; }
+  .open ul { margin: 10px 0 0; padding-left: 18px; } .open li + li { margin-top: 6px; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; max-width: 900px; }
+  footer ul { padding-left: 18px; margin: 8px 0; }
+  a { color: inherit; }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker mono">Lion Words Positioning &amp; Messaging Canvas</p>
+    <h1>Positioning and messaging hub for COMPANY</h1>
+    <p class="meta"><span>Status: <b>draft</b></span><span>Updated: <b>YYYY-MM-DD</b></span><span>Open (inferred) tags: <b>0</b></span><span>Source: <b>wiki/brand/positioning-messaging.md</b></span></p>
+  </header>
+
+  <div class="legend">
+    <span><i class="sw anchor"></i>Anchor line: lift it into copy</span>
+    <span><i class="sw facing"></i>Customer-facing wording</span>
+    <span><i class="sw white"></i>Supporting detail and evidence</span>
+    <span><span class="inf">inferred</span>No source states this. Open until resolved.</span>
+    <span><i class="sw blank"></i>Blank: no source, left empty on purpose</span>
+  </div>
+
+  <div class="canvas">
+    <table>
+      <colgroup><col class="c-sec"><col class="c-row"><col><col><col><col><col><col></colgroup>
+      <thead>
+        <tr><th colspan="8"><span class="title">Lion Words Positioning &amp; Messaging Canvas / Hub for COMPANY</span><span class="by">by Diane Wiredu @ LionWords.com</span></th></tr>
+      </thead>
+      <tbody>
+        <tr class="part"><td colspan="8" class="mono">Positioning: where we stand</td></tr>
+        <tr><th class="sec" rowspan="2" scope="rowgroup">CUSTOMER<small>Who we're for</small></th><th class="rl" scope="row">Target segment</th><td class="lab">Buying champion (persona)</td><td colspan="2"><span class="ph">Buying champion</span></td><td class="lab">Company type(s)</td><td colspan="2"><span class="ph">Company types</span></td></tr>
+        <tr><th class="rl" scope="row">Use case</th><td class="lab">Primary use case</td><td colspan="2"><span class="ph">Primary use case</span></td><td class="lab">Buying context</td><td colspan="2"><span class="ph">Buying context</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="1" scope="rowgroup">MARKET<small>Where we compete</small></th><th class="rl" scope="row">Market category</th><td colspan="6"><span class="ph">Market category</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="2" scope="rowgroup">COMPETITIVE ALTERNATIVES<small>What we replace</small></th><th class="rl" scope="row">Alternative solutions</th><td colspan="2" class="anchor"><span class="ph">Approach 1</span></td><td colspan="2" class="anchor"><span class="ph">Approach 2</span></td><td colspan="2" class="anchor"><span class="ph">Approach 3</span></td></tr>
+        <tr><th class="rl" scope="row">Limitations</th><td colspan="2"><span class="ph">Limitations</span></td><td colspan="2"><span class="ph">Limitations</span></td><td colspan="2"><span class="ph">Limitations</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="4" scope="rowgroup">PROBLEMS WE SOLVE</th><th class="rl" scope="row">Problem summary</th><td colspan="6"><span class="ph">Core problem summary statement</span></td></tr>
+        <tr><th class="rl" scope="row">Problem in buyer language</th><td colspan="6"><span class="ph">"VOC quote 1" "VOC quote 2"</span></td></tr>
+        <tr><th class="rl" scope="row">Sub-problems</th><td colspan="2" class="anchor"><span class="ph">Problem 1</span></td><td colspan="2" class="anchor"><span class="ph">Problem 2</span></td><td colspan="2" class="anchor"><span class="ph">Problem 3</span></td></tr>
+        <tr><th class="rl" scope="row">Struggles / limitations</th><td colspan="2"><span class="ph">Description and limitations</span></td><td colspan="2"><span class="ph">Description and limitations</span></td><td colspan="2"><span class="ph">Description and limitations</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="1" scope="rowgroup">UNIQUE ATTRIBUTES<small>How we're different</small></th><th class="rl" scope="row">Differentiation</th><td colspan="6"><span class="ph">Differentiation</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr class="part"><td colspan="8" class="mono">Messaging: what we say</td></tr>
+        <tr><th class="sec" rowspan="3" scope="rowgroup">BIG IDEA<small>'OKM' messaging anchor</small></th><th class="rl" scope="row">Big idea / owned key message</th><td colspan="6" class="anchor"><span class="ph">Messaging anchor (owned key message)</span></td></tr>
+        <tr><th class="rl" scope="row">What it means</th><td colspan="6"><span class="ph">What it means</span></td></tr>
+        <tr><th class="rl" scope="row">VOC validation / reframe messages</th><td colspan="6"><span class="ph">Customer quotes and reframes</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="2" scope="rowgroup">VALUE PROPOSITION<small>Value we enable</small></th><th class="rl" scope="row">Internal<small>shorthand</small></th><td colspan="6" class="anchor"><span class="ph">The value we enable</span></td></tr>
+        <tr><th class="rl" scope="row">Customer-facing</th><td colspan="6" class="facing"><span class="ph">Customer-facing value proposition statement</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="2" scope="rowgroup">MESSAGING PILLARS</th><th class="rl" scope="row">Value theme</th><td colspan="2" class="anchor"><span class="ph">1st value theme</span></td><td colspan="2" class="anchor"><span class="ph">2nd value theme</span></td><td colspan="2" class="anchor"><span class="ph">3rd value theme</span></td></tr>
+        <tr><th class="rl" scope="row">Messaging pillar statement<small>key idea</small></th><td colspan="2" class="anchor"><span class="ph">1st messaging pillar statement</span></td><td colspan="2" class="anchor"><span class="ph">2nd messaging pillar statement</span></td><td colspan="2" class="anchor"><span class="ph">3rd messaging pillar statement</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="6" scope="rowgroup">OUR SOLUTION<small>Product / solution</small></th><th class="rl" scope="row">Capability<small>what you can now do</small></th><td colspan="2"><span class="ph">1st capability statement</span></td><td colspan="2"><span class="ph">2nd capability statement</span></td><td colspan="2"><span class="ph">3rd capability statement</span></td></tr>
+        <tr><th class="rl" scope="row">Benefit<small>day-to-day impact</small></th><td colspan="2"><span class="ph">1st benefit message</span></td><td colspan="2"><span class="ph">2nd benefit message</span></td><td colspan="2"><span class="ph">3rd benefit message</span></td></tr>
+        <tr><th class="rl" scope="row">Outcome<small>long-term result</small></th><td colspan="2"><span class="ph">1st outcome message</span></td><td colspan="2"><span class="ph">2nd outcome message</span></td><td colspan="2"><span class="ph">3rd outcome message</span></td></tr>
+        <tr><th class="rl" scope="row">VOC validation<small>customer quotes</small></th><td colspan="2"><span class="ph">"VOC quote 1" "VOC quote 2"</span></td><td colspan="2"><span class="ph">"VOC quote 1" "VOC quote 2"</span></td><td colspan="2"><span class="ph">"VOC quote 1" "VOC quote 2"</span></td></tr>
+        <tr><th class="rl" scope="row">Supporting features</th><td colspan="2"><span class="ph">Supporting features and components</span></td><td colspan="2"><span class="ph">Supporting features and components</span></td><td colspan="2"><span class="ph">Supporting features and components</span></td></tr>
+        <tr><th class="rl" scope="row">Proof points</th><td colspan="2"><span class="ph">Metrics and results, credibility, case studies</span></td><td colspan="2"><span class="ph">Metrics and results, credibility, case studies</span></td><td colspan="2"><span class="ph">Metrics and results, credibility, case studies</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="5" scope="rowgroup">DIFFERENTIATION SNAPSHOT</th><th class="rl" scope="row">Core summary</th><td colspan="6"><span class="ph">Core differentiation summary statement</span></td></tr>
+        <tr><th class="rl" scope="row">Differentiator 1</th><td colspan="6"><span class="ph">Description, alternative, and context</span></td></tr>
+        <tr><th class="rl" scope="row">Differentiator 2</th><td colspan="6"><span class="ph">Description, alternative, and context</span></td></tr>
+        <tr><th class="rl" scope="row">Differentiator 3</th><td colspan="6"><span class="ph">Description, alternative, and context</span></td></tr>
+        <tr><th class="rl" scope="row">Differentiator 4</th><td colspan="6"><span class="ph">Description, alternative, and context</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="after">
+    <div class="note">
+      <p><b>Other alternatives:</b> <span class="ph">Any alternatives beyond the three in the canvas.</span></p>
+    </div>
+    <section class="open">
+      <h2>Open (inferred) tags</h2>
+      <ul><li><span class="ph">Row, column: what is inferred, and what would resolve it.</span></li></ul>
+    </section>
+  </div>
+
+  <footer>
+    <p><b>Sources</b></p>
+    <ul>
+      <li><span class="ph">One line per source file or scraped page.</span></li>
+    </ul>
+    <p>Framework: Diane Wiredu, <a href="https://www.lionwords.com/">Lion Words</a>: the Lite Positioning &amp; Messaging Canvas and the Messaging House template, merged into one grid in the Messaging House colour code. Built with /positioning-messaging, CXL AI Native Marketer cohort.</p>
+  </footer>
+</div>

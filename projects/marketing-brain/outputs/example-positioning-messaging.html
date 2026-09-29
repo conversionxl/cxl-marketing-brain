@@ -1,0 +1,191 @@
+<title>Acme Deals Messaging Hub</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+  /* Colour code from Diane Wiredu's Lion Words Messaging House:
+     black section labels, pale grey-blue row labels, pink anchor lines,
+     light grey customer-facing wording, white supporting detail. */
+  :root {
+    color-scheme: light;
+    --bg: #f5f6f6; --surface: #ffffff; --ink: #161819; --muted: #5a6166; --line: #d3d8da;
+    --sec: #000000; --sec-ink: #ffffff;
+    --rl: #ecf0f1; --rl-ink: #161819;
+    --anchor: #f4cccc; --anchor-ink: #2a0f0f;
+    --facing: #efefef;
+    --title: #990000;
+    --inf: #8f5200; --inf-bg: #fff3d6; --inf-line: #d9a441;
+    --blank: #f1f2f2; --blank-stripe: #e6e8e8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #101213; --surface: #181b1c; --ink: #e9ecec; --muted: #9aa2a6; --line: #30363a;
+      --sec: #000000; --sec-ink: #ffffff;
+      --rl: #242a2d; --rl-ink: #e9ecec;
+      --anchor: #4a2626; --anchor-ink: #fbe3e3;
+      --facing: #2a2d2f;
+      --title: #ec8a8a;
+      --inf: #f2bd62; --inf-bg: #3a2b10; --inf-line: #8a6320;
+      --blank: #1d2022; --blank-stripe: #23272a;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #101213; --surface: #181b1c; --ink: #e9ecec; --muted: #9aa2a6; --line: #30363a;
+    --sec: #000000; --sec-ink: #ffffff;
+    --rl: #242a2d; --rl-ink: #e9ecec;
+    --anchor: #4a2626; --anchor-ink: #fbe3e3;
+    --facing: #2a2d2f;
+    --title: #ec8a8a;
+    --inf: #f2bd62; --inf-bg: #3a2b10; --inf-line: #8a6320;
+    --blank: #1d2022; --blank-stripe: #23272a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 "IBM Plex Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 1320px; margin: 0 auto; padding-inline: 20px; padding-block: 36px 64px; }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; }
+  header { display: grid; gap: 10px; max-width: 900px; }
+  header .kicker { color: var(--title); margin: 0; }
+  h1 { font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.05; margin: 0; text-wrap: balance; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); font-size: 14px; margin: 4px 0 0; }
+  .meta b { color: var(--ink); font-weight: 600; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 26px 0 14px; font-size: 13.5px; color: var(--muted); align-items: center; }
+  .legend > span { display: inline-flex; align-items: center; gap: 8px; }
+  .sw { width: 16px; height: 16px; border-radius: 3px; display: inline-block; border: 1px solid var(--line); }
+  .sw.sec { background: var(--sec); } .sw.rl { background: var(--rl); } .sw.anchor { background: var(--anchor); }
+  .sw.facing { background: var(--facing); } .sw.white { background: var(--surface); }
+  .sw.blank { background: repeating-linear-gradient(135deg, var(--blank) 0 4px, var(--blank-stripe) 4px 8px); }
+
+  .canvas { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+  table { width: 100%; min-width: 1120px; border-collapse: collapse; table-layout: fixed; font-size: 14px; }
+  col.c-sec { width: 158px; } col.c-row { width: 168px; }
+  td, th { border: 1px solid var(--line); padding: 11px 13px; vertical-align: top; text-align: left; font-weight: 400; }
+  thead th { background: var(--surface); padding: 16px 14px; }
+  thead .title { font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif; font-size: 19px; font-weight: 700; color: var(--title); display: block; }
+  thead .by { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+  th.sec { color: var(--sec-ink); background: var(--sec); font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; line-height: 1.5; border-color: #3a3f42; }
+  th.sec small { display: block; text-transform: none; letter-spacing: 0; font-family: "IBM Plex Sans", sans-serif; font-size: 12.5px; opacity: .8; margin-top: 4px; }
+  th.rl, td.lab { background: var(--rl); color: var(--rl-ink); font-weight: 600; font-size: 13.5px; }
+  th.rl small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
+  td.anchor { background: var(--anchor); color: var(--anchor-ink); font-weight: 600; }
+  td.anchor .src { font-weight: 400; }
+  td.facing { background: var(--facing); }
+  tr.part td { background: var(--bg); border-inline: 0; padding: 18px 4px 8px; color: var(--muted); }
+  tr.part:first-child td { padding-top: 10px; }
+  tr.gap td { height: 8px; padding: 0; border-inline: 0; background: var(--bg); }
+  td ul { margin: 0; padding-left: 17px; } td li + li { margin-top: 3px; }
+  td blockquote { margin: 0; } td blockquote + blockquote { margin-top: 8px; }
+  .src { display: block; margin-top: 6px; color: var(--muted); font-size: 12.5px; }
+  td.anchor .src { color: inherit; opacity: .72; }
+  .inf { display: inline-block; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 500; color: var(--inf); background: var(--inf-bg); border: 1px solid var(--inf-line); border-radius: 3px; padding: 0 5px; margin: 0 2px; white-space: nowrap; vertical-align: 1px; }
+  td.has-inf { box-shadow: inset 4px 0 0 var(--inf-line); }
+  td.blank { background: repeating-linear-gradient(135deg, var(--blank) 0 6px, var(--blank-stripe) 6px 12px); color: var(--muted); font-style: italic; font-weight: 400; }
+  .ph { color: var(--muted); font-style: italic; font-weight: 400; }
+
+  .after { display: grid; gap: 16px; margin-top: 24px; max-width: 900px; }
+  .note { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; }
+  .note p { margin: 0; } .note p + p { margin-top: 10px; }
+  .open { background: var(--inf-bg); border: 1px solid var(--inf-line); border-radius: 6px; padding: 16px 18px; }
+  .open h2 { font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif; font-weight: 600; margin: 0; font-size: 20px; }
+  .open ul { margin: 10px 0 0; padding-left: 18px; } .open li + li { margin-top: 6px; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; max-width: 900px; }
+  footer ul { padding-left: 18px; margin: 8px 0; }
+  a { color: inherit; }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker mono">Lion Words Positioning &amp; Messaging Canvas · Fictional example</p>
+    <h1>Positioning and messaging hub for Acme Deals</h1>
+    <p class="meta"><span>Status: <b>draft</b></span><span>Updated: <b>2026-09-29</b></span><span>Open (inferred) tags: <b>2</b></span><span>Source: <b>drafts/example-brain/positioning-messaging.md</b></span></p>
+  </header>
+
+  <div class="legend">
+    <span><i class="sw anchor"></i>Anchor line: lift it into copy</span>
+    <span><i class="sw facing"></i>Customer-facing wording</span>
+    <span><i class="sw white"></i>Supporting detail and evidence</span>
+    <span><span class="inf">inferred</span>No source states this. Open until resolved.</span>
+    <span><i class="sw blank"></i>Blank: no source, left empty on purpose</span>
+  </div>
+
+  <div class="canvas">
+    <table>
+      <colgroup><col class="c-sec"><col class="c-row"><col><col><col><col><col><col></colgroup>
+      <thead>
+        <tr><th colspan="8"><span class="title">Lion Words Positioning &amp; Messaging Canvas / Hub for Acme Deals</span><span class="by">by Diane Wiredu @ LionWords.com</span></th></tr>
+      </thead>
+      <tbody>
+        <tr class="part"><td colspan="8" class="mono">Positioning: where we stand</td></tr>
+        <tr><th class="sec" rowspan="2" scope="rowgroup">CUSTOMER<small>Who we're for</small></th><th class="rl" scope="row">Target segment</th><td class="lab">Buying champion (persona)</td><td colspan="2">Solo Agency Jordan: the founder or owner of a 1 to 5 person marketing agency or consultancy who is also the whole delivery team. Finds, argues for, and owns the result alone: there is no one else in the decision.<span class="src">icp.md</span></td><td class="lab">Company type(s)</td><td colspan="2"><b>Buy:</b> marketing agencies and independent consultancies of 1 to 5 people, on client retainers (74.0% of revenue).<br><b>Also buy, for different reasons:</b> lone in-house marketers at SaaS and ecommerce companies of 6 to 200 (22.9%).<br><b>Don't buy repeatedly:</b> one-off project buyers and explorers (3.0% combined).<span class="src">icp.md</span></td></tr>
+        <tr><th class="rl" scope="row">Use case</th><td class="lab">Primary use case</td><td colspan="2">Add a tool to the agency's stack once and resell it into client retainers. "I buy the tool once, resell it into 8 client retainers, and pocket the difference every month."<span class="src">Jordan Reyes, reviews.md</span></td><td class="lab">Buying context</td><td colspan="2">The trigger is the deal, not a need: "I buy first and find the use case later if the deal is good enough." Nobody else is involved. The one check is whether it will still be in use in 6 months. Deadline pressure: blank, not in the data.<span class="src">Ben Ortiz, reviews.md; Aisha Nelson, reviews.md; Marisol Vega, sales-call-notes.md</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="1" scope="rowgroup">MARKET<small>Where we compete</small></th><th class="rl" scope="row">Market category</th><td colspan="6">Lifetime deals for agencies.<span class="src">on-brand/ads.md; "lifetime deals" is the customer's own term, Jordan Reyes, reviews.md and sales-call-notes.md</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="2" scope="rowgroup">COMPETITIVE ALTERNATIVES<small>What we replace</small></th><th class="rl" scope="row">Alternative solutions</th><td colspan="2" class="anchor">Pay monthly for SaaS subscriptions.<span class="src">Marisol Vega, reviews.md</span></td><td colspan="2" class="anchor">Hire someone.<span class="src">Jordan Reyes, sales-call-notes.md</span></td><td colspan="2" class="anchor">Do nothing: let clients buy their own tools.<span class="src">Jordan Reyes, ticket #4902</span></td></tr>
+        <tr><th class="rl" scope="row">Limitations</th><td colspan="2">Every tool is a recurring cost, and per-seat pricing does not fit one login serving many clients.<span class="src">Marisol Vega, reviews.md; ticket #4821</span></td><td colspan="2">Kills the margin the model depends on: "I'd rather own 30 tools than manage one person."<span class="src">Marisol Vega, sales-call-notes.md</span></td><td colspan="2">Gives away half the agency's value: "Half my value to them is that I bring the tools so they don't have to go shopping."<span class="src">Jordan Reyes, ticket #4902</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="4" scope="rowgroup">PROBLEMS WE SOLVE</th><th class="rl" scope="row">Problem summary</th><td colspan="6">A solo agency's margin is whatever is left after overhead, and both ways to grow, more subscriptions or a first hire, add overhead.<span class="src">Jordan Reyes, reviews.md and sales-call-notes.md</span></td></tr>
+        <tr><th class="rl" scope="row">Problem in buyer language</th><td colspan="6"><blockquote>"Overhead is what kills small agencies."<span class="src">Jordan Reyes, reviews.md</span></blockquote><blockquote>"The day I have to hire is the day my margin dies."<span class="src">Jordan Reyes, sales-call-notes.md</span></blockquote><blockquote>"I'm a team of one wearing nine hats."<span class="src">Marisol Vega, reviews.md</span></blockquote></td></tr>
+        <tr><th class="rl" scope="row">Sub-problems</th><td colspan="2" class="anchor">A monthly bill for every tool in the stack.<span class="src">Marisol Vega, reviews.md; on-brand/ads.md</span></td><td colspan="2" class="anchor">Per-seat licences for a one-login agency.<span class="src">Marisol Vega, ticket #4821</span></td><td colspan="2" class="anchor has-inf">Tools the agency can't rebrand as its own <span class="inf">inferred</span><span class="src">Jordan Reyes, ticket #4902</span></td></tr>
+        <tr><th class="rl" scope="row">Struggles / limitations</th><td colspan="2">The recurring bill grows with the stack and eats the margin: "Every tool I don't have to pay monthly for is one less thing draining the account."<span class="src">Marisol Vega, reviews.md; on-brand/ads.md: "the recurring SaaS bill that quietly eats your agency margin"</span></td><td colspan="2">Seat pricing assumes one user per seat; the agency runs every client under one login: "I run everything under my one login to keep costs down."<span class="src">Marisol Vega, ticket #4821</span></td><td colspan="2">The tools are part of what the agency sells: "Half my value to them is that I bring the tools so they don't have to go shopping." The ticket asks whether Acme's tools allow white-label; it does not say other tools don't.<span class="src">Jordan Reyes, ticket #4902</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="1" scope="rowgroup">UNIQUE ATTRIBUTES<small>How we're different</small></th><th class="rl" scope="row">Differentiation</th><td colspan="6">One-time pricing, with no seats and no renewals, on tools the agency can rebrand and resell to clients.<span class="src">on-brand/ads.md</span><span class="src"><b>Unverified as product fact:</b> the rebrand, resell, and all-clients rights appear only in ad copy, and tickets #4821 and #4902 show customers asking whether they have them. Confirm the terms before this ships.</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr class="part"><td colspan="8" class="mono">Messaging: what we say</td></tr>
+        <tr><th class="sec" rowspan="3" scope="rowgroup">BIG IDEA<small>'OKM' messaging anchor</small></th><th class="rl" scope="row">Big idea / owned key message</th><td colspan="6" class="anchor">Buy once, bill clients monthly.<span class="src">on-brand/ads.md, scored 5/5</span></td></tr>
+        <tr><th class="rl" scope="row">What it means</th><td colspan="6">The agency pays for a tool one time and charges for it inside every client retainer, every month. The cost is fixed; the income recurs. That gap is the agency's margin, and it grows without a hire.<span class="src">on-brand/ads.md; Jordan Reyes, sales-call-notes.md</span></td></tr>
+        <tr><th class="rl" scope="row">VOC validation / reframe messages</th><td colspan="6"><blockquote>"I'm not buying software, I'm buying margin. Every lifetime deal I resell into a retainer pays for itself in a month and prints after that."<span class="src">Jordan Reyes, BrightPath Agency, sales-call-notes.md</span></blockquote><p style="margin:8px 0 0">Reframe: software as margin, not cost.<span class="src">same quote</span></p></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="2" scope="rowgroup">VALUE PROPOSITION<small>Value we enable</small></th><th class="rl" scope="row">Internal<small>shorthand</small></th><td colspan="6" class="anchor">Margin grows while overhead stays flat.<span class="src">on-brand/ads.md: "Overhead stays flat"</span></td></tr>
+        <tr><th class="rl" scope="row">Customer-facing</th><td colspan="6" class="facing">Own it once, bill it into retainers, keep the margin.<span class="src">on-brand/ads.md, verbatim</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="2" scope="rowgroup">MESSAGING PILLARS</th><th class="rl" scope="row">Value theme</th><td colspan="2" class="anchor">Money</td><td colspan="2" class="anchor">Capability</td><td colspan="2" class="anchor">Status</td></tr>
+        <tr><th class="rl" scope="row">Messaging pillar statement<small>key idea</small></th><td colspan="2" class="anchor">Own it, don't rent it.<span class="src">on-brand/ads.md</span></td><td colspan="2" class="anchor">Resell to every client.<span class="src">on-brand/ads.md</span></td><td colspan="2" class="anchor">Run more clients without hiring.<span class="src">on-brand/ads.md</span></td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="6" scope="rowgroup">OUR SOLUTION<small>Product / solution</small></th><th class="rl" scope="row">Capability<small>what you can now do</small></th><td colspan="2">Pay for software once.<span class="src">on-brand/ads.md</span></td><td colspan="2">Rebrand the tools and resell them to clients.<span class="src">on-brand/ads.md; unverified, see Differentiation</span></td><td colspan="2">Stand up a stack of owned tools in place of extra staff.<span class="src">on-brand/ads.md: "Run more clients without hiring"</span></td></tr>
+        <tr><th class="rl" scope="row">Benefit<small>day-to-day impact</small></th><td colspan="2">No seats, no renewals, no surprise invoices.<span class="src">on-brand/ads.md</span></td><td colspan="2">Margin on every retainer, every month.<span class="src">on-brand/ads.md; Jordan Reyes, reviews.md</span></td><td colspan="2">More clients without the workload of a hire.<span class="src">on-brand/ads.md; Marisol Vega, sales-call-notes.md</span></td></tr>
+        <tr><th class="rl" scope="row">Outcome<small>long-term result</small></th><td colspan="2">Overhead stays flat as the stack grows.<span class="src">on-brand/ads.md</span></td><td colspan="2">Each tool pays for itself, then turns to profit.<span class="src">Jordan Reyes, sales-call-notes.md</span></td><td colspan="2">A one-person shop that looks like a full team.<span class="src">on-brand/ads.md; Tomas Becker, reviews.md</span></td></tr>
+        <tr><th class="rl" scope="row">VOC validation<small>customer quotes</small></th><td colspan="2"><blockquote>"Every tool I don't have to pay monthly for is one less thing draining the account."<span class="src">Marisol Vega, reviews.md</span></blockquote></td><td colspan="2"><blockquote>"I buy the tool once, resell it into 8 client retainers, and pocket the difference every month."<span class="src">Jordan Reyes, reviews.md</span></blockquote></td><td colspan="2"><blockquote>"My clients genuinely think I have a whole team behind me. It's me and a stack of tools I picked up here."<span class="src">Tomas Becker, reviews.md</span></blockquote></td></tr>
+        <tr><th class="rl" scope="row">Supporting features</th><td colspan="2"><ul><li>One payment</li><li>No seats</li><li>No renewals</li></ul><span class="src">on-brand/ads.md</span></td><td colspan="2"><ul><li>White-label and resell</li><li>One payment, every client</li></ul><span class="src">on-brand/ads.md</span></td><td colspan="2" class="blank">Blank. No source names what the tools do.</td></tr>
+        <tr><th class="rl" scope="row">Proof points</th><td colspan="2" class="blank">Blank.</td><td colspan="2" class="blank">Blank.</td><td colspan="2" class="blank">Blank.</td></tr>
+        <tr class="gap"><td colspan="8"></td></tr>
+        <tr><th class="sec" rowspan="5" scope="rowgroup">DIFFERENTIATION SNAPSHOT</th><th class="rl" scope="row">Core summary</th><td colspan="6">One payment buys a tool you can bill into every client retainer, where a subscription bills you every month per seat and a hire takes the margin.<span class="src">on-brand/ads.md; icp.md</span></td></tr>
+        <tr><th class="rl" scope="row">Differentiator 1</th><td colspan="6"><b>One payment, no renewals.</b> Versus paying monthly for SaaS: the stack grows without the monthly bill growing, "one less thing draining the account".<span class="src">Marisol Vega, reviews.md</span></td></tr>
+        <tr><th class="rl" scope="row">Differentiator 2</th><td colspan="6"><b>One licence across every client account.</b> Versus per-seat SaaS: fits how the agency works, "I run everything under my one login to keep costs down". Unverified, see Differentiation.<span class="src">Marisol Vega, ticket #4821</span></td></tr>
+        <tr><th class="rl" scope="row">Differentiator 3</th><td colspan="6"><b>Rebrand and resell rights.</b> Versus letting clients buy their own tools: keeps the tools, and the margin on them, inside the agency. Unverified, see Differentiation.<span class="src">Jordan Reyes, ticket #4902</span></td></tr>
+        <tr><th class="rl" scope="row">Differentiator 4</th><td colspan="6"><b>Tools instead of headcount.</b> Versus hiring: adds capacity without the fixed cost of a person, "I'd rather own 30 tools than manage one person".<span class="src">Marisol Vega, sales-call-notes.md</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="after">
+    <div class="note">
+      <p><b>Other alternatives:</b> Do the work by hand, wearing all the hats: caps how many clients one person can run (Marisol Vega, reviews.md) <span class="inf">inferred</span>: the avatar never describes the manual work; only the in-house segment does (Sofia Marin, Nadia Khoury). Other lifetime deal marketplaces: blank, no competitor is named in any source.</p>
+      <p><b>The proof row is the finding.</b> Every pillar has customer quotes and no proof. The voice rules demand "Proof over claims. Name the mechanism, cite the result, show the number" (guides/voice-rules.md), and no source holds a number, a case study, or a documented result. The raw material for one exists: Jordan's 8 retainers and "pays for itself in a month" claim, and the avatar cohort's repeat buying (154 of 205 orders, customers.csv). Turning either into published proof needs the customer's permission and verified figures.</p>
+    </div>
+    <section class="open">
+      <h2>Open (inferred) tags</h2>
+      <ul>
+        <li><b>Sub-problems, column 3:</b> other tools can't be rebranded. The ticket asks about Acme, not about alternatives. Resolves with a customer or sales note saying their other tools can't be white-labelled.</li>
+        <li><b>Other alternatives, doing the work by hand:</b> only the in-house segment describes manual work, not the avatar. Resolves with an avatar interview asking what they did before buying tools.</li>
+      </ul>
+      <p style="margin:12px 0 0">Also open, not (inferred) but unverified: the rebrand, resell, and one-licence-for-all-clients rights (ad copy only; tickets #4821 and #4902 ask about them). Blank: other lifetime deal marketplaces, buying deadline, Pillar 3 supporting features, all proof points.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p><b>Sources</b></p>
+    <ul>
+      <li>drafts/example-brain/icp.md: the customer, segments, and shares.</li>
+      <li>raw/brand/example/on-brand/ads.md: the only brand-side source for product claims.</li>
+      <li>raw/brand/example/guides/voice-rules.md: the proof-over-claims rule.</li>
+      <li>raw/voc/example/: reviews.md, support-tickets.md, sales-call-notes.md for customer quotes; customers.csv via icp.md.</li>
+      <li>Scraped pages: none. Example mode reads raw/brand/example/, which has no URLs.</li>
+    </ul>
+    <p>Acme Deals is a fictional brand; its data is Nick Christensen's (MIT). Framework: Diane Wiredu, <a href="https://www.lionwords.com/">Lion Words</a>: the Lite Positioning &amp; Messaging Canvas and the Messaging House template, merged into one grid in the Messaging House colour code. Built with /positioning-messaging, CXL AI Native Marketer cohort.</p>
+  </footer>
+</div>
