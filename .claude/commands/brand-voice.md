@@ -31,33 +31,45 @@ Do all of this before step 1, and wait for the answers. Skip it in `example` mod
 - **Off-brand samples** are what the this-not-that pairs are built from. If there are none, say the pairs will be weaker, and continue.
 - **ICP and hub:** read them if filled. They supply the customer words and the owned words. If either is a template, say so and continue without it.
 
-## 2. Draft the voice guide
+## 2. Check the core four
 
-- **Persona:** one line, "a [role] with a [quality]", drawn from how the on-brand samples sound.
-- **Traits:** 3 to 5. Each must name which of vocabulary, cadence, or sentence length it changes, and how it shows on the page, with an example from a sample. A trait with no effect gets cut, not kept.
-- **Cadence rules:** measure them from the on-brand samples: average and longest sentence, how paragraphs open, fragments and questions. State the numbers you measured.
-- **Always / never:** specific enough to pass or fail a draft.
-- **This, not that:** 8 to 12 near-miss pairs from real sentences. "This" is on-brand, "not that" is a near miss (from `off-brand/`, or a plausible drift of the same sentence, tagged (inferred)). Near misses, never extremes.
-- **Tone:** leave the optional section blank unless the samples clearly show the voice flexing by context.
+Read `positioning-messaging.md` (or the example hub). Fill the "Core four check" table in the voice guide: can a prospect answer what it is, who it is for, why they should care, and what sets it apart? Name any that are blank, and say the voice can't fix them.
 
-## 3. Draft the vocabulary
+## 3. Draft the voice guide, section by section
 
-- **Owned words:** from the hub's big idea, category, and pillars.
-- **Allowed jargon:** terms buyers use in `raw/voc/`, with the evidence.
-- **Banned buzzwords:** from the off-brand samples and any existing guide, each with what to write instead.
+Follow `frameworks/brand-voice-guide.md`, Diane's six sections, in order.
+
+1. **Our voice in a nutshell.** The persona as "a [role] with a [quality]", drawn from how the on-brand samples sound. Three or four sentences on how the copy reads, and the voice blend.
+2. **Brand voice traits (matrix).** 3 to 5 traits, each with what it means, do, don't, which pillar it changes (vocabulary, cadence, or tone), and an example from a real sample. A trait with no effect gets cut, not kept.
+3. **Tone profile.** One row per context the brand writes in (for example sales page, email, social post, support reply), each with the tone, what shifts, and an example from a sample. Fill only contexts the samples cover; list the rest as (inferred).
+4. **Writing principles.**
+   - **Cadence and sentence length:** measure them from the on-brand samples: average and longest sentence, how paragraphs open, fragments and questions. State the numbers. Rhythm rules, not word caps.
+   - **Always / never:** specific enough to pass or fail a draft.
+   - **This, not that:** 8 to 12 near-miss pairs from real sentences, each naming what changed. "This" is on-brand; "not that" comes from `off-brand/` or is a plausible drift of the same sentence, tagged (inferred). Near misses, never extremes.
+   - **Fluff check:** place each off-brand sample on the fluff matrix. Fill one row per fluff quadrant with a real line and its fix.
+5. **Language and terminology.** Summarise the rules and point to `vocabulary.md` (step 4).
+6. **Branded language: the signature element.** Product, feature and method names, owned terms, and the signature element (a mascot, a named concept, a recurring phrase): how it stays consistent visually and verbally, and where it is used. Only what the samples, guides or hub show; blank otherwise.
+
+Then **Proof: before and after.** Rewrite one off-brand sample using only the guide and the vocabulary, and put the before, the after, and what changed in the file.
+
+## 4. Draft the vocabulary
+
+- **Phrases to use:** owned words from the hub's owned key message (OKM), category, pillars and the signature element; allowed jargon, with evidence from `raw/voc/` that buyers use it.
+- **Phrases to avoid:** banned buzzwords from the off-brand samples and any existing guide. Each gets a "write instead", taken from customer language in `raw/voc/` wherever possible.
 - **Customer words vs our words:** where `raw/voc/` and the brand's pages name the same thing differently.
 
-## 4. Write
+## 5. Write
 
 Every line traces to a sample, a scraped page, a guide, or a customer quote. Anything else is tagged **(inferred)**. Never invent a quote. If a target file's `status` is not `template`, show what would change and ask before replacing anything. Set `status: draft`, `last_updated`, and `sources` on both files, and list every (inferred) line under "Open (inferred) tags".
 
-## 5. Feedback prompts
+## 6. Checks
 
-End with the two questions the workshop checks live:
-- **Does each trait change vocabulary, cadence, or sentence length?** Name any that don't.
+Answer each honestly from what you wrote:
+- **Does each trait change vocabulary, cadence, or tone?** Name any that don't.
 - **Jargon kept, buzzwords cut?** Name anything in the wrong list.
-
-Then prove the guide works: rewrite one off-brand sample using only the guide and the vocabulary, and show before and after.
+- **Is any this-not-that pair an extreme rather than a near miss?**
+- **Could a competitor's page pass this guide unchanged?** If yes, the guide is too generic: say where.
+- **Are all four core questions answered in the hub?**
 
 Then:
 - The two file paths.

@@ -51,6 +51,8 @@ Fill the template section by section. Set `status: draft`, today's date in `last
 
 Write the HTML dossier: one self-contained page with inline CSS, readable on a laptop and a phone. Top to bottom: the rich avatar with a short description and 3 or 4 key numbers from the data, "their words" as quote cards with sources, desires and pains side by side, the segments table, and a methodology footer naming the sources. Mark (inferred) lines visibly. No em dashes.
 
+Then share it: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] ICP Dossier" and give the link. Otherwise give the file path and say to open it in a browser.
+
 ## 5. Feedback prompts
 
 End with the two questions the workshop checks live, answered from what you wrote:

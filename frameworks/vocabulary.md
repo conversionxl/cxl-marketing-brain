@@ -17,8 +17,12 @@ Vocabulary is one of the three parts of voice in [[frameworks/brand-voice-guide|
 
 ## What goes in the file
 
+Diane's guide calls this section **Language and terminology: phrases to use, and phrases to avoid.**
+
+## Phrases to use
+
 ### 1. Owned words
-The terms you want to be known for: your category name, your method, your key message. Each with a one-line definition and where it came from (the hub, a customer, a product name).
+The terms you want to be known for: your category name, your method, your owned key message (OKM), and the words of your signature element. Each with a one-line definition and where it came from (the hub, a customer, a product name).
 
 | Word or phrase | Means | Source |
 |---|---|---|
@@ -31,12 +35,14 @@ Insider terms your buyers use. Each with evidence that buyers use it: a quote or
 |---|---|
 | | |
 
-### 3. Banned buzzwords
-Words you never use, each with what to write instead. Start from the drafts that failed the fluff lens and from `raw/brand/off-brand/`.
+## Phrases to avoid
 
-| Never | Write instead |
-|---|---|
-| | |
+### 3. Banned buzzwords
+Words you never use, each with what to write instead. Start from the drafts that failed the fluff lens and from `raw/brand/off-brand/`. Take the "write instead" from customer language in `raw/voc/` wherever you can: that is the second lever against fluff.
+
+| Never | Write instead | Where the replacement comes from |
+|---|---|---|
+| | | |
 
 ### 4. Customer words vs our words
 Where you and your customers name the same thing differently. Customer words come verbatim from `raw/voc/`. When they differ, customer-facing copy uses the customer's word.

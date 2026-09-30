@@ -11,8 +11,8 @@ Read `frameworks/lion-words-positioning-messaging-hub.md` in full first. It defi
 
 ## Mode
 
-- **No argument:** own data. ICP from `wiki/brand/icp.md`, pages from `raw/brand/urls.md`, guides from `raw/brand/guides/`, customer words from `raw/voc/` (excluding `example/`). Write to `wiki/brand/positioning-messaging.md`.
-- **`example`:** Acme Deals. ICP from `drafts/example-brain/icp.md`, brand material from `raw/brand/example/`, customer words from `raw/voc/example/`. Write to `drafts/example-brain/positioning-messaging.md`. Never write example data into `wiki/brand/`.
+- **No argument:** own data. ICP from `wiki/brand/icp.md`, pages from `raw/brand/urls.md`, guides from `raw/brand/guides/`, customer words from `raw/voc/` (excluding `example/`). Write to `wiki/brand/positioning-messaging.md` and `projects/marketing-brain/outputs/messaging-hub.html`.
+- **`example`:** Acme Deals. ICP from `drafts/example-brain/icp.md`, brand material from `raw/brand/example/`, customer words from `raw/voc/example/`. Write to `drafts/example-brain/positioning-messaging.md` and `projects/marketing-brain/outputs/example-messaging-hub.html`. Never write example data into `wiki/brand/`.
 
 ## 0. Before you run
 
@@ -43,7 +43,17 @@ Work through Part 1 then Part 2 of the framework, field by field.
 
 If the target file's `status` is not `template`, show what would change and ask before replacing anything. Set `status: draft`, `last_updated`, and `sources`. List every (inferred) line under "Open (inferred) tags".
 
-## 3. Feedback prompts
+## 3. Build the messaging hub page
+
+Always, in both modes. Render the hub as one self-contained HTML page in Diane's Messaging House layout. Use `frameworks/messaging-hub-example.html` (the Acme Deals hub from the workshop) as the template; with the plugin and no local copy, read `${CLAUDE_PLUGIN_ROOT}/frameworks/messaging-hub-example.html`.
+
+- Keep its structure exactly: the Positioning then Messaging parts, the same rows, the colour code (black section labels, grey-blue row labels, pink anchor lines, grey customer-facing wording, white supporting detail), the legend, the visible **(inferred)** tags, striped cells for blanks, the open-tags box and the sources footer, and the light and dark themes.
+- Replace every cell with this hub's content. Never carry Acme text over. A field with no source is a striped blank cell, not a guess.
+- Title it "Positioning and messaging hub for [Brand]", with status, date, and the count of open (inferred) tags in the header. No em dashes.
+
+Then share it: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] Messaging Hub" and give the link. Otherwise give the file path and say to open it in a browser.
+
+## 4. Feedback prompts
 
 End with the three questions the workshop checks live, each answered honestly from what you wrote:
 - **Are the alternatives real?** Would a buyer recognise them as what they do today?
