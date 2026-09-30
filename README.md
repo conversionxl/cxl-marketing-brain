@@ -15,8 +15,8 @@ The Marketing Brain adds a **brand brain**: four files that Claude reads before 
 
 Needs the **personal-os** plugin, set up in a folder with `/personal-os:setup` (see [its README](https://github.com/conversionxl/cxl-personal-os-plugin)).
 
-1. In Claude, open **Customize**, then **Browse plugins**, **Personal**, and the `cxl-personal-os-plugin` marketplace you added for personal-os. Add **marketing-brain**.
-   (Terminal or VS Code instead: `/plugin install marketing-brain@cxl-personal-os-plugin`.)
+1. In Claude, open **Customize**, then **Browse plugins**, **Personal**, **+**, **Add marketplace from GitHub**. Enter `https://github.com/conversionxl/cxl-marketing-brain` with **Sync automatically** on, then add **marketing-brain**. This is its own marketplace, separate from the one you added for personal-os.
+   (Terminal or VS Code instead: `/plugin marketplace add conversionxl/cxl-marketing-brain`, then `/plugin install marketing-brain@cxl-marketing-brain`.)
 2. Open your personal OS folder in Cowork, or in the desktop app's Code tab with Environment: Local, and type `/marketing-brain:setup`.
 
 Setup adds `raw/voc/`, `raw/brand/`, `wiki/brand/`, the frameworks, the project file, and a Marketing Brain section in your `CLAUDE.md`. It never overwrites a file, and it adds the `.gitignore` rule that keeps customer data local before anything lands in `raw/voc/`. The exercises are then `/marketing-brain:icp-dossier`, `/marketing-brain:positioning-messaging` and `/marketing-brain:brand-voice`, and the skills load by themselves.
