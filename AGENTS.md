@@ -17,3 +17,7 @@ The routines are Markdown files in `.claude/commands/`: `start`, `brief`, `inges
 
 - Skills are in `.claude/skills/<name>/SKILL.md`. When a task matches a skill's description, read it and follow it.
 - Standing facts are in `.claude/memory/`, indexed by `MEMORY.md`. Add a file there when the owner tells you something that stays true, and add one line to the index.
+
+## Brand brain
+
+**`wiki/brand/` is this repo's tone of voice, messaging and positioning documentation.** Read it before writing anything customer-facing: `icp.md` for who, `positioning-messaging.md` for what to say, `voice-guide.md` and `vocabulary.md` for how to say it.

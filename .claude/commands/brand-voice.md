@@ -14,9 +14,20 @@ Read `frameworks/brand-voice-guide.md` and `frameworks/vocabulary.md` in full fi
 - **No argument:** own data. Samples from `raw/brand/on-brand/`, `raw/brand/off-brand/`, `raw/brand/guides/`, and `raw/brand/scraped/`; the ICP and hub from `wiki/brand/`; customer words from `raw/voc/` (excluding `example/`). Write to `wiki/brand/voice-guide.md` and `wiki/brand/vocabulary.md`.
 - **`example`:** Acme Deals. Samples from `raw/brand/example/`; ICP and hub from `drafts/example-brain/`; customer words from `raw/voc/example/`. Write to `drafts/example-brain/voice-guide.md` and `drafts/example-brain/vocabulary.md`. Never write example data into `wiki/brand/`.
 
+## 0. Before you run
+
+Do all of this before step 1, and wait for the answers. Skip it in `example` mode.
+
+1. **Is the module set up here?** Look for a `## Marketing Brain` section in `CLAUDE.md` and for `wiki/brand/`, `raw/voc/` and `raw/brand/`. If any is missing and this session has the marketing-brain plugin, run `bash "${CLAUDE_PLUGIN_ROOT}/plugin/setup.sh" "$PWD"` with the shell and show its output: it creates the folders, the customer-data `.gitignore` rule and the CLAUDE.md section, and never overwrites a file. Without the plugin, create only the missing folders and their README files, and say so.
+2. **On-brand samples.** Show what is in `raw/brand/on-brand/` and `raw/brand/urls.md`. If there is little, ask the user to paste 3 to 10 pieces that sound exactly right (emails, ads, landing page sections, posts). Save each as Markdown in `raw/brand/on-brand/`, labelled with where and when it ran.
+3. **Off-brand samples.** Show what is in `raw/brand/off-brand/` and `raw/brand/off-brand/urls.md`. If there is little, ask for near misses: old copy, AI drafts that felt wrong, competitor lines, as pasted text or URLs. Save text in `raw/brand/off-brand/`, URLs in `off-brand/urls.md`, each with a note on what is wrong with it.
+4. **Existing voice guides.** Ask for any tone of voice, style or brand guide the company already has. Save it to `raw/brand/guides/`. Nothing under NDA.
+5. **Go or wait.** Summarise what you now have, and ask whether to start or to add more first.
+
 ## 1. Check the inputs
 
 - **On-brand samples** are the main input. If there are none, and nothing in `scraped/`, stop: a voice guide can't be drafted from nothing. Point to `raw/brand/README.md`, or to `/brand-voice example`.
+- **Off-brand URLs** in `raw/brand/off-brand/urls.md`: fetch each and save it to `raw/brand/off-brand/scraped-<short-slug>.md` with the URL and date at the top. Skip any already scraped.
 - **Off-brand samples** are what the this-not-that pairs are built from. If there are none, say the pairs will be weaker, and continue.
 - **ICP and hub:** read them if filled. They supply the customer words and the owned words. If either is a template, say so and continue without it.
 
@@ -53,3 +64,13 @@ Then:
 - The number of open (inferred) tags.
 - **Take home:** write your own this-not-that pairs from real sentences.
 - The brand brain is now in place. The `brand-brain` skill loads it automatically before any customer-facing writing.
+
+## Last. Connect it to the repo
+
+Before the final summary, make sure this repository treats the brand brain as its source of truth. Do each step only if it is missing, and never overwrite the user's own text:
+
+1. **CLAUDE.md** has this line in its Marketing Brain section. Add it if not:
+   > **`wiki/brand/` is this repo's tone of voice, messaging and positioning documentation.** Read it before writing anything customer-facing: `icp.md` for who, `positioning-messaging.md` for what to say, `voice-guide.md` and `vocabulary.md` for how to say it.
+2. **AGENTS.md**, if the repo has one, has the same line, so Codex, Copilot, Cursor and other tools follow it too. Add it if not.
+3. **Other voice or brand docs in the repo** (for example a `tone-of-voice.md`, a `brand/` folder, or a style section in `CLAUDE.md`): list them, say they now overlap with `wiki/brand/`, and ask whether to point them at `wiki/brand/` or leave them. Change nothing without a yes.
+4. Say in one line what now points at the file you just wrote.
