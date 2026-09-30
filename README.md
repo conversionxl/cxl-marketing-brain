@@ -83,6 +83,10 @@ https://github.com/conversionxl/cxl-marketing-brain. Show me the plan before cha
 6. Show me git status, then remove the marketing-brain remote.
 ```
 
+## Updating
+
+New versions don't install themselves on a personal marketplace. To update: **Plugins → Add → Manage marketplaces → ⋮** next to the marketplace → **Check for updates**. Your folder, logs and projects are untouched. (Automatic sync needs the Claude GitHub App to have access to the repo; that is not set up.)
+
 ## The Marketing Brain
 
 | | Exercise | Run | You bring | It fills |
