@@ -1,0 +1,20 @@
+{
+  "name": "marketing-brain",
+  "version": "0.1.0",
+  "description": "Marketing Brain module for the CXL AI Native Marketer cohort: the /marketing-brain:icp-dossier, positioning-messaging and brand-voice exercises, the icp-synthesis, brand-brain and ad-copy skills, and /marketing-brain:setup to add the brand brain folders and frameworks to your personal OS. Needs the personal-os plugin.",
+  "author": { "name": "CXL", "email": "hesh@cxl.com" },
+  "homepage": "https://github.com/conversionxl/cxl-marketing-brain",
+  "repository": "https://github.com/conversionxl/cxl-marketing-brain",
+  "keywords": ["cxl", "marketing-brain", "icp", "positioning", "brand-voice"],
+  "commands": [
+    "./plugin/setup.md",
+    "./.claude/commands/icp-dossier.md",
+    "./.claude/commands/positioning-messaging.md",
+    "./.claude/commands/brand-voice.md"
+  ],
+  "skills": [
+    "./.claude/skills/icp-synthesis",
+    "./.claude/skills/brand-brain",
+    "./.claude/skills/ad-copy"
+  ]
+}
