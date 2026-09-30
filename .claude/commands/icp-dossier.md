@@ -7,7 +7,7 @@ argument-hint: [example]
 
 Exercise 1 of the Marketing Brain. Turn the customer data in `raw/voc/` into an ICP: the rich avatar, the segments below it, their exact words, their pains and desires.
 
-Read `.claude/skills/icp-synthesis/SKILL.md` in full first and follow its method. This command says where things come from and where they go.
+Read the `icp-synthesis` skill in full first (`.claude/skills/icp-synthesis/SKILL.md` in the repo, or the marketing-brain plugin's copy) and follow its method. This command says where things come from and where they go.
 
 ## Mode
 
