@@ -13,7 +13,7 @@ The Marketing Brain adds a **brand brain**: four files that Claude reads before 
 
 ## Plugin route
 
-Needs the **personal-os** plugin, set up in a folder with `/personal-os:setup` (see [its README](https://github.com/conversionxl/cxl-personal-os-plugin)).
+Needs the **personal-os** plugin, set up in a folder with `/personal-os:setup` (see [its README](https://github.com/conversionxl/cxl-personal-os-plugins)).
 
 1. In Claude, open **Customize**, then **Browse plugins**, **Personal**, **+**, **Add marketplace from GitHub**. Enter `https://github.com/conversionxl/cxl-marketing-brain` with **Sync automatically** on, then add **marketing-brain**. This is its own marketplace, separate from the one you added for personal-os.
    (Terminal or VS Code instead: `/plugin marketplace add conversionxl/cxl-marketing-brain`, then `/plugin install marketing-brain@cxl-marketing-brain`.)
