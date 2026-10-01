@@ -11,7 +11,7 @@ Your brand's own words: what you publish, what sounds right, what sounds wrong, 
 | `urls.md` | 5 to 8 URLs, one per line: your homepage, 3 to 5 blog posts, 2 to 3 social posts | Exercises 2 and 3 |
 | `scraped/` | Nothing. The exercises save scraped pages here so they are not fetched twice | Exercises 2 and 3 |
 | `on-brand/` | Copy that sounds exactly right: your best emails, ads, landing page sections, posts | Exercise 3 |
-| `off-brand/` | Near misses: old copy, AI drafts that felt wrong, competitor lines you would never write | Exercise 3 |
+| `off-brand/` | Near misses: old copy, AI drafts that felt wrong, competitor lines you would never write. URLs of pages like that go in `off-brand/urls.md` | Exercise 3 |
 | `guides/` | Brand, style, or messaging docs you already have | Exercises 2 and 3 |
 
 Paste text into Markdown files. Label every sample with where it came from and when.

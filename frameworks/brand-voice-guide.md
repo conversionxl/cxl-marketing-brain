@@ -7,61 +7,87 @@ tags: [marketing-brain, voice]
 
 # Brand voice guide
 
-> **Credit:** Diane Wiredu, [Lion Words](https://www.lionwords.com/). Her approach to voice guides that an AI can apply, taught in the CXL AI Native Marketer cohort, Marketing Brain workshop.
+> **Credit:** Diane Wiredu, [Lion Words](https://www.lionwords.com/). Her verbal identity guide structure and her approach to voice, taught in the CXL AI Native Marketer cohort, Marketing Brain workshop.
+
+**Brand** is your business's personality. **Brand voice** is how you communicate that personality through language, in every word you publish: website copy, sales materials, emails, social media, customer comms.
 
 "Warm, human, friendly" tells nobody how to write, and it tells Claude even less. A voice guide works when every rule in it changes something you can see on the page. Exercise 3 fills this into [[wiki/brand/voice-guide|voice-guide]] and [[wiki/brand/vocabulary|vocabulary]].
 
-## Voice has three parts
+## Before the voice: the core four
 
-**Voice = vocabulary + cadence + sentence length.**
+No amount of voice work helps if prospects can't answer these four questions about the product. They come from the positioning and messaging hub (exercise 2).
 
-| Part | What it controls |
+| Question | What it covers |
 |---|---|
-| **Vocabulary** | Which words you use and which you never use. Lives in [[wiki/brand/vocabulary]]. |
-| **Cadence** | The rhythm: how sentences follow each other, where the short punches land, how paragraphs open and close. |
-| **Sentence length** | How long sentences run, on average and at most. |
+| **What is it?** (clarity) | Category, and what prospects can do with it |
+| **Who is it for?** (relevance) | Company type, job type, department or role |
+| **Why should I care?** (value) | The problem solved, and clear, specific, tangible benefits |
+| **What sets you apart?** (advantage) | What you replace, and what you can do that the alternatives can't |
+
+If the hub leaves any of the four blank, the voice guide says so up front.
+
+## Voice has three pillars
+
+| Pillar | What it controls |
+|---|---|
+| **Vocabulary** | Which words and phrases you use, and which you never use. Lives in [[wiki/brand/vocabulary]]. |
+| **Cadence** | The rhythm and sentence length: how sentences follow each other, where the short punches land, how long they run. |
+| **Tone** | How the voice flexes by context: a launch, a support reply, an apology. |
 
 A trait only counts if it changes one of these three.
 
 ## What goes in the guide
 
-### 1. Persona
-One line: **"a [role] with a [quality]"**. Who would be speaking if the brand were one person? For example: "a senior operator with no patience for fluff". Pick a role your buyer would trust and a quality that shows up in the writing.
+Diane's verbal identity guide has six sections. The voice guide follows them in order.
 
-### 2. Traits
-Three to five traits. Each has a required effect column: if you can't fill it, cut the trait.
+### 1. Our voice in a nutshell
+- **Persona:** "[Company]'s voice personified is a **[role] with a [quality]**", for example "a trusted coach with a playful streak". A role your buyer would trust, and a quality that shows up in the writing.
+- **How it reads:** three or four sentences on what the copy sounds like to a reader. What it does, and what it never does.
+- **Voice blend:** the layers the audience hears, for example "professional competence with human warmth".
 
-| Trait | Changes | How it shows on the page |
+### 2. Brand voice traits (matrix)
+Three to five traits. Every trait names the pillar it changes. If you can't fill that column, cut the trait.
+
+| Trait | What it means | Do | Don't | Changes (vocabulary / cadence / tone) | Example from a real sample |
+|---|---|---|---|---|---|
+
+### 3. Tone profile
+How the voice flexes by context, while staying the same voice. One row per context the brand actually writes in.
+
+| Context | Tone | What shifts | Example |
+|---|---|---|---|
+
+### 4. Writing principles
+- **Cadence and sentence length:** measured from real samples: average and longest sentence, how paragraphs open, fragments and questions. Rules about rhythm, not word caps: use as many words as necessary, but not one more.
+- **Always / never:** specific enough to pass or fail a draft.
+- **This, not that:** 8 to 12 near-miss pairs from real sentences. Nuance, not extremes: "We cut your reporting time" vs "We streamline your reporting workflow", not vs "Synergize your paradigm". Each pair names what changed: the pillar, or the fluff quadrant.
+- **Fluff check:** the fluff matrix below, with one real off-brand line per fluff quadrant and its fix.
+- **Core four check:** every piece of copy should leave a reader able to answer the four questions above.
+
+### 5. Language and terminology
+Phrases to use, and phrases to avoid. The lists live in [[wiki/brand/vocabulary|vocabulary]]; this section summarises the rules and links there.
+
+### 6. Branded language: the signature element
+- **Overview:** the product, feature and method names, owned terms, and the **signature element**: the recurring device that makes the brand recognisable (a mascot, a named concept, a recurring phrase), and how it stays consistent visually and verbally.
+- **Practical application:** where it appears, where it never appears, and how to write it.
+
+### After the six sections
+- **Proof:** one off-brand sample rewritten using only this guide and the vocabulary, before and after.
+- **Sources** and **open (inferred) tags.**
+
+## The fluff matrix
+
+Fluff is a lack of substance, and substance comes down to two things: **how specific** you are (the content) and **how natural** it sounds (the delivery).
+
+| | Formulaic phrasing | Natural phrasing |
 |---|---|---|
-| | vocabulary / cadence / sentence length | |
+| **Specific** | **Jargon jungle.** Technically accurate, but exhausting to read. Substance buried under buzzwords. | **Fluff-free zone.** Clear and credible, in the language buyers actually use. |
+| **Vague** | **Corporate blandspeak.** Says a lot, means nothing. Empty promises in clichés and big words. | **Empty charm.** Sounds warm and relatable, with no substance behind it. |
 
-### 3. Cadence rules
-Concrete, checkable rules. Average and maximum sentence length. How paragraphs open. Where a one-line paragraph is allowed. Whether you use questions, lists, fragments.
+The two easiest levers for fluff-free messaging:
+1. Get specific about the problem you solve and the solution you offer.
+2. Use customer language to describe buyer needs and frustrations.
 
-### 4. Always / never
-Hard constraints Claude can check a draft against. Short lists, each item specific enough to pass or fail.
-
-### 5. This, not that
-**8 to 12 near-miss pairs.** Each pair shows the same idea written on-brand and slightly off-brand. Near misses, not extremes: "We cut your reporting time" vs "We streamline your reporting workflow", not "We cut your reporting time" vs "Synergize your paradigm". This is the section a language model learns most from, so build the pairs from real sentences: `raw/brand/on-brand/` and `raw/brand/off-brand/`.
-
-| This | Not that | Why |
-|---|---|---|
-| | | |
-
-### 6. Tone (optional)
-How the voice flexes by context: a launch, an apology, a support reply. Only for teams that have the basics working. Skip it on a first pass.
-
-## Feedback lens: spot the fluff
-
-Diane's fluff matrix plots copy on two axes: **specificity** (what it says: vague to specific) and **delivery** (how it says it: formulaic to natural).
-
-| | Formulaic | Natural |
-|---|---|---|
-| **Specific** | **Jargon jungle.** Accurate but exhausting. Substance buried in buzzwords. | **Fluff-free zone.** Clear and credible, in the language buyers use. |
-| **Vague** | **Corporate blandspeak.** Says a lot, means nothing. Clichés and big words. | **Empty charm.** Sounds warm and relatable, with nothing behind it. |
-
-Two levers move copy toward the fluff-free zone: **get specific** about the problem and solution, and **use customer language**.
-
-**Jargon is fine, buzzwords aren't.** Insider terms your buyers use show you know their world. "Seamless" and "supercharge" mean nothing. Record which is which in [[wiki/brand/vocabulary|vocabulary]].
+**Jargon is not the enemy.** Jargon is insider language your buyers use: it shows you get their world. Buzzwords are "empty fluff we hide behind": "seamless", "supercharge", "unlock". Record which is which in [[wiki/brand/vocabulary|vocabulary]].
 
 Use this lens to critique drafts in all three exercises, not only this one.

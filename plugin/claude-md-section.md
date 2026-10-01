@@ -5,6 +5,8 @@
 
 <!-- Added by /marketing-brain:setup. Edit freely. -->
 
+**`wiki/brand/` is this repo's tone of voice, messaging and positioning documentation.** Read it before writing anything customer-facing: `icp.md` for who, `positioning-messaging.md` for what to say, `voice-guide.md` and `vocabulary.md` for how to say it.
+
 | Folder | What goes in it |
 |---|---|
 | `raw/voc/` | Voice of customer: customer exports, reviews, tickets, call notes, survey answers. Gitignored except the README and the Acme Deals example. `/personal-os:ingest` leaves it alone. |

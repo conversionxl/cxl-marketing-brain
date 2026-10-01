@@ -10,23 +10,27 @@ tags: [marketing-brain, voice, vocabulary]
 
 <!-- Filled by /brand-voice (exercise 3). Framework: frameworks/vocabulary.md. Jargon is fine, buzzwords aren't. Customer words come verbatim from raw/voc/. -->
 
-## Owned words
+## Phrases to use
+
+### Owned words
 
 | Word or phrase | Means | Source |
 |---|---|---|
 | | | |
 
-## Allowed jargon
+### Allowed jargon
 
 | Term | Evidence buyers use it |
 |---|---|
 | | |
 
-## Banned buzzwords
+## Phrases to avoid
 
-| Never | Write instead |
-|---|---|
-| | |
+### Banned buzzwords
+
+| Never | Write instead | Where the replacement comes from |
+|---|---|---|
+| | | |
 
 ## Customer words vs our words
 

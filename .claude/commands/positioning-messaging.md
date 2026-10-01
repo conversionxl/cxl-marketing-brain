@@ -11,8 +11,18 @@ Read `frameworks/lion-words-positioning-messaging-hub.md` in full first. It defi
 
 ## Mode
 
-- **No argument:** own data. ICP from `wiki/brand/icp.md`, pages from `raw/brand/urls.md`, guides from `raw/brand/guides/`, customer words from `raw/voc/` (excluding `example/`). Write to `wiki/brand/positioning-messaging.md`.
-- **`example`:** Acme Deals. ICP from `drafts/example-brain/icp.md`, brand material from `raw/brand/example/`, customer words from `raw/voc/example/`. Write to `drafts/example-brain/positioning-messaging.md`. Never write example data into `wiki/brand/`.
+- **No argument:** own data. ICP from `wiki/brand/icp.md`, pages from `raw/brand/urls.md`, guides from `raw/brand/guides/`, customer words from `raw/voc/` (excluding `example/`). Write to `wiki/brand/positioning-messaging.md` and `projects/marketing-brain/outputs/messaging-hub.html`.
+- **`example`:** Acme Deals. ICP from `drafts/example-brain/icp.md`, brand material from `raw/brand/example/`, customer words from `raw/voc/example/`. Write to `drafts/example-brain/positioning-messaging.md` and `projects/marketing-brain/outputs/example-messaging-hub.html`. Never write example data into `wiki/brand/`.
+
+## 0. Before you run
+
+Do all of this before step 1, and wait for the answers. Skip it in `example` mode.
+
+1. **Is the module set up here?** Look for a `## Marketing Brain` section in `CLAUDE.md` and for `wiki/brand/`, `raw/voc/` and `raw/brand/`. If any is missing and this session has the marketing-brain plugin, run `bash "${CLAUDE_PLUGIN_ROOT}/plugin/setup.sh" "$PWD"` with the shell and show its output: it creates the folders, the customer-data `.gitignore` rule and the CLAUDE.md section, and never overwrites a file. Without the plugin, create only the missing folders and their README files, and say so.
+2. **Your own pages (on-brand).** Show what is in `raw/brand/urls.md`. If it has fewer than 5 URLs, ask for 5 to 8 pages that sound like the brand at its best: the homepage, 3 to 5 blog posts, 2 to 3 social posts. Save them there, one per line.
+3. **Pages you'd never want to sound like (off-brand).** Ask for 2 to 5 URLs: old versions of their pages, competitor pages, generic copy in their category. Save them in `raw/brand/off-brand/urls.md`. Exercise 3 uses them; asking now saves a step later.
+4. **Existing positioning and messaging docs.** Ask: "Paste any existing positioning, messaging, brand or pitch docs from your company: a messaging house, a positioning statement, a sales deck script, a brand book section. Nothing under NDA." Save each as Markdown in `raw/brand/guides/<short-slug>.md`, labelled with its source and date. This folder is committed, so check nothing confidential goes in.
+5. **Go or wait.** Summarise what you now have, and ask whether to start or to add more first.
 
 ## 1. Check the inputs
 
@@ -33,7 +43,17 @@ Work through Part 1 then Part 2 of the framework, field by field.
 
 If the target file's `status` is not `template`, show what would change and ask before replacing anything. Set `status: draft`, `last_updated`, and `sources`. List every (inferred) line under "Open (inferred) tags".
 
-## 3. Feedback prompts
+## 3. Build the messaging hub page
+
+Always, in both modes. Render the hub as one self-contained HTML page in Diane's Messaging House layout. Use `frameworks/messaging-hub-example.html` (the Acme Deals hub from the workshop) as the template; with the plugin and no local copy, read `${CLAUDE_PLUGIN_ROOT}/frameworks/messaging-hub-example.html`.
+
+- Keep its structure exactly: the Positioning then Messaging parts, the same rows, the colour code (black section labels, grey-blue row labels, pink anchor lines, grey customer-facing wording, white supporting detail), the legend, the visible **(inferred)** tags, striped cells for blanks, the open-tags box and the sources footer, and the light and dark themes.
+- Replace every cell with this hub's content. Never carry Acme text over. A field with no source is a striped blank cell, not a guess.
+- Title it "Positioning and messaging hub for [Brand]", with status, date, and the count of open (inferred) tags in the header. No em dashes.
+
+Then share it: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] Messaging Hub" and give the link. Otherwise give the file path and say to open it in a browser.
+
+## 4. Feedback prompts
 
 End with the three questions the workshop checks live, each answered honestly from what you wrote:
 - **Are the alternatives real?** Would a buyer recognise them as what they do today?
@@ -47,3 +67,13 @@ Then:
 - The number of open (inferred) tags.
 - **Take home:** test alternatives and differentiators against real sales conversations; add proof, never invent it.
 - **Next:** `/brand-voice`.
+
+## Last. Connect it to the repo
+
+Before the final summary, make sure this repository treats the brand brain as its source of truth. Do each step only if it is missing, and never overwrite the user's own text:
+
+1. **CLAUDE.md** has this line in its Marketing Brain section. Add it if not:
+   > **`wiki/brand/` is this repo's tone of voice, messaging and positioning documentation.** Read it before writing anything customer-facing: `icp.md` for who, `positioning-messaging.md` for what to say, `voice-guide.md` and `vocabulary.md` for how to say it.
+2. **AGENTS.md**, if the repo has one, has the same line, so Codex, Copilot, Cursor and other tools follow it too. Add it if not.
+3. **Other voice or brand docs in the repo** (for example a `tone-of-voice.md`, a `brand/` folder, or a style section in `CLAUDE.md`): list them, say they now overlap with `wiki/brand/`, and ask whether to point them at `wiki/brand/` or leave them. Change nothing without a yes.
+4. Say in one line what now points at the file you just wrote.

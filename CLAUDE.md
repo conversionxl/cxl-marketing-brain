@@ -74,6 +74,8 @@ Claude has no memory between sessions by default. This repo fixes that with plai
 
 ## Marketing Brain
 
+**`wiki/brand/` is this repo's tone of voice, messaging and positioning documentation.** Read it before writing anything customer-facing: `icp.md` for who, `positioning-messaging.md` for what to say, `voice-guide.md` and `vocabulary.md` for how to say it.
+
 The brand brain is four files in `wiki/brand/` that Claude reads before it writes anything customer-facing. Three exercises fill them, in order, because each feeds the next:
 
 | Exercise | Command | Reads | Writes | Framework |

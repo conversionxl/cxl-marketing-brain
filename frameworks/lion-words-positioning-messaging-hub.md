@@ -7,7 +7,7 @@ tags: [marketing-brain, positioning, messaging]
 
 # Positioning and messaging hub
 
-> **Credit:** Diane Wiredu, [Lion Words](https://www.lionwords.com/). This is her Lite Positioning & Messaging Hub, with three items added from her Messaging House template: the big idea, customer words, and the differentiation snapshot. Taught in the CXL AI Native Marketer cohort, Marketing Brain workshop.
+> **Credit:** Diane Wiredu, [Lion Words](https://www.lionwords.com/). This is her Lite Positioning & Messaging Hub, with three items added from her Messaging House template: the owned key message (OKM), customer words, and the differentiation snapshot. Taught in the CXL AI Native Marketer cohort, Marketing Brain workshop.
 
 The hub is the single page every other piece of copy draws from. Part 1 decides where you stand. Part 2 decides what you say about it. Exercise 2 fills it into [[wiki/brand/positioning-messaging|positioning-messaging]].
 
@@ -54,7 +54,7 @@ What buyers do today instead of buying you. Include doing nothing, doing it by h
 
 ## Part 2: Messaging
 
-### Big idea *(from the Messaging House)*
+### Owned key message (OKM) *(from the Messaging House)*
 - **Owned key message:** the one message you want to own in your category. The anchor for everything else.
 - **What it means:** the key message unpacked in two or three plain sentences.
 - **Customer validation:** evidence that customers already think or say this. A quote from `raw/voc/`, or blank.

@@ -43,7 +43,7 @@ tags: [marketing-brain, positioning, messaging]
 
 ## Part 2: Messaging
 
-### Big idea
+### Owned key message (OKM)
 - **Owned key message:**
 - **What it means:**
 - **Customer validation:**
