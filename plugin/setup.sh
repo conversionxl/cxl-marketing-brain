@@ -28,7 +28,8 @@ created=0; kept=0
 for p in raw/voc raw/brand wiki/brand projects/marketing-brain \
          frameworks/positioning-messaging-hub.md \
          frameworks/brand-voice-guide.md frameworks/vocabulary.md \
-         frameworks/messaging-hub-example.html; do
+         frameworks/messaging-hub-example.html \
+         frameworks/icp-dossier-example.html frameworks/voice-guide-example.html; do
   while IFS= read -r -d '' src; do
     rel="${src#"$ROOT/"}"
     if [ -e "$rel" ]; then kept=$((kept+1)); continue; fi

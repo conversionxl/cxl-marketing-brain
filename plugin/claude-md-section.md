@@ -18,8 +18,8 @@ The brand brain is four files in `wiki/brand/` that Claude reads before it write
 | Exercise | Command | Reads | Writes | Framework |
 |---|---|---|---|---|
 | 1. ICP | `/marketing-brain:icp-dossier` | `raw/voc/` only | `wiki/brand/icp.md`, `projects/marketing-brain/outputs/icp-dossier.html` | `icp-synthesis` skill (Nick Christensen) |
-| 2. Positioning and messaging | `/marketing-brain:positioning-messaging` | ICP, `raw/brand/`, `raw/voc/` | `wiki/brand/positioning-messaging.md` | `frameworks/positioning-messaging-hub.md` |
-| 3. Brand voice | `/marketing-brain:brand-voice` | ICP, hub, `raw/brand/`, `raw/voc/` | `wiki/brand/voice-guide.md`, `wiki/brand/vocabulary.md` | `frameworks/brand-voice-guide.md`, `frameworks/vocabulary.md` |
+| 2. Positioning and messaging | `/marketing-brain:positioning-messaging` | ICP, `raw/brand/`, `raw/voc/` | `wiki/brand/positioning-messaging.md`, `projects/marketing-brain/outputs/messaging-hub.html` | `frameworks/positioning-messaging-hub.md` |
+| 3. Brand voice | `/marketing-brain:brand-voice` | ICP, hub, `raw/brand/`, `raw/voc/` | `wiki/brand/voice-guide.md`, `wiki/brand/vocabulary.md`, `projects/marketing-brain/outputs/voice-guide.html` | `frameworks/brand-voice-guide.md`, `frameworks/vocabulary.md` |
 | Optional: campaign | Ask for "an example campaign from my ICP" | The brain | `projects/marketing-brain/outputs/campaign.html` | `ad-copy` skill (Nick Christensen) |
 
 Each command takes `example` to run on Acme Deals, the fictional brand in `raw/voc/example/` and `raw/brand/example/`. Example runs write to `drafts/example-brain/`, never to `wiki/brand/`.

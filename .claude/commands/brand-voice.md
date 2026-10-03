@@ -11,8 +11,8 @@ Read `frameworks/brand-voice-guide.md` and `frameworks/vocabulary.md` in full fi
 
 ## Mode
 
-- **No argument:** own data. Samples from `raw/brand/on-brand/`, `raw/brand/off-brand/`, `raw/brand/guides/`, and `raw/brand/scraped/`; the ICP and hub from `wiki/brand/`; customer words from `raw/voc/` (excluding `example/`). Write to `wiki/brand/voice-guide.md` and `wiki/brand/vocabulary.md`.
-- **`example`:** Acme Deals. Samples from `raw/brand/example/`; ICP and hub from `drafts/example-brain/`; customer words from `raw/voc/example/`. Write to `drafts/example-brain/voice-guide.md` and `drafts/example-brain/vocabulary.md`. Never write example data into `wiki/brand/`.
+- **No argument:** own data. Samples from `raw/brand/on-brand/`, `raw/brand/off-brand/`, `raw/brand/guides/`, and `raw/brand/scraped/`; the ICP and hub from `wiki/brand/`; customer words from `raw/voc/` (excluding `example/`). Write to `wiki/brand/voice-guide.md`, `wiki/brand/vocabulary.md` and `projects/marketing-brain/outputs/voice-guide.html`.
+- **`example`:** Acme Deals. Samples from `raw/brand/example/`; ICP and hub from `drafts/example-brain/`; customer words from `raw/voc/example/`. Write to `drafts/example-brain/voice-guide.md`, `drafts/example-brain/vocabulary.md` and `projects/marketing-brain/outputs/example-voice-guide.html`. Never write example data into `wiki/brand/`.
 
 ## 0. Before you run
 
@@ -67,7 +67,18 @@ Then the **appendix**: the core four check from step 2, **Proof: before and afte
 
 Every line traces to a sample, a scraped page, a guide, or a customer quote. Anything else is tagged **(inferred)**. Never invent a quote. The output carries the brand's name only: no Lion Words or Diane Wiredu name, logo, link, or credit, in the files or in the summary. The credit lives in `frameworks/`. If a target file's `status` is not `template`, show what would change and ask before replacing anything. Set `status: draft`, `last_updated`, and `sources` on both files, and list every (inferred) line under "Open (inferred) tags".
 
-## 6. Checks
+## 6. Build the voice guide page
+
+Always, in both modes. Render the voice guide, with the vocabulary appended below a rule, as one self-contained HTML page. Use `frameworks/voice-guide-example.html` (the Acme Deals guide) as the template; with the plugin and no local copy, read `${CLAUDE_PLUGIN_ROOT}/frameworks/voice-guide-example.html`.
+
+- Keep its structure exactly: the title, the BRAND VOICE callout, the linked contents list, the six sections, the appendix, then the vocabulary. Every contents link must land on its heading.
+- All three exercise pages share one look, the CXL web styling: Work Sans 900 headings, Lato body, and the teal, red, beige, black and white tokens. Copy the template's `<style>` block unchanged; never restyle a page.
+- Show every (inferred) tag as the template's red `inferred` chip.
+- Write it to `projects/marketing-brain/outputs/voice-guide.html` (own data) or `projects/marketing-brain/outputs/example-voice-guide.html` (`example`).
+
+Then share it: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] Verbal Identity" and give the link. Otherwise give the file path and say to open it in a browser.
+
+## 7. Checks
 
 Answer each honestly from what you wrote:
 - **Does each trait change vocabulary, cadence, or tone?** Name any that don't.
@@ -79,7 +90,7 @@ Answer each honestly from what you wrote:
 - **Could a new hire, or Claude, write in this voice from the guide alone?** If not, say which section is too thin.
 
 Then:
-- The two file paths.
+- The two file paths and the page.
 - The number of open (inferred) tags.
 - **Take home:** write your own this-not-that pairs from real sentences, and run your homepage through the fluff matrix.
 - The brand brain is now in place. The `brand-brain` skill loads it automatically before any customer-facing writing.

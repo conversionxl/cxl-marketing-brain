@@ -47,8 +47,10 @@ If the target file's `status` is not `template`, show what would change and ask 
 
 Always, in both modes. Render the hub as one self-contained HTML page in the Messaging House layout. Use `frameworks/messaging-hub-example.html` (the Acme Deals hub from the workshop) as the template; with the plugin and no local copy, read `${CLAUDE_PLUGIN_ROOT}/frameworks/messaging-hub-example.html`.
 
-- Keep its structure exactly: the Positioning then Messaging parts, the same rows, the colour code (black section labels, grey-blue row labels, pink anchor lines, grey customer-facing wording, white supporting detail), the legend, the visible **(inferred)** tags, striped cells for blanks, the open-tags box and the sources footer, and the light and dark themes.
+- Keep its structure exactly: the Positioning then Messaging parts, the same rows, the colour code (black section labels, beige row labels, teal anchor lines, teal-tint customer-facing wording, white supporting detail, red title and (inferred) flags), the legend, the visible **(inferred)** tags, striped cells for blanks, the open-tags box and the sources footer, and the light and dark themes.
 - Replace every cell with this hub's content. Never carry Acme text over. A field with no source is a striped blank cell, not a guess.
+- All three exercise pages share one look, the CXL web styling: Work Sans 900 headings, Lato body, and the teal, red, beige, black and white tokens. Copy the template's `<style>` block unchanged; never restyle a page.
+- **`example` mode:** the template already is the Acme Deals hub. Copy it to `projects/marketing-brain/outputs/example-messaging-hub.html` and update only the date, the status, and the open-tag count in the header; change a cell only where your Markdown hub differs from it, and say which.
 - Title it "Positioning and messaging hub for [Brand]", with status, date, and the count of open (inferred) tags in the header. No em dashes.
 - The page and the Markdown hub carry the brand's name only: no Lion Words or Diane Wiredu name, logo, link, or credit anywhere in the output. The credit lives in `frameworks/`.
 

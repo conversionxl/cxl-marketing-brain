@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Acme Deals ICP Dossier</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  /* Layout: one reading column; avatar card, number strip, quote grid, two-up desires/pains, segment table. */
+  :root {
+    --cxl-teal: #6ce5e8; --cxl-red: #d61f2c; --cxl-beige: #faf7ef; --cxl-black: #000000; --cxl-white: #ffffff;
+    --bg: var(--cxl-beige); --surface: var(--cxl-white); --ink: var(--cxl-black); --muted: #4d4a44; --line: #e6e1d4;
+    --accent: var(--cxl-teal); --accent-ink: var(--cxl-black); --flag: var(--cxl-red); --kicker: var(--cxl-red);
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    --font-head: 'Work Sans', system-ui, sans-serif; --font-body: 'Lato', system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #0d0d0c; --surface: #1a1a18; --ink: #faf7ef; --muted: #b9b4a8; --line: #2e2d29; --shadow: none; color-scheme: dark; } }
+  :root[data-theme="dark"] { --bg: #0d0d0c; --surface: #1a1a18; --ink: #faf7ef; --muted: #b9b4a8; --line: #2e2d29; --shadow: none; color-scheme: dark; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
+  .wrap { max-width: 960px; margin: 0 auto; padding-inline: 16px; padding-block: 40px 64px; display: grid; gap: 40px; }
+  h1, h2, h3 { font-family: var(--font-head); font-weight: 900; line-height: 1.1; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(2rem, 5vw, 3rem); }
+  h2 { font-size: 1.5rem; margin-bottom: 16px; }
+  h3 { font-size: 1.1rem; }
+  p { margin: 0; }
+  .eyebrow { font-family: var(--font-head); font-weight: 700; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kicker); }
+  .meta { color: var(--muted); font-size: .9rem; margin-top: 8px; }
+  .card { background: var(--surface); border-radius: 12px; box-shadow: var(--shadow); padding: 24px; border: 1px solid var(--line); }
+  .avatar { display: grid; gap: 16px; border-top: 6px solid var(--accent); }
+  .avatar dl { display: grid; grid-template-columns: minmax(120px, 200px) 1fr; gap: 8px 20px; margin: 0; }
+  .avatar dt { font-weight: 700; } .avatar dd { margin: 0; min-width: 0; }
+  @media (max-width: 560px) { .avatar dl { grid-template-columns: 1fr; } .avatar dd { margin-bottom: 8px; } }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  @media (max-width: 720px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { padding: 16px 0; border-top: 2px solid var(--ink); }
+  .stat b { display: block; font-family: var(--font-head); font-weight: 900; font-size: 2rem; font-variant-numeric: tabular-nums; }
+  .stat span { color: var(--muted); font-size: .9rem; }
+  .quotes { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .quote { display: grid; gap: 12px; align-content: space-between; }
+  .quote p { font-size: 1.05rem; }
+  .quote cite { font-style: normal; font-size: .85rem; color: var(--muted); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 720px) { .two { grid-template-columns: 1fr; } }
+  .two ul { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 8px; }
+  .pill { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: .75rem; font-weight: 700; background: var(--accent); color: var(--accent-ink); }
+  .pill.red { background: var(--flag); color: var(--cxl-white); }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; background: var(--surface); }
+  th, td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid var(--line); }
+  th { font-family: var(--font-head); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  footer { color: var(--muted); font-size: .9rem; display: grid; gap: 8px; border-top: 1px solid var(--line); padding-top: 24px; }
+  footer ul { margin: 0; padding-left: 20px; }
+</style>
+<style>* { box-sizing: border-box; } body { margin: 0; }</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">ICP dossier · fictional example</p>
+    <h1>Solo Agency Jordan</h1>
+    <p class="meta">Acme Deals · Status: draft · Updated 2026-10-03 · Open (inferred) tags: 0 · Built from raw/voc/example/ only</p>
+  </header>
+
+  <section class="card avatar" aria-labelledby="avatar">
+    <h2 id="avatar">The rich avatar</h2>
+    <p>The founder or owner of a 1 to 5 person marketing agency or consultancy who is also the whole delivery team. Runs on client retainers, buys two or three deals a month for years, and treats a one-time price as margin, not cost.</p>
+    <dl>
+      <dt>Titles</dt><dd>Founder, Owner / Operator, Managing Director, Freelance Consultant</dd>
+      <dt>Business model</dt><dd>Client retainers: "8 active client retainers" (Jordan), "12-ish clients" (Marisol)</dd>
+      <dt>Why they buy again</dt><dd>"I'm not buying software, I'm buying margin."</dd>
+      <dt>What they really buy</dt><dd>Staying small without looking small. No first hire, and a client list that thinks there's a whole team.</dd>
+    </dl>
+  </section>
+
+  <section class="stats" aria-label="Key numbers">
+    <div class="stat"><b>74.0%</b><span>of revenue from the avatar cohort, 6 of 18 customers</span></div>
+    <div class="stat"><b>31.8%</b><span>of revenue from the top 10%, 2 customers</span></div>
+    <div class="stat"><b>25.7</b><span>average orders per avatar customer, vs 11.4 overall</span></div>
+    <div class="stat"><b>$6,230</b><span>average spend per avatar customer, vs $2,805 overall</span></div>
+  </section>
+
+  <section aria-labelledby="words">
+    <h2 id="words">Their words</h2>
+    <div class="quotes">
+      <figure class="card quote" style="margin:0"><p>"I'm not buying software, I'm buying margin. Every lifetime deal I resell into a retainer pays for itself in a month and prints after that."</p><cite>Jordan Reyes, BrightPath Agency · sales-call-notes.md</cite></figure>
+      <figure class="card quote" style="margin:0"><p>"Overhead is what kills small agencies and this is the opposite of overhead."</p><cite>Jordan Reyes, BrightPath Agency · reviews.md</cite></figure>
+      <figure class="card quote" style="margin:0"><p>"The day I have to hire is the day my margin dies."</p><cite>Jordan Reyes, BrightPath Agency · sales-call-notes.md</cite></figure>
+      <figure class="card quote" style="margin:0"><p>"I'm a team of one wearing nine hats. Every tool I don't have to pay monthly for is one less thing draining the account."</p><cite>Marisol Vega, Delta Creative · reviews.md</cite></figure>
+      <figure class="card quote" style="margin:0"><p>"My clients genuinely think I have a whole team behind me. It's me and a stack of tools I picked up here."</p><cite>Tomas Becker, North Loop Digital · reviews.md</cite></figure>
+      <figure class="card quote" style="margin:0"><p>"I buy first and find the use case later if the deal is good enough. Sounds reckless but the math works when it's one payment."</p><cite>Ben Ortiz, CraftFunnel · reviews.md</cite></figure>
+    </div>
+  </section>
+
+  <section class="two" aria-label="Desires and pains">
+    <div class="card"><h3><span class="pill">Desires</span></h3>
+      <ul>
+        <li>Margin that grows without headcount</li>
+        <li>To resell what they buy, under their own logo</li>
+        <li>To look bigger than they are: "punching way above my weight"</li>
+        <li>Tools they'll "actually still use in 6 months"</li>
+      </ul></div>
+    <div class="card"><h3><span class="pill red">Pains</span></h3>
+      <ul>
+        <li>Overhead: "what kills small agencies"</li>
+        <li>The first hire: "the day my margin dies"</li>
+        <li>Monthly bills: "one less thing draining the account"</li>
+        <li>Per-seat licences when every client runs under one login</li>
+      </ul></div>
+  </section>
+
+  <section aria-labelledby="segs">
+    <h2 id="segs">Segments</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Segment</th><th>Who</th><th>Revenue</th><th>Avg orders</th><th>What moves them</th></tr></thead>
+      <tbody>
+        <tr><td><b>Solo Agency Jordan</b><br><span class="pill">Avatar</span></td><td>Agency and consultancy owners, 1 to 5 people (6)</td><td class="num">74.0%</td><td class="num">25.7</td><td>Margin, no overhead, resale into retainers</td></tr>
+        <tr><td><b>Lone in-house marketer</b></td><td>The only marketer at SaaS or ecommerce, 6 to 200 (4)</td><td class="num">22.9%</td><td class="num">10.2</td><td>Time, not price: "Monday is reporting hell"</td></tr>
+        <tr><td><b>One-off buyers and explorers</b></td><td>Coaches, designers, students, early founders (8)</td><td class="num">3.0%</td><td class="num">1.2</td><td>Price: "grabbed it because it was cheap"</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <footer>
+    <p><b>Method.</b> Ranked 18 customers by total spend, named the cohort the top five share, layered reviews, tickets and call notes, and cross-checked against the calls. Every line traces to a file. Quotes are verbatim.</p>
+    <ul>
+      <li>customers.csv: 18 customers, 205 orders, $50,481</li>
+      <li>reviews.md: 10 reviews · support-tickets.md: 6 tickets · sales-call-notes.md: 4 calls</li>
+    </ul>
+    <p>Blank, not guessed: buying deadline, company revenue, first-touch channel. Acme Deals is fictional; its data is Nick Christensen's (MIT).</p>
+  </footer>
+</div>
+</body>
+</html>
