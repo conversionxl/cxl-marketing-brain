@@ -6,27 +6,33 @@ sources: []             # files in raw/brand/, scraped pages
 tags: [marketing-brain, voice]
 ---
 
-# Voice guide
+# Verbal Identity: Brand Voice & Writing Guidelines
 
-<!-- Filled by /brand-voice (exercise 3). Framework: frameworks/brand-voice-guide.md (Lion Words, Diane Wiredu). Voice = vocabulary + cadence + tone. A trait only counts if it changes one of the three. Word lists live in vocabulary.md. -->
+<!-- Filled by /brand-voice (exercise 3). Framework: frameworks/brand-voice-guide.md. Voice = vocabulary + cadence + tone. A trait only counts if it changes one of the three. Full word lists live in vocabulary.md. -->
 
-**Brand voice:** how we communicate our personality through language. It applies to every word we publish: website copy, sales materials, emails, social media, customer comms.
+> 💡 **BRAND VOICE:** *How we communicate our brand personality, values, purpose, and messaging through language and voice.* **Use case:** *This applies to all the words we publish. Website copy, sales materials, emails, social media, customer comms, etc.*
 
-## Core four check
-<!-- Can a prospect answer these from positioning-messaging.md? Name any that are blank. -->
+1. [Our voice in a nutshell](#1-our-voice-in-a-nutshell)
+2. [Brand voice traits (matrix)](#2-brand-voice-traits-matrix)
+3. [Tone profile](#3-tone-profile)
+4. [Writing principles](#4-writing-principles)
+5. [Language and terminology](#5-language-and-terminology)
+    - [Phrases to use](#phrases-to-use)
+    - [Phrases to avoid](#phrases-to-avoid)
+6. [Branded language: the [PRODUCT] / [signature element]](#6-branded-language)
+    - [Overview: visual and verbal consistency](#overview-visual-and-verbal-consistency)
+    - [Practical application](#practical-application)
 
-| Question | Answered? | Where |
-|---|---|---|
-| What is it? | | |
-| Who is it for? | | |
-| Why should I care? | | |
-| What sets you apart? | | |
+---
 
 ## 1. Our voice in a nutshell
 
-- **Persona:** our voice personified is a **[role] with a [quality]**.
-- **How it reads:**
-- **Voice blend:**
+[COMPANY]'s voice personified is a **'[Role] with a [quality]'**.
+
+<!-- One prose paragraph: "Our copy reads like..." Then the core personality in one line. -->
+
+**Voice blend:** our audience hears the following layers:
+-
 
 ## 2. Brand voice traits (matrix)
 
@@ -62,21 +68,35 @@ tags: [marketing-brain, voice]
 | | | | |
 
 ### Fluff check
-<!-- One real off-brand line per quadrant, with its fix. -->
+<!-- One real off-brand line per fluff quadrant, with its fix. The fix lands in the fluff-free zone: specific and natural. -->
 
 | Quadrant | Off-brand line | Fix | Source |
 |---|---|---|---|
-| Jargon jungle | | | |
-| Corporate blandspeak | | | |
-| Empty charm | | | |
+| Empty charm (vague, natural) | | | |
+| Corporate blandspeak (vague, formulaic) | | | |
+| Jargon jungle (specific, formulaic) | | | |
 
 ## 5. Language and terminology
 
-Phrases to use and phrases to avoid are in [[wiki/brand/vocabulary|vocabulary]].
-- **The rule:** jargon is fine, buzzwords aren't.
-- **Customer words win** where they differ from ours.
+Jargon our buyers use stays. Buzzwords go: if a word falls apart when you ask "how, exactly?", cut it. Customer words win where they differ from ours.
 
-## 6. Branded language: the signature element
+### Phrases to use
+
+| Phrase | What it means, or why we use it |
+|---|---|
+| | |
+
+### Phrases to avoid
+
+| Never | Write instead |
+|---|---|
+| | |
+
+Full lists, evidence, and customer words vs ours: [[wiki/brand/vocabulary|vocabulary]].
+
+## 6. Branded language
+
+<!-- Rename this heading "6. Branded language: the [PRODUCT] / [signature element]" -->
 
 ### Overview: visual and verbal consistency
 -
@@ -84,16 +104,30 @@ Phrases to use and phrases to avoid are in [[wiki/brand/vocabulary|vocabulary]].
 ### Practical application
 -
 
-## Proof: before and after
+---
+
+## Appendix
+
+### Core four check
+<!-- Can a prospect answer these from positioning-messaging.md? Name any that are blank. -->
+
+| Question | Answered? | Where |
+|---|---|---|
+| What is it? | | |
+| Who is it for? | | |
+| Why should I care? | | |
+| What sets you apart? | | |
+
+### Proof: before and after
 
 - **Before:**
 - **After:**
 - **What changed:**
 
-## Sources
+### Sources
 
 -
 
-## Open (inferred) tags
+### Open (inferred) tags
 
 -

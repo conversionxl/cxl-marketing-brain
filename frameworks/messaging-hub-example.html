@@ -4,55 +4,49 @@
 <title>Acme Deals Messaging Hub</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
-  /* Colour code from Diane Wiredu's Lion Words Messaging House:
-     black section labels, pale grey-blue row labels, pink anchor lines,
-     light grey customer-facing wording, white supporting detail. */
+  /* CXL web system, Messaging House colour code:
+     black section labels, beige row labels, teal anchor lines,
+     teal-tint customer-facing wording, white supporting detail, red title and (inferred) flags. */
   :root {
     color-scheme: light;
-    --bg: #f5f6f6; --surface: #ffffff; --ink: #161819; --muted: #5a6166; --line: #d3d8da;
-    --sec: #000000; --sec-ink: #ffffff;
-    --rl: #ecf0f1; --rl-ink: #161819;
-    --anchor: #f4cccc; --anchor-ink: #2a0f0f;
-    --facing: #efefef;
-    --title: #990000;
-    --inf: #8f5200; --inf-bg: #fff3d6; --inf-line: #d9a441;
-    --blank: #f1f2f2; --blank-stripe: #e6e8e8;
+    --cxl-teal: #6ce5e8; --cxl-red: #d61f2c; --cxl-beige: #faf7ef; --cxl-black: #000000; --cxl-white: #ffffff;
+    --font-head: 'Work Sans', system-ui, sans-serif; --font-body: 'Lato', system-ui, sans-serif;
+    --bg: var(--cxl-beige); --surface: var(--cxl-white); --ink: var(--cxl-black); --muted: #4d4a44; --line: #e6e1d4;
+    --sec: var(--cxl-black); --sec-ink: var(--cxl-white);
+    --rl: var(--cxl-beige); --rl-ink: var(--cxl-black);
+    --anchor: var(--cxl-teal); --anchor-ink: var(--cxl-black);
+    --facing: rgba(108, 229, 232, 0.16);
+    --title: var(--cxl-red);
+    --inf: var(--cxl-red); --inf-bg: var(--cxl-white); --inf-line: var(--cxl-red);
+    --blank: var(--cxl-beige); --blank-stripe: #efeadc;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       color-scheme: dark;
-      --bg: #101213; --surface: #181b1c; --ink: #e9ecec; --muted: #9aa2a6; --line: #30363a;
-      --sec: #000000; --sec-ink: #ffffff;
-      --rl: #242a2d; --rl-ink: #e9ecec;
-      --anchor: #4a2626; --anchor-ink: #fbe3e3;
-      --facing: #2a2d2f;
-      --title: #ec8a8a;
-      --inf: #f2bd62; --inf-bg: #3a2b10; --inf-line: #8a6320;
-      --blank: #1d2022; --blank-stripe: #23272a;
+      --bg: #0d0d0c; --surface: #1a1a18; --ink: #faf7ef; --muted: #b9b4a8; --line: #2e2d29;
+      --rl: #24231f; --rl-ink: #faf7ef;
+      --facing: rgba(108, 229, 232, 0.10);
+      --title: #ff6b74; --inf: #ff6b74; --inf-bg: #1a1a18; --inf-line: #ff6b74;
+      --blank: #1a1a18; --blank-stripe: #24231f;
     }
   }
   :root[data-theme="dark"] {
     color-scheme: dark;
-    --bg: #101213; --surface: #181b1c; --ink: #e9ecec; --muted: #9aa2a6; --line: #30363a;
-    --sec: #000000; --sec-ink: #ffffff;
-    --rl: #242a2d; --rl-ink: #e9ecec;
-    --anchor: #4a2626; --anchor-ink: #fbe3e3;
-    --facing: #2a2d2f;
-    --title: #ec8a8a;
-    --inf: #f2bd62; --inf-bg: #3a2b10; --inf-line: #8a6320;
-    --blank: #1d2022; --blank-stripe: #23272a;
+    --bg: #0d0d0c; --surface: #1a1a18; --ink: #faf7ef; --muted: #b9b4a8; --line: #2e2d29;
+    --rl: #24231f; --rl-ink: #faf7ef;
+    --facing: rgba(108, 229, 232, 0.10);
+    --title: #ff6b74; --inf: #ff6b74; --inf-bg: #1a1a18; --inf-line: #ff6b74;
+    --blank: #1a1a18; --blank-stripe: #24231f;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 "IBM Plex Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--font-body); }
   .wrap { max-width: 1320px; margin: 0 auto; padding-inline: 20px; padding-block: 36px 64px; }
-  .mono { font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; }
+  .mono { font-family: var(--font-head); font-weight: 700; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; }
   header { display: grid; gap: 10px; max-width: 900px; }
   header .kicker { color: var(--title); margin: 0; }
-  h1 { font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.05; margin: 0; text-wrap: balance; }
+  h1 { font-family: var(--font-head); font-weight: 900; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.05; margin: 0; text-wrap: balance; }
   .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); font-size: 14px; margin: 4px 0 0; }
   .meta b { color: var(--ink); font-weight: 600; }
   .legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 26px 0 14px; font-size: 13.5px; color: var(--muted); align-items: center; }
@@ -62,15 +56,14 @@
   .sw.facing { background: var(--facing); } .sw.white { background: var(--surface); }
   .sw.blank { background: repeating-linear-gradient(135deg, var(--blank) 0 4px, var(--blank-stripe) 4px 8px); }
 
-  .canvas { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+  .canvas { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
   table { width: 100%; min-width: 1120px; border-collapse: collapse; table-layout: fixed; font-size: 14px; }
   col.c-sec { width: 158px; } col.c-row { width: 168px; }
   td, th { border: 1px solid var(--line); padding: 11px 13px; vertical-align: top; text-align: left; font-weight: 400; }
   thead th { background: var(--surface); padding: 16px 14px; }
-  thead .title { font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif; font-size: 19px; font-weight: 700; color: var(--title); display: block; }
-  thead .by { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
-  th.sec { color: var(--sec-ink); background: var(--sec); font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; line-height: 1.5; border-color: #3a3f42; }
-  th.sec small { display: block; text-transform: none; letter-spacing: 0; font-family: "IBM Plex Sans", sans-serif; font-size: 12.5px; opacity: .8; margin-top: 4px; }
+  thead .title { font-family: var(--font-head); font-weight: 900; font-size: 20px; color: var(--title); display: block; }
+  th.sec { color: var(--sec-ink); background: var(--sec); font-family: var(--font-head); font-weight: 700; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; line-height: 1.5; border-color: #333333; }
+  th.sec small { display: block; text-transform: none; letter-spacing: 0; font-family: var(--font-body); font-size: 12.5px; opacity: .8; margin-top: 4px; }
   th.rl, td.lab { background: var(--rl); color: var(--rl-ink); font-weight: 600; font-size: 13.5px; }
   th.rl small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
   td.anchor { background: var(--anchor); color: var(--anchor-ink); font-weight: 600; }
@@ -83,16 +76,16 @@
   td blockquote { margin: 0; } td blockquote + blockquote { margin-top: 8px; }
   .src { display: block; margin-top: 6px; color: var(--muted); font-size: 12.5px; }
   td.anchor .src { color: inherit; opacity: .72; }
-  .inf { display: inline-block; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 500; color: var(--inf); background: var(--inf-bg); border: 1px solid var(--inf-line); border-radius: 3px; padding: 0 5px; margin: 0 2px; white-space: nowrap; vertical-align: 1px; }
+  .inf { display: inline-block; font-family: var(--font-head); font-weight: 700; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--inf); background: var(--inf-bg); border: 1px solid var(--inf-line); border-radius: 3px; padding: 0 5px; margin: 0 2px; white-space: nowrap; vertical-align: 1px; }
   td.has-inf { box-shadow: inset 4px 0 0 var(--inf-line); }
   td.blank { background: repeating-linear-gradient(135deg, var(--blank) 0 6px, var(--blank-stripe) 6px 12px); color: var(--muted); font-style: italic; font-weight: 400; }
   .ph { color: var(--muted); font-style: italic; font-weight: 400; }
 
   .after { display: grid; gap: 16px; margin-top: 24px; max-width: 900px; }
-  .note { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; }
+  .note { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
   .note p { margin: 0; } .note p + p { margin-top: 10px; }
-  .open { background: var(--inf-bg); border: 1px solid var(--inf-line); border-radius: 6px; padding: 16px 18px; }
-  .open h2 { font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif; font-weight: 600; margin: 0; font-size: 20px; }
+  .open { background: var(--inf-bg); border: 1px solid var(--inf-line); border-radius: 12px; padding: 16px 18px; }
+  .open h2 { font-family: var(--font-head); font-weight: 900; margin: 0; font-size: 20px; }
   .open ul { margin: 10px 0 0; padding-left: 18px; } .open li + li { margin-top: 6px; }
   footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; max-width: 900px; }
   footer ul { padding-left: 18px; margin: 8px 0; }
@@ -102,7 +95,7 @@
 <body>
 <div class="wrap">
   <header>
-    <p class="kicker mono">Lion Words Positioning &amp; Messaging Canvas · Fictional example</p>
+    <p class="kicker mono">Positioning &amp; Messaging Hub · Fictional example</p>
     <h1>Positioning and messaging hub for Acme Deals</h1>
     <p class="meta"><span>Status: <b>draft</b></span><span>Updated: <b>2026-09-29</b></span><span>Open (inferred) tags: <b>2</b></span><span>Source: <b>drafts/example-brain/positioning-messaging.md</b></span></p>
   </header>
@@ -119,7 +112,7 @@
     <table>
       <colgroup><col class="c-sec"><col class="c-row"><col><col><col><col><col><col></colgroup>
       <thead>
-        <tr><th colspan="8"><span class="title">Lion Words Positioning &amp; Messaging Canvas / Hub for Acme Deals</span><span class="by">by Diane Wiredu @ LionWords.com</span></th></tr>
+        <tr><th colspan="8"><span class="title">Positioning &amp; Messaging Hub for Acme Deals</span></th></tr>
       </thead>
       <tbody>
         <tr class="part"><td colspan="8" class="mono">Positioning: where we stand</td></tr>
@@ -190,7 +183,7 @@
       <li>raw/voc/example/: reviews.md, support-tickets.md, sales-call-notes.md for customer quotes; customers.csv via icp.md.</li>
       <li>Scraped pages: none. Example mode reads raw/brand/example/, which has no URLs.</li>
     </ul>
-    <p>Acme Deals is a fictional brand; its data is Nick Christensen's (MIT). Framework: Diane Wiredu, <a href="https://www.lionwords.com/">Lion Words</a>: the Lite Positioning &amp; Messaging Canvas and the Messaging House template, merged into one grid in the Messaging House colour code. Built with /positioning-messaging, CXL AI Native Marketer cohort.</p>
+    <p>Acme Deals is a fictional brand; its data is Nick Christensen's (MIT). Built with /positioning-messaging, CXL AI Native Marketer cohort.</p>
   </footer>
 </div>
 </body>

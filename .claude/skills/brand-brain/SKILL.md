@@ -20,7 +20,7 @@ The brand brain is four files in `wiki/brand/`. Load them before the first line 
 - **Who and why** come from `icp.md`. Write to the rich avatar unless told otherwise.
 - **What to say** comes from `positioning-messaging.md`: the owned key message (OKM), the value proposition, the pillars and their proof points. Use only proof points that are in the file.
 - **How to say it** comes from `voice-guide.md`: the persona, the traits matrix, the tone profile for this context, the writing principles (cadence, always / never, this-not-that pairs), and the signature element.
-- **Which words** come from `vocabulary.md`: use owned words and allowed jargon, never a banned buzzword, and prefer the customer's word where the two differ.
+- **Which words** come from `vocabulary.md`: use owned words and allowed jargon, never a banned buzzword, and prefer the customer's word where the two differ. Section 5 of `voice-guide.md` (Phrases to use, Phrases to avoid) is the short version of the same lists. `vocabulary.md` is the full list and the authority: if the two disagree, follow `vocabulary.md` and say which line differs, so the guide gets fixed.
 - **When files disagree:** wording follows `voice-guide` > `vocabulary` > `positioning-messaging` > `icp`; facts follow the reverse. Say when you hit a disagreement.
 
 ## Check before returning

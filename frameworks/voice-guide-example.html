@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Acme Deals Verbal Identity</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  /* Layout: a single document column, the verbal identity guide first, its vocabulary appended below a rule. */
+  :root {
+    --cxl-teal: #6ce5e8; --cxl-red: #d61f2c; --cxl-beige: #faf7ef; --cxl-black: #000000; --cxl-white: #ffffff;
+    --bg: var(--cxl-beige); --surface: var(--cxl-white); --ink: var(--cxl-black); --muted: #4d4a44; --line: #e6e1d4;
+    --link: #0b6f73; --accent: var(--cxl-teal); --flag: var(--cxl-red);
+    --font-head: 'Work Sans', system-ui, sans-serif; --font-body: 'Lato', system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #0d0d0c; --surface: #1a1a18; --ink: #faf7ef; --muted: #b9b4a8; --line: #2e2d29; --link: var(--cxl-teal); --flag: #ff6b74; color-scheme: dark; } }
+  :root[data-theme="dark"] { --bg: #0d0d0c; --surface: #1a1a18; --ink: #faf7ef; --muted: #b9b4a8; --line: #2e2d29; --link: var(--cxl-teal); --flag: #ff6b74; color-scheme: dark; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.65; }
+  .doc { max-width: 860px; margin: 0 auto; padding-inline: 16px; padding-block: 48px 72px; }
+  .eyebrow { font-family: var(--font-head); font-weight: 700; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--flag); margin: 0 0 8px; }
+  h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 900; line-height: 1.12; text-wrap: balance; }
+  h1 { font-size: clamp(2rem, 5vw, 2.9rem); margin: 0 0 24px; }
+  h2 { font-size: 1.9rem; margin: 56px 0 12px; scroll-margin-top: 16px; }
+  h3 { font-size: 1.2rem; margin: 32px 0 8px; scroll-margin-top: 16px; }
+  h4 { font-size: 1rem; margin: 24px 0 8px; }
+  p, li { max-width: 68ch; }
+  a { color: var(--link); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  blockquote.callout { margin: 0 0 32px; padding: 16px 20px; background: var(--surface); border-left: 6px solid var(--accent); border-radius: 12px; font-size: 1.1rem; }
+  blockquote.callout p { margin: 0; max-width: none; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+  .doc > ol:first-of-type { font-size: 1.05rem; line-height: 1.9; padding-left: 24px; }
+  .doc > ol:first-of-type ul { list-style: none; padding-left: 20px; }
+  .tbl { overflow-x: auto; margin: 12px 0 20px; }
+  table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { font-family: var(--font-head); font-weight: 700; font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; background: var(--cxl-black); color: var(--cxl-white); }
+  table { background: var(--surface); }
+  .inf { display: inline-block; font-family: var(--font-head); font-weight: 700; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--flag); border: 1px solid var(--flag); border-radius: 4px; padding: 0 5px; white-space: nowrap; vertical-align: 1px; }
+  .vocab-head { font-family: var(--font-head); font-weight: 900; font-size: 1.9rem; margin: 0; }
+</style>
+<style>* { box-sizing: border-box; } body { margin: 0; }</style>
+</head>
+<body>
+<main class="doc">
+  <p class="eyebrow">Acme Deals · fictional example · draft, 2026-10-03</p>
+  <h1>Verbal Identity: Brand Voice &amp; Writing Guidelines</h1>
+  <blockquote class="callout">
+<p>💡 <strong>BRAND VOICE:</strong> <em>How we communicate our brand personality, values, purpose, and messaging through language and voice.</em> <strong>Use case:</strong> <em>This applies to all the words we publish. Website copy, sales materials, emails, social media, customer comms, etc.</em></p>
+</blockquote>
+<ol>
+<li><a href="#1-our-voice-in-a-nutshell">Our voice in a nutshell</a></li>
+<li><a href="#2-brand-voice-traits-matrix">Brand voice traits (matrix)</a></li>
+<li><a href="#3-tone-profile">Tone profile</a></li>
+<li><a href="#4-writing-principles">Writing principles</a></li>
+<li><a href="#5-language-and-terminology">Language and terminology</a><ul>
+<li><a href="#phrases-to-use">Phrases to use</a></li>
+<li><a href="#phrases-to-avoid">Phrases to avoid</a></li>
+</ul>
+</li>
+<li><a href="#6-branded-language-the-acme-deals--cheat-code-element">Branded language: the Acme Deals / cheat code element</a><ul>
+<li><a href="#overview-visual-and-verbal-consistency">Overview: visual and verbal consistency</a></li>
+<li><a href="#practical-application">Practical application</a></li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="1-our-voice-in-a-nutshell">1. Our voice in a nutshell</h2>
+<p>Acme Deals' voice personified is a <strong>'Fellow Operator with a dealmaker's grin'</strong>.</p>
+<p>Our copy reads like another agency owner leaning over to show you the maths on their own stack. It names the money first: one payment, the monthly bill you stop paying, the margin you keep on every retainer. It talks in short, direct lines, the way operators talk to each other, and it borrows the customer's own phrases ("cheat code", "punch above your weight") instead of inventing polished ones. It never hypes, never promises speed it can't show, and never talks about itself. Our core personality: commercial sharpness with a wink. We take the margin seriously, and we enjoy getting a good deal.</p>
+<p><strong>Voice blend:</strong> our audience hears the following layers:
+- <strong>Operator:</strong> direct, practical, "operator to operator" (guides/voice-rules.md).
+- <strong>Dealmaker:</strong> the quiet satisfaction of a smart buy: "The agency cheat code", "Punch above your weight" (on-brand/ads.md).
+- <strong>Peer, not vendor:</strong> the customer's words, not the brand's. "People buy words that sound like their own thoughts" (guides/voice-rules.md).</p>
+<h2 id="2-brand-voice-traits-matrix">2. Brand voice traits (matrix)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Trait</th>
+<th>What it means</th>
+<th>Do</th>
+<th>Don't</th>
+<th>Changes</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Margin-minded</strong></td>
+<td>Every line ties back to money the agency keeps.</td>
+<td>Name the mechanism: one payment, monthly bill, retainer, margin.</td>
+<td>Talk about value, growth, or ROI in the abstract.</td>
+<td>Vocabulary</td>
+<td>"Buy once, bill clients monthly" (on-brand/ads.md, 5/5)</td>
+</tr>
+<tr>
+<td><strong>Operator to operator</strong></td>
+<td>Talks like one owner to another: imperative, second person, no brand "we".</td>
+<td>Open on a verb. Address "you".</td>
+<td>Write "we", "our platform", or anything that sounds like a brand communicating.</td>
+<td>Cadence, tone</td>
+<td>"Stop renting your software." (on-brand/ads.md, 4/5)</td>
+</tr>
+<tr>
+<td><strong>In their words</strong></td>
+<td>Borrows the customer's phrases, grammar intact.</td>
+<td>Reuse "cheat code", "punch above your weight", "overhead", "margin".</td>
+<td>Paraphrase customer language into corporate-speak.</td>
+<td>Vocabulary</td>
+<td>"The agency cheat code" (on-brand/ads.md, 5/5), from "a cheat code for an agency" (Jordan Reyes, reviews.md)</td>
+</tr>
+<tr>
+<td><strong>Specific over impressive</strong></td>
+<td>Concrete counts and conditions beat big adjectives.</td>
+<td>Use numbers and named conditions: "10 clients", "No seats, no renewals".</td>
+<td>Use superlatives or unprovable speed claims.</td>
+<td>Vocabulary</td>
+<td>"Run 10 clients solo" (on-brand/ads.md, 4/5)</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="3-tone-profile">3. Tone profile</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Context</th>
+<th>Tone</th>
+<th>What shifts</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Paid ads and headlines</strong></td>
+<td>Punchy, confident, a little cheeky.</td>
+<td>Shortest form: 2 to 6 words, often a fragment. One idea per asset.</td>
+<td>"Margin on every retainer" (on-brand/ads.md)</td>
+</tr>
+<tr>
+<td><strong>Ad descriptions</strong></td>
+<td>Plain and reassuring.</td>
+<td>Two or three short sentences; names the condition that removes risk.</td>
+<td>"No seats, no renewals, no surprise invoices. One payment, yours to keep." (on-brand/ads.md)</td>
+</tr>
+<tr>
+<td><strong>Landing page</strong> <span class="inf">inferred</span></td>
+<td>Same voice, more room for proof.</td>
+<td>Longer paragraphs allowed, but each claim carries a number or a customer quote.</td>
+<td><span class="inf">inferred</span> No landing page sample exists.</td>
+</tr>
+<tr>
+<td><strong>Support reply</strong> <span class="inf">inferred</span></td>
+<td>Calm, exact, no jokes.</td>
+<td>Answers the licensing or invoice question first, in one line. The wink drops.</td>
+<td><span class="inf">inferred</span> Tickets #4821, #5130 show what customers ask; no Acme replies exist.</td>
+</tr>
+<tr>
+<td><strong>Email</strong> <span class="inf">inferred</span></td>
+<td>Peer-to-peer, one deal per email.</td>
+<td>First line is the money: what it costs once, what it replaces monthly.</td>
+<td><span class="inf">inferred</span> No email sample exists.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-writing-principles">4. Writing principles</h2>
+<h3 id="cadence-and-sentence-length">Cadence and sentence length</h3>
+<ul>
+<li><strong>Average sentence length:</strong> 6.4 words, across 29 sentences in on-brand/ads.md.</li>
+<li><strong>Longest sentence:</strong> 13 words: "The lifetime deals that let a one-person shop look like a full team."</li>
+<li><strong>How paragraphs open:</strong> on a verb, most often: Own, Stop, Buy, Cut, Run, Look. Never on the brand name.</li>
+<li><strong>Rhythm:</strong> 11 of 29 sentences are four words or fewer. Fragments are fine ("No seats. No renewals."). Use triplets of short clauses for the money mechanics ("Own it once, bill it into retainers, keep the margin."). No questions in the samples, and no "we" or "our".</li>
+</ul>
+<h3 id="always">Always</h3>
+<ul>
+<li>Lead with the outcome or the job to be done, not the product name (guides/voice-rules.md).</li>
+<li>Put a number, a condition, or a customer quote in every claim.</li>
+<li>Use the customer's word when there is one: "lifetime deals", "overhead", "retainer", "margin".</li>
+<li>Read it out loud. If it sounds like a brand communicating, rewrite it (guides/voice-rules.md).</li>
+</ul>
+<h3 id="never">Never</h3>
+<ul>
+<li>Em dashes, hashtags in body copy, or emoji (guides/voice-rules.md).</li>
+<li>The hype words and banned phrases in section 5.</li>
+<li>More than one idea per asset (guides/voice-rules.md; off-brand #7).</li>
+<li>Speed promises with no proof: "in just minutes" (off-brand #5).</li>
+</ul>
+<h3 id="this-not-that">This, not that</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>This</th>
+<th>Not that</th>
+<th>What changed</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cut overhead, keep the margin</td>
+<td>Unlock game-changing margins for your agency</td>
+<td>Vocabulary: hype words out; the mechanism (cut overhead) in</td>
+<td>off-brand #1</td>
+</tr>
+<tr>
+<td>Built for solo agencies</td>
+<td>Acme Deals: the best-in-class software marketplace for agencies</td>
+<td>Opens on the buyer, not the brand; "best-in-class" cut</td>
+<td>off-brand #2</td>
+</tr>
+<tr>
+<td>Tools you resell for margin</td>
+<td>Leverage seamless tools to supercharge client growth</td>
+<td>Corporate blandspeak to specific: says what you do with the tool</td>
+<td>off-brand #3</td>
+</tr>
+<tr>
+<td>Run 10 clients solo</td>
+<td>Anyone can run 10 clients solo, no experience needed</td>
+<td>Tone: drops the banned reassurance, keeps the claim</td>
+<td>off-brand #4</td>
+</tr>
+<tr>
+<td>Own your stack instead of renting it back every single month</td>
+<td>Set up your whole agency stack in just minutes</td>
+<td>Swaps an unproven speed claim for the money mechanism</td>
+<td>off-brand #5</td>
+</tr>
+<tr>
+<td>Buy once, bill clients monthly</td>
+<td>Cost-effective multi-tool value for modern agencies</td>
+<td>Customer words restored; vague value made specific</td>
+<td>off-brand #6</td>
+</tr>
+<tr>
+<td>Own your stack instead of renting it back every single month</td>
+<td>Own your stack, delight your clients, scale your team, and grow your revenue</td>
+<td>Cadence: one idea, not four</td>
+<td>off-brand #7</td>
+</tr>
+<tr>
+<td>The agency cheat code</td>
+<td>The secret formula for explosive agency growth #agencylife</td>
+<td>Vocabulary: the customer's phrase, not marketer hype; hashtag cut</td>
+<td>off-brand #8</td>
+</tr>
+<tr>
+<td>One payment, every client</td>
+<td>Our revolutionary platform delivers synergy across your entire client portfolio</td>
+<td>Tone: no "our", no hype; concrete terms</td>
+<td>off-brand #9</td>
+</tr>
+<tr>
+<td>No seats, no renewals</td>
+<td>Flexible licensing for growing teams</td>
+<td>Specific conditions instead of an adjective (inferred drift)</td>
+<td>on-brand/ads.md <span class="inf">inferred</span></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="fluff-check">Fluff check</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Quadrant</th>
+<th>Off-brand line</th>
+<th>Fix</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Empty charm (vague, natural)</td>
+<td>Own your stack, delight your clients, scale your team, and grow your revenue</td>
+<td>Own your stack instead of renting it back every single month</td>
+<td>off-brand #7</td>
+</tr>
+<tr>
+<td>Corporate blandspeak (vague, formulaic)</td>
+<td>Our revolutionary platform delivers synergy across your entire client portfolio</td>
+<td>One payment, every client</td>
+<td>off-brand #9</td>
+</tr>
+<tr>
+<td>Jargon jungle (specific, formulaic)</td>
+<td>Leverage our perpetual licensing architecture to eliminate per-seat SaaS overhead across 10+ client accounts</td>
+<td>One licence, every client. No seats, no renewals.</td>
+<td>off-brand #10</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="5-language-and-terminology">5. Language and terminology</h2>
+<p>Jargon our buyers use stays: retainer, white-label, seats, stack. Buzzwords go: if a word falls apart when you ask "how, exactly?", cut it. Customer words win where they differ from ours.</p>
+<h3 id="phrases-to-use">Phrases to use</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Phrase</th>
+<th>What it means, or why we use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buy once, bill clients monthly</td>
+<td>The owned key message (positioning-messaging.md)</td>
+</tr>
+<tr>
+<td>Lifetime deals</td>
+<td>The category, in the customer's word (Jordan Reyes, reviews.md)</td>
+</tr>
+<tr>
+<td>Margin, overhead</td>
+<td>The two words the avatar thinks in (Jordan Reyes; Aisha Nelson, reviews.md)</td>
+</tr>
+<tr>
+<td>Retainer</td>
+<td>How the avatar bills clients (Jordan Reyes, reviews.md)</td>
+</tr>
+<tr>
+<td>No seats, no renewals</td>
+<td>The conditions that remove risk (on-brand/ads.md)</td>
+</tr>
+<tr>
+<td>The agency cheat code</td>
+<td>The signature element (section 6)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="phrases-to-avoid">Phrases to avoid</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Never</th>
+<th>Write instead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unlock, supercharge</td>
+<td>Name the result: "keep the margin", "bill it monthly"</td>
+</tr>
+<tr>
+<td>Leverage (verb)</td>
+<td>Use, resell</td>
+</tr>
+<tr>
+<td>Seamless</td>
+<td>Say what doesn't break: "one login, every client"</td>
+</tr>
+<tr>
+<td>Game-changing, revolutionary, best-in-class</td>
+<td>A number or a customer quote</td>
+</tr>
+<tr>
+<td>Cost-effective</td>
+<td>"One payment" or "one less thing draining the account"</td>
+</tr>
+<tr>
+<td>In just minutes</td>
+<td>Cut it, or show the actual time</td>
+</tr>
+</tbody>
+</table></div>
+<p>Full lists, evidence, and customer words vs ours: <a href="#vocabulary-acme-deals-example">vocabulary</a>.</p>
+<h2 id="6-branded-language-the-acme-deals--cheat-code-element">6. Branded language: the Acme Deals / cheat code element</h2>
+<h3 id="overview-visual-and-verbal-consistency">Overview: visual and verbal consistency</h3>
+<ul>
+<li><strong>Product and owned terms:</strong> Acme Deals (always two words, both capitalised). Owned key message: "Buy once, bill clients monthly" (positioning-messaging.md).</li>
+<li><strong>Signature element: the agency cheat code.</strong> A customer's phrase ("lifetime deals are a cheat code for an agency", Jordan Reyes, reviews.md and customers.csv) adopted as a 5/5 headline ("The agency cheat code", on-brand/ads.md). It frames buying a deal as a smart operator's move, not a discount.</li>
+<li><strong>Visual:</strong> a bold typographic card with a red accent (on-brand/ads.md, image assets). The wordmark is horizontal with the same red accent.</li>
+</ul>
+<h3 id="practical-application">Practical application</h3>
+<ul>
+<li><strong>Where it appears:</strong> headlines, image overlays, and the opening line of a campaign. Once per asset at most.</li>
+<li><strong>Where it never appears:</strong> support replies, invoices, and anything about licensing terms (inferred: these need precision, not a wink).</li>
+<li><strong>How to write it:</strong> "the agency cheat code", lowercase in running text, never "Cheat Code™", and never with "secret" or "hack" next to it (off-brand #8).</li>
+</ul>
+<hr />
+<h2 id="appendix">Appendix</h2>
+<h3 id="core-four-check">Core four check</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answered?</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What is it?</td>
+<td>Half. The category is clear; what the tools actually do is blank. The voice can't fix that.</td>
+<td>positioning-messaging.md: Market; Pillar 3 features blank</td>
+</tr>
+<tr>
+<td>Who is it for?</td>
+<td>Yes.</td>
+<td>positioning-messaging.md: Customer</td>
+</tr>
+<tr>
+<td>Why should I care?</td>
+<td>Yes, but no proof points.</td>
+<td>positioning-messaging.md: pillars</td>
+</tr>
+<tr>
+<td>What sets you apart?</td>
+<td>Partly. Two differentiators rest on unverified rebrand and licensing rights.</td>
+<td>positioning-messaging.md: Differentiation snapshot</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="proof-before-and-after">Proof: before and after</h3>
+<ul>
+<li><strong>Before:</strong> "Unlock game-changing margins for your agency" (off-brand #1)</li>
+<li><strong>After:</strong> "Buy the tool once. Bill it into every retainer. Keep the margin."</li>
+<li><strong>What changed:</strong> two hype words out (section 5). The mechanism named in three short clauses (cadence, section 4). "Margin" kept, because it is the customer's word (Jordan Reyes, sales-call-notes.md).</li>
+</ul>
+<h3 id="sources">Sources</h3>
+<ul>
+<li><code>raw/brand/example/on-brand/ads.md</code>: 25 headlines and descriptions, 12 image overlays.</li>
+<li><code>raw/brand/example/off-brand/ads.md</code>: 10 near-miss lines (generated for the demo, labelled as such).</li>
+<li><code>raw/brand/example/guides/voice-rules.md</code>: hard rules, write-like-this, the read-aloud test.</li>
+<li><code>drafts/example-brain/icp.md</code> and <code>drafts/example-brain/positioning-messaging.md</code>.</li>
+<li><code>raw/voc/example/</code>: customer words.</li>
+</ul>
+<h3 id="open-inferred-tags">Open <span class="inf">inferred</span> tags</h3>
+<ul>
+<li>Tone profile: landing page, support reply, and email rows. No samples.</li>
+<li>This, not that: the "Flexible licensing for growing teams" pair.</li>
+<li>Practical application: where the signature element never appears.</li>
+</ul>
+  <hr>
+  <h2 id="vocabulary-acme-deals-example">Vocabulary: Acme Deals (example)</h2>
+<h3 id="phrases-to-use">Phrases to use</h3>
+<h4 id="owned-words">Owned words</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Word or phrase</th>
+<th>Means</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buy once, bill clients monthly</td>
+<td>The owned key message: fixed cost, recurring income</td>
+<td>positioning-messaging.md; on-brand/ads.md (5/5)</td>
+</tr>
+<tr>
+<td>The agency cheat code</td>
+<td>The signature element: a smart operator's buy</td>
+<td>on-brand/ads.md (5/5); Jordan Reyes, reviews.md</td>
+</tr>
+<tr>
+<td>Own it, don't rent it</td>
+<td>Pillar 1: one payment instead of a subscription</td>
+<td>positioning-messaging.md; on-brand/ads.md</td>
+</tr>
+<tr>
+<td>Margin on every retainer</td>
+<td>Pillar 2 benefit</td>
+<td>on-brand/ads.md (5/5)</td>
+</tr>
+<tr>
+<td>Punch above your weight</td>
+<td>The status outcome: look bigger than you are</td>
+<td>on-brand/ads.md; Tomas Becker, reviews.md</td>
+</tr>
+<tr>
+<td>No seats, no renewals</td>
+<td>The risk-removing conditions</td>
+<td>on-brand/ads.md</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="allowed-jargon">Allowed jargon</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Evidence buyers use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lifetime deals</td>
+<td>"the lifetime deals are a cheat code for an agency" (Jordan Reyes, reviews.md)</td>
+</tr>
+<tr>
+<td>Retainer</td>
+<td>"resell it into 8 client retainers" (Jordan Reyes, reviews.md)</td>
+</tr>
+<tr>
+<td>Overhead</td>
+<td>"Overhead is what kills small agencies" (Jordan Reyes, reviews.md); "every dollar of overhead" (Aisha Nelson, reviews.md)</td>
+</tr>
+<tr>
+<td>Margin</td>
+<td>"I'm buying margin" (Jordan Reyes, sales-call-notes.md)</td>
+</tr>
+<tr>
+<td>Seat</td>
+<td>"is it one per seat?" (Marisol Vega, ticket #4821)</td>
+</tr>
+<tr>
+<td>White-label</td>
+<td>Ticket subject "white-label / reselling" (Jordan Reyes, ticket #4902)</td>
+</tr>
+<tr>
+<td>Stack</td>
+<td>"a stack of tools I picked up here" (Tomas Becker, reviews.md)</td>
+</tr>
+</tbody>
+</table></div>
+<p>All seven pass both tests: buyers use them unprompted, and each still holds when you ask "how, exactly?"</p>
+<h3 id="phrases-to-avoid">Phrases to avoid</h3>
+<h4 id="banned-buzzwords">Banned buzzwords</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Never</th>
+<th>Write instead</th>
+<th>Where the replacement comes from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unlock</td>
+<td>"keep the margin", "pocket the difference"</td>
+<td>Jordan Reyes, reviews.md</td>
+</tr>
+<tr>
+<td>Supercharge</td>
+<td>Name the result: "run more clients without hiring"</td>
+<td>on-brand/ads.md</td>
+</tr>
+<tr>
+<td>Leverage (verb)</td>
+<td>Use, resell</td>
+<td>Jordan Reyes, reviews.md ("resell it into")</td>
+</tr>
+<tr>
+<td>Seamless</td>
+<td>"one login" for every client</td>
+<td>Marisol Vega, ticket #4821</td>
+</tr>
+<tr>
+<td>Game-changing, revolutionary, disruptive</td>
+<td>A number: "8 client retainers"</td>
+<td>Jordan Reyes, reviews.md</td>
+</tr>
+<tr>
+<td>Best-in-class</td>
+<td>Who it's for: "Built for solo agencies"</td>
+<td>on-brand/ads.md</td>
+</tr>
+<tr>
+<td>Synergy</td>
+<td>Cut. Say the specific link: "one payment, every client"</td>
+<td>on-brand/ads.md</td>
+</tr>
+<tr>
+<td>Secret formula, growth hacks, explosive growth</td>
+<td>"cheat code"</td>
+<td>Jordan Reyes, reviews.md</td>
+</tr>
+<tr>
+<td>Cost-effective</td>
+<td>"one less thing draining the account"</td>
+<td>Marisol Vega, reviews.md</td>
+</tr>
+<tr>
+<td>Platform, solutions</td>
+<td>"tools"</td>
+<td>Tomas Becker, reviews.md ("a stack of tools")</td>
+</tr>
+<tr>
+<td>Anyone can do this, no experience needed, in just minutes</td>
+<td>Cut. Show the condition instead</td>
+<td>guides/voice-rules.md</td>
+</tr>
+</tbody>
+</table></div>
+<p>Every word in this table fails the "how?" test: "seamless how?", "unlock what, exactly?"</p>
+<h3 id="customer-words-vs-our-words">Customer words vs our words</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>We say</th>
+<th>They say</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Run 10 clients solo</td>
+<td>"a team of one wearing nine hats"</td>
+<td>Marisol Vega, reviews.md</td>
+</tr>
+<tr>
+<td>White-label and resell</td>
+<td>"rebrand the output and put it in front of my clients"</td>
+<td>Jordan Reyes, ticket #4902</td>
+</tr>
+<tr>
+<td>Cut overhead, keep the margin</td>
+<td>"every dollar of overhead I don't spend is a dollar of margin"</td>
+<td>Aisha Nelson, reviews.md</td>
+</tr>
+<tr>
+<td>Tools that pay for themselves</td>
+<td>"pays for itself in a month and prints after that"</td>
+<td>Jordan Reyes, sales-call-notes.md</td>
+</tr>
+</tbody>
+</table></div>
+<p>Where they differ, customer-facing copy uses the customer's phrase.</p>
+<h3 id="open-inferred-tags">Open (inferred) tags</h3>
+<ul>
+<li>None. Every line traces to a source.</li>
+</ul>
+</main>
+</body>
+</html>

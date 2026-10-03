@@ -49,7 +49,7 @@ Fill the template section by section. Set `status: draft`, today's date in `last
 
 ## 4. Build the dossier page
 
-Write the HTML dossier: one self-contained page with inline CSS, readable on a laptop and a phone. Top to bottom: the rich avatar with a short description and 3 or 4 key numbers from the data, "their words" as quote cards with sources, desires and pains side by side, the segments table, and a methodology footer naming the sources. Mark (inferred) lines visibly. No em dashes.
+Write the HTML dossier from the template `frameworks/icp-dossier-example.html` (the Acme Deals dossier; with the plugin and no local copy, read `${CLAUDE_PLUGIN_ROOT}/frameworks/icp-dossier-example.html`). Keep its structure and replace every piece of content with this ICP's. All three exercise pages share one look, the CXL web styling: Work Sans 900 headings, Lato body, and the teal, red, beige, black and white tokens. Copy the template's `<style>` block unchanged; never restyle a page. One self-contained page, readable on a laptop and a phone. Top to bottom: the rich avatar with a short description and 3 or 4 key numbers from the data, "their words" as quote cards with sources, desires and pains side by side, the segments table, and a methodology footer naming the sources. Mark (inferred) lines visibly. No em dashes.
 
 Then share it: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] ICP Dossier" and give the link. Otherwise give the file path and say to open it in a browser.
 

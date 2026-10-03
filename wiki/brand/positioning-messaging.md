@@ -8,7 +8,7 @@ tags: [marketing-brain, positioning, messaging]
 
 # Positioning and messaging
 
-<!-- Filled by /positioning-messaging (exercise 2). Framework: frameworks/lion-words-positioning-messaging-hub.md (Lion Words, Diane Wiredu). Customer starts from icp.md. Proof points and customer words are never invented: missing means blank. Any line not traceable to a source is tagged (inferred). -->
+<!-- Filled by /positioning-messaging (exercise 2). Framework: frameworks/positioning-messaging-hub.md. Customer starts from icp.md. Proof points and customer words are never invented: missing means blank. Any line not traceable to a source is tagged (inferred). -->
 
 ## Part 1: Positioning
 

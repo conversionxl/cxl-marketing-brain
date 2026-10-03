@@ -81,8 +81,8 @@ The brand brain is four files in `wiki/brand/` that Claude reads before it write
 | Exercise | Command | Reads | Writes | Framework |
 |---|---|---|---|---|
 | 1. ICP | `/icp-dossier` | `raw/voc/` only | `wiki/brand/icp.md`, `projects/marketing-brain/outputs/icp-dossier.html` | `icp-synthesis` skill (Nick Christensen) |
-| 2. Positioning and messaging | `/positioning-messaging` | ICP, `raw/brand/`, `raw/voc/` | `wiki/brand/positioning-messaging.md` | `frameworks/lion-words-positioning-messaging-hub.md` (Lion Words) |
-| 3. Brand voice | `/brand-voice` | ICP, hub, `raw/brand/`, `raw/voc/` | `wiki/brand/voice-guide.md`, `wiki/brand/vocabulary.md` | `frameworks/brand-voice-guide.md`, `frameworks/vocabulary.md` (Lion Words) |
+| 2. Positioning and messaging | `/positioning-messaging` | ICP, `raw/brand/`, `raw/voc/` | `wiki/brand/positioning-messaging.md`, `projects/marketing-brain/outputs/messaging-hub.html` | `frameworks/positioning-messaging-hub.md` |
+| 3. Brand voice | `/brand-voice` | ICP, hub, `raw/brand/`, `raw/voc/` | `wiki/brand/voice-guide.md`, `wiki/brand/vocabulary.md`, `projects/marketing-brain/outputs/voice-guide.html` | `frameworks/brand-voice-guide.md`, `frameworks/vocabulary.md` |
 | Optional: campaign | Ask for "an example campaign from my ICP" | The brain | `projects/marketing-brain/outputs/campaign.html` | `ad-copy` skill (Nick Christensen) |
 
 Each command takes `example` to run on Acme Deals, the fictional brand in `raw/voc/example/` and `raw/brand/example/`. Example runs write to `drafts/example-brain/`, never to `wiki/brand/`.
@@ -95,7 +95,7 @@ Each command takes `example` to run on Acme Deals, the fictional brand in `raw/v
 - **Brand voice vs your voice.** Copy written for the brand follows `wiki/brand/` (the `brand-brain` skill loads it). Messages the owner writes as themselves follow the `my-voice` skill.
 - **Customer data stays local.** Never copy an email address from `raw/voc/` into any other file.
 
-Credits: the ICP workflow and the Acme Deals data are Nick Christensen's ([ship-icp-ads-automate-monitoring](https://github.com/nickyc1/ship-icp-ads-automate-monitoring), MIT). The positioning, messaging, and voice frameworks are Diane Wiredu's, [Lion Words](https://www.lionwords.com/).
+Credits: the ICP workflow and the Acme Deals data are Nick Christensen's ([ship-icp-ads-automate-monitoring](https://github.com/nickyc1/ship-icp-ads-automate-monitoring), MIT). The positioning, messaging, and voice frameworks credit their author in `frameworks/`.
 
 ---
 

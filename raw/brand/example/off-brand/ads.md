@@ -13,3 +13,4 @@
 | 7 | Own your stack, delight your clients, scale your team, and grow your revenue | Own your stack instead of renting it back every single month | Four ideas in one asset |
 | 8 | The secret formula for explosive agency growth #agencylife | The agency cheat code | Hype words ("secret formula", "explosive growth"); hashtag in body copy |
 | 9 | Our revolutionary platform delivers synergy across your entire client portfolio | One payment, every client | Hype words ("revolutionary", "synergy"); sounds like a brand communicating, not a person talking |
+| 10 | Leverage our perpetual licensing architecture to eliminate per-seat SaaS overhead across 10+ client accounts | One payment, every client | Specific but formulaic: the facts are there (one licence, no seats, 10+ clients), buried under buzzwords ("leverage", "architecture") and dense phrasing. The jargon jungle quadrant |

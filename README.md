@@ -74,8 +74,9 @@ https://github.com/conversionxl/cxl-marketing-brain. Show me the plan before cha
    .claude/commands/icp-dossier.md, .claude/commands/positioning-messaging.md,
    .claude/commands/brand-voice.md, .claude/skills/brand-brain/, .claude/skills/icp-synthesis/,
    .claude/skills/ad-copy/, raw/voc/, raw/brand/, wiki/brand/, projects/marketing-brain/,
-   frameworks/lion-words-positioning-messaging-hub.md, frameworks/brand-voice-guide.md,
-   frameworks/vocabulary.md
+   frameworks/positioning-messaging-hub.md, frameworks/brand-voice-guide.md,
+   frameworks/vocabulary.md, frameworks/icp-dossier-example.html,
+   frameworks/messaging-hub-example.html, frameworks/voice-guide-example.html
 4. Merge into my CLAUDE.md, never overwriting my own text: its "Marketing Brain" section,
    its four new rows in the folder table, and its three new rows in the commands table.
 5. In my .claude/commands/ingest.md, make step 1 skip raw/voc/ and raw/brand/, as the module's

@@ -7,17 +7,23 @@ tags: [marketing-brain, voice, vocabulary]
 
 # Vocabulary
 
-> **Credit:** the rule at the heart of this file, "jargon is fine, buzzwords aren't", is Diane Wiredu's, [Lion Words](https://www.lionwords.com/). The section structure is CXL's, built for the Marketing Brain workshop.
+> **Credit:** the rule at the heart of this file, "jargon is fine, buzzwords aren't", is Diane Wiredu's, [Lion Words](https://www.lionwords.com/). The section structure is CXL's, built for the Marketing Brain workshop. The credit lives here; the vocabulary file this produces carries the brand's name only, with no Lion Words or Diane Wiredu name, link or credit.
 
 Vocabulary is one of the three parts of voice in [[frameworks/brand-voice-guide|brand-voice-guide]]. It gets its own file because it is the part Claude can check word by word, and the part that changes most often. Exercise 3 fills it into [[wiki/brand/vocabulary|vocabulary]].
 
 ## The rule
 
-**Jargon is fine, buzzwords aren't.** Jargon is the insider language your buyers use themselves: it shows you know their world. A buzzword is a word that sounds impressive and carries no meaning: "seamless", "supercharge", "unlock". The test: would your buyer use this word, unprompted, to describe their own work? Then it is jargon, and it may stay.
+**Jargon is fine, buzzwords aren't.** Jargon is the insider language your buyers use themselves: it shows you know their world. Jargon needs specialised knowledge to understand, and using it shows you belong in the buyer's in-group. A buzzword is a loaded word that has spread into everyday business and every B2B website: it sounds impressive and has several meanings or none. "Seamless", "supercharge", "unlock", "leverage", "empower", "innovative", "scalable", "AI-powered", "streamline", "solutions".
+
+Two tests, applied to every word on the edge:
+1. **The buyer test.** Would your buyer use this word, unprompted, to describe their own work? Then it is jargon, and it may stay.
+2. **The "how?" test.** Ask "how, exactly?" after it. If the sentence falls apart ("seamless" how?), it is a buzzword. If it still holds ("deploy" to where, "rollback" of what), it is jargon.
+
+Cutting real jargon is a mistake too: simple must not mean dumbed down. A technical buyer who doesn't see their own words hears an outsider.
 
 ## What goes in the file
 
-Diane's guide calls this section **Language and terminology: phrases to use, and phrases to avoid.**
+The verbal identity guide calls this section **Language and terminology: phrases to use, and phrases to avoid.** Section 5 of the voice guide carries the short version of both lists; this file holds the full lists, the evidence, and customer words vs ours.
 
 ## Phrases to use
 
