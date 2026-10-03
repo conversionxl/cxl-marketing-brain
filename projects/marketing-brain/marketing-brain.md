@@ -52,6 +52,6 @@ As of YYYY-MM-DD: templates untouched.
 - YYYY-MM-DD: decision and why
 
 ## Links and sources
-- Frameworks: [[frameworks/lion-words-positioning-messaging-hub|Positioning and messaging hub]], [[frameworks/brand-voice-guide|Brand voice guide]], [[frameworks/vocabulary|Vocabulary]]
+- Frameworks: [[frameworks/positioning-messaging-hub|Positioning and messaging hub]], [[frameworks/brand-voice-guide|Brand voice guide]], [[frameworks/vocabulary|Vocabulary]]
 - Inputs: `raw/voc/`, `raw/brand/`
 - Outputs: `outputs/icp-dossier.html`, `outputs/campaign.html` (generated)

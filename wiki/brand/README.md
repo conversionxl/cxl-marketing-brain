@@ -7,7 +7,7 @@ Your brand brain: four files Claude reads before it writes anything customer-fac
 | File | What it holds | Filled by | Framework |
 |---|---|---|---|
 | `icp.md` | Who buys: the rich avatar, the segments, their words, pains and desires | Exercise 1, `/icp-dossier` | Nick Christensen's ICP workflow (`.claude/skills/icp-synthesis/`) |
-| `positioning-messaging.md` | Where you stand and what you say: the positioning and messaging hub | Exercise 2, `/positioning-messaging` | `frameworks/lion-words-positioning-messaging-hub.md` |
+| `positioning-messaging.md` | Where you stand and what you say: the positioning and messaging hub | Exercise 2, `/positioning-messaging` | `frameworks/positioning-messaging-hub.md` |
 | `voice-guide.md` | How you sound: persona, traits, cadence, always / never, this-not-that | Exercise 3, `/brand-voice` | `frameworks/brand-voice-guide.md` |
 | `vocabulary.md` | Which words: owned words, allowed jargon, banned buzzwords, customer words | Exercise 3, `/brand-voice` | `frameworks/vocabulary.md` |
 

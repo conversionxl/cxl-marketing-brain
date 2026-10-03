@@ -1,5 +1,5 @@
 ---
-description: Marketing Brain exercise 2. Scrape your pages and fill the positioning and messaging hub (Lion Words) into wiki/brand/positioning-messaging.md.
+description: Marketing Brain exercise 2. Scrape your pages and fill the positioning and messaging hub into wiki/brand/positioning-messaging.md.
 argument-hint: [example]
 ---
 
@@ -7,7 +7,7 @@ argument-hint: [example]
 
 Exercise 2 of the Marketing Brain. Fill the positioning and messaging hub from the ICP, your own published pages, and your brand guides.
 
-Read `frameworks/lion-words-positioning-messaging-hub.md` in full first. It defines every field.
+Read `frameworks/positioning-messaging-hub.md` in full first (older setups have it as `frameworks/lion-words-positioning-messaging-hub.md`; with the plugin and neither file, read `${CLAUDE_PLUGIN_ROOT}/frameworks/positioning-messaging-hub.md`). It defines every field.
 
 ## Mode
 
@@ -45,11 +45,12 @@ If the target file's `status` is not `template`, show what would change and ask 
 
 ## 3. Build the messaging hub page
 
-Always, in both modes. Render the hub as one self-contained HTML page in Diane's Messaging House layout. Use `frameworks/messaging-hub-example.html` (the Acme Deals hub from the workshop) as the template; with the plugin and no local copy, read `${CLAUDE_PLUGIN_ROOT}/frameworks/messaging-hub-example.html`.
+Always, in both modes. Render the hub as one self-contained HTML page in the Messaging House layout. Use `frameworks/messaging-hub-example.html` (the Acme Deals hub from the workshop) as the template; with the plugin and no local copy, read `${CLAUDE_PLUGIN_ROOT}/frameworks/messaging-hub-example.html`.
 
 - Keep its structure exactly: the Positioning then Messaging parts, the same rows, the colour code (black section labels, grey-blue row labels, pink anchor lines, grey customer-facing wording, white supporting detail), the legend, the visible **(inferred)** tags, striped cells for blanks, the open-tags box and the sources footer, and the light and dark themes.
 - Replace every cell with this hub's content. Never carry Acme text over. A field with no source is a striped blank cell, not a guess.
 - Title it "Positioning and messaging hub for [Brand]", with status, date, and the count of open (inferred) tags in the header. No em dashes.
+- The page and the Markdown hub carry the brand's name only: no Lion Words or Diane Wiredu name, logo, link, or credit anywhere in the output. The credit lives in `frameworks/`.
 
 Then share it: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] Messaging Hub" and give the link. Otherwise give the file path and say to open it in a browser.
 

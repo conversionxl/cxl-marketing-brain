@@ -26,7 +26,7 @@ fi
 # 2. Module files, skipping anything that exists.
 created=0; kept=0
 for p in raw/voc raw/brand wiki/brand projects/marketing-brain \
-         frameworks/lion-words-positioning-messaging-hub.md \
+         frameworks/positioning-messaging-hub.md \
          frameworks/brand-voice-guide.md frameworks/vocabulary.md \
          frameworks/messaging-hub-example.html; do
   while IFS= read -r -d '' src; do
