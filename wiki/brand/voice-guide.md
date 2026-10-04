@@ -27,6 +27,9 @@ tags: [marketing-brain, voice]
 
 ## 1. Our voice in a nutshell
 
+**Written for:** <!-- the rich avatar from icp.md: label, role, buying context. Cite icp.md. -->
+**Saying:** <!-- the owned key message from positioning-messaging.md, word for word. Cite it. -->
+
 [COMPANY]'s voice personified is a **'[Role] with a [quality]'**.
 
 <!-- One prose paragraph: "Our copy reads like..." Then the core personality in one line. -->
@@ -117,6 +120,17 @@ Full lists, evidence, and customer words vs ours: [[wiki/brand/vocabulary|vocabu
 | Who is it for? | | |
 | Why should I care? | | |
 | What sets you apart? | | |
+
+### Brain test: the hub, in this voice, to the ICP
+<!-- Lift each line from positioning-messaging.md. Change it only where this guide or vocabulary.md demands, and say which rule. No new claims or proof. -->
+
+| Slot | Line | From the hub | What the voice changed |
+|---|---|---|---|
+| Headline | | Owned key message | |
+| Subhead | | Value proposition: customer-facing | |
+| Bullet 1 | | Pillar 1 statement | |
+| Bullet 2 | | Pillar 2 statement | |
+| Bullet 3 | | Pillar 3 statement | |
 
 ### Performance evidence
 <!-- Only when live data was used. Traits, phrases or formats that appear in the top performers and not the bottom ones. Appears with, never "causes". -->

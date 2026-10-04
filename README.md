@@ -4,7 +4,7 @@ The [CXL Personal OS](https://github.com/conversionxl/cxl-personal-os) with the 
 
 Claude starts every session knowing nothing about the last one. The personal OS fixes that with plain Markdown files you own: a daily log written automatically at the end of every session, project files that hold the state of your work, and a handful of commands for the daily and weekly loop. Open it in Obsidian and it is also a linked second brain.
 
-The Marketing Brain adds a **brand brain**: four files that Claude reads before it writes anything customer-facing, so drafts come out on-brand and in your customers' words instead of generic. You fill them in three exercises: your ICP, your positioning and messaging, and your brand voice.
+The Marketing Brain adds a **brand brain**: four files that Claude reads before it writes anything customer-facing, so drafts come out on-brand and in your customers' words instead of generic. You fill them in three exercises that feed each other: your ICP, then positioning and messaging written for that ICP, then a brand voice that says those messages to that ICP. A fourth exercise updates the module to the latest version.
 
 **Three ways in:**
 - **Using Claude?** Install the module as a plugin: see [Plugin route](#plugin-route) below. No code editor, no terminal. It works on its own, and best alongside the personal-os plugin.
@@ -19,7 +19,7 @@ Works in any folder. For daily logs, memory and the personal OS commands, also s
    (Terminal or VS Code instead: `/plugin marketplace add conversionxl/cxl-marketing-brain`, then `/plugin install marketing-brain@cxl-marketing-brain`.)
 2. Open your personal OS folder (or any folder for this project) in Cowork, or in the desktop app's Code tab with Environment: Local, and type `/marketing-brain:setup`.
 
-Setup adds `raw/voc/`, `raw/brand/`, `wiki/brand/`, the frameworks, the project file, and a Marketing Brain section in your `CLAUDE.md`. It never overwrites a file, and it adds the `.gitignore` rule that keeps customer data local before anything lands in `raw/voc/`. The exercises are then `/marketing-brain:icp-dossier`, `/marketing-brain:positioning-messaging` and `/marketing-brain:brand-voice`, and the skills load by themselves.
+Setup adds `raw/voc/`, `raw/brand/`, `wiki/brand/`, the frameworks, the project file, and a Marketing Brain section in your `CLAUDE.md`. It never overwrites a file, and it adds the `.gitignore` rule that keeps customer data local before anything lands in `raw/voc/`. The exercises are then `/marketing-brain:icp-dossier`, `/marketing-brain:positioning-messaging`, `/marketing-brain:brand-voice` and `/marketing-brain:update-brain`, and the skills load by themselves.
 
 
 ## Set up (10 minutes)
@@ -72,7 +72,7 @@ https://github.com/conversionxl/cxl-marketing-brain. Show me the plan before cha
    BEFORE copying anything into raw/voc/.
 3. Copy these paths from marketing-brain/main, skipping any file I already have:
    .claude/commands/icp-dossier.md, .claude/commands/positioning-messaging.md,
-   .claude/commands/brand-voice.md, .claude/skills/brand-brain/, .claude/skills/icp-synthesis/,
+   .claude/commands/brand-voice.md, .claude/commands/update-brain.md, .claude/skills/brand-brain/, .claude/skills/icp-synthesis/,
    .claude/skills/ad-copy/, raw/voc/, raw/brand/, wiki/brand/, projects/marketing-brain/,
    frameworks/positioning-messaging-hub.md, frameworks/brand-voice-guide.md,
    frameworks/vocabulary.md, frameworks/icp-dossier-example.html,
@@ -87,15 +87,25 @@ https://github.com/conversionxl/cxl-marketing-brain. Show me the plan before cha
 
 ## Updating
 
-New versions don't install themselves on a personal marketplace. To update: **Plugins → Add → Manage marketplaces → ⋮** next to the marketplace → **Check for updates**. Your folder, logs and projects are untouched. (Automatic sync needs the Claude GitHub App to have access to the repo; that is not set up.)
+New versions don't install themselves on a personal marketplace. To update: **Plugins → Add → Manage marketplaces → ⋮** next to the marketplace → **Check for updates**. (Terminal: `/plugin marketplace update cxl-marketing-brain`.) Your folder, logs and projects are untouched. (Automatic sync needs the Claude GitHub App to have access to the repo; that is not set up.)
+
+Then run `/marketing-brain:update-brain` (or `/update-brain` in a repo copy). The plugin update brings new commands and skills; the setup copied frameworks and templates into your folder, and this refreshes them. It never touches a filled `wiki/brand/` file, `raw/`, your projects or logs, and backs up every file it replaces to `drafts/`.
+
+**Repo copy without the command yet?** Paste this into Claude in your folder:
+```
+Update the Marketing Brain module in this folder. Clone https://github.com/conversionxl/cxl-marketing-brain
+to a temp folder outside this one, run its plugin/update.sh with --dry-run on this folder and show me
+the output, then run it without --dry-run when I say yes.
+```
 
 ## The Marketing Brain
 
 | | Exercise | Run | You bring | It fills |
 |---|---|---|---|---|
 | 1 | ICP | `/icp-dossier` | Customer data in `raw/voc/` | `wiki/brand/icp.md` and a dossier page in `projects/marketing-brain/outputs/` |
-| 2 | Positioning and messaging | `/positioning-messaging` | 5 to 8 URLs in `raw/brand/urls.md`, any brand guides | `wiki/brand/positioning-messaging.md` |
-| 3 | Brand voice | `/brand-voice` | On-brand and off-brand samples in `raw/brand/` | `wiki/brand/voice-guide.md` and `vocabulary.md` |
+| 2 | Positioning and messaging | `/positioning-messaging` | The ICP, 5 to 8 URLs in `raw/brand/urls.md`, any brand guides | `wiki/brand/positioning-messaging.md`, built on the ICP |
+| 3 | Brand voice | `/brand-voice` | On-brand and off-brand samples in `raw/brand/`; the ICP and hub | `wiki/brand/voice-guide.md` and `vocabulary.md`, written for the ICP and saying the hub's messages |
+| 4 | Update | `/update-brain` | Nothing: it fetches the latest version | Refreshed frameworks, templates and commands; your brand brain kept |
 | + | Example campaign (optional) | Ask: "build an example campaign from my ICP" | A landing page URL | `projects/marketing-brain/outputs/campaign.html` |
 
 **Before the workshop**, fill the inputs. The checklist is in `projects/marketing-brain/marketing-brain.md`, and each input folder has a README saying what goes in it.
@@ -132,7 +142,7 @@ drafts/            Content in progress
 team-updates/      Weekly standup updates built from your logs
 .claude/
   commands/        /start, /brief, /ingest, /shutdown, /lint, /team-update,
-                   /icp-dossier, /positioning-messaging, /brand-voice
+                   /icp-dossier, /positioning-messaging, /brand-voice, /update-brain
   skills/          Know-how Claude applies automatically (my-voice, brand-brain,
                    icp-synthesis, ad-copy)
   agents/          Specialists Claude hands whole jobs to (example: researcher)
@@ -153,7 +163,8 @@ team-updates/      Weekly standup updates built from your logs
 | `/team-update <period>` | When you owe a status update | Standup-format update from your daily logs |
 | `/icp-dossier [example]` | Marketing Brain exercise 1 | Your ICP from customer data, plus a dossier page |
 | `/positioning-messaging [example]` | Marketing Brain exercise 2 | Your positioning and messaging hub, from your pages |
-| `/brand-voice [example]` | Marketing Brain exercise 3 | Your voice guide and vocabulary, from your samples |
+| `/brand-voice [example]` | Marketing Brain exercise 3 | Your voice guide and vocabulary, from your samples, for your ICP |
+| `/update-brain [check]` | Marketing Brain exercise 4 | Updates the module, keeps your brand brain |
 
 ## What runs automatically
 

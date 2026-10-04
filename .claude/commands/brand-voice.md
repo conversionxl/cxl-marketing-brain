@@ -7,6 +7,8 @@ argument-hint: [example]
 
 Exercise 3 of the Marketing Brain. Draft the voice guide and the vocabulary from what the brand already sounds like, what it should never sound like, and the first two brain files.
 
+**The chain:** exercise 1 decided who you talk to (`icp.md`). Exercise 2 decided what you say to them (`positioning-messaging.md`). This exercise decides how you say it, **to that ICP, using that messaging**. The voice is not drafted in a vacuum: the persona is someone the rich avatar would trust, the tone flexes for the moments the ICP meets the brand, and the guide is proven by saying the hub's messages to the rich avatar in this voice.
+
 Read `frameworks/brand-voice-guide.md` and `frameworks/vocabulary.md` in full first (with the plugin and no local copy, read them from `${CLAUDE_PLUGIN_ROOT}/frameworks/`). They define every section and the output format.
 
 ## Mode
@@ -33,11 +35,16 @@ Do all of this before step 1, and wait for the answers. Skip it in `example` mod
 - **On-brand samples** are the main input. If there are none, and nothing in `scraped/`, stop: a voice guide can't be drafted from nothing. Point to `raw/brand/README.md`, or to `/brand-voice example`.
 - **Off-brand URLs** in `raw/brand/off-brand/urls.md`: fetch each and save it to `raw/brand/off-brand/scraped-<short-slug>.md` with the URL and date at the top. Skip any already scraped.
 - **Off-brand samples** are what the this-not-that pairs are built from. If there are none, say the pairs will be weaker, and continue.
-- **ICP and hub:** read them if filled. They supply the customer words and the owned words. If either is a template, say so and continue without it.
+- **ICP and hub are required.** Read `icp.md` and `positioning-messaging.md` (the `drafts/example-brain/` copies in `example` mode). If either is still a template or missing, stop and point to the exercise that fills it (`/icp-dossier`, `/positioning-messaging`): a voice with no listener and no message is a style sheet. If the user asks to continue anyway, every line that would have come from the missing file is tagged **(inferred)**, and the brain test in step 3 is skipped and listed under open tags.
 
-## 2. Check the core four
+## 2. Who we're talking to, and what we're saying
 
-Read `positioning-messaging.md` (or the example hub). For each of the four questions, check the sub-questions in the framework: category and use case; target customer; problem solved and benefits; alternatives and unique attributes. Fill the "Core four check" table in the appendix. Name any that are blank, unclear, or inconsistent across the hub and the samples, and say the voice can't fix them.
+Before a word of the guide, pull the two lines the whole voice serves, and show them to the user:
+
+- **Written for:** from `icp.md`, the rich avatar's label and role, their buying context, and 3 to 5 of their words (verbatim, from "Their words"). With two purchase motions, name both and say which one the voice leads with.
+- **Saying:** from `positioning-messaging.md`, the owned key message (OKM), the customer-facing value proposition, and the three pillar statements, word for word.
+
+Every later step checks against these two lines. Then check the core four: for each of the four questions, check the sub-questions in the framework: category and use case; target customer; problem solved and benefits; alternatives and unique attributes. Fill the "Core four check" table in the appendix. Name any that are blank, unclear, or inconsistent across the hub and the samples, and say the voice can't fix them.
 
 ## 3. Draft the voice guide, in the verbal identity format
 
@@ -48,24 +55,26 @@ Lay the guide out exactly as "The output format" in `frameworks/brand-voice-guid
 
 Then fill each section:
 
-1. **Our voice in a nutshell.** The persona line, "[Brand]'s voice personified is a **'[Role] with a [quality]'**", drawn from how the on-brand samples sound. Then one prose paragraph starting "Our copy reads like...", three to five sentences, ending on the core personality. Then "**Voice blend:** our audience hears the following layers:" and the layers as a short list.
+1. **Our voice in a nutshell.** Open with the **Written for** and **Saying** lines from step 2, each citing its brain file. Then the persona line, "[Brand]'s voice personified is a **'[Role] with a [quality]'**", drawn from how the on-brand samples sound, and a role the rich avatar would trust: a peer, a guide, an expert they already listen to. Then one prose paragraph starting "Our copy reads like...", three to five sentences, ending on the core personality. Then "**Voice blend:** our audience hears the following layers:" and the layers as a short list. At least one layer comes from how the ICP talks (cite "Their words").
 2. **Brand voice traits (matrix).** 3 to 5 traits, each with what it means, do, don't, which pillar it changes (vocabulary, cadence, or tone), and an example from a real sample. A trait with no effect gets cut, not kept.
-3. **Tone profile.** One row per context the brand writes in (for example sales page, email, social post, support reply), each with the tone, what shifts, and an example from a sample. Fill only contexts the samples cover; list the rest as (inferred).
+3. **Tone profile.** One row per context the brand writes in (for example sales page, email, social post, support reply), each with the tone, what shifts, and an example from a sample. Start from the moments the ICP meets the brand: the hub's buying context and the ICP's buying trigger come first. Fill only contexts the samples cover; list the rest as (inferred).
 4. **Writing principles.**
    - **Cadence and sentence length:** measure them from the on-brand samples: average and longest sentence, how paragraphs open, fragments and questions. State the numbers. Rhythm rules, not word caps.
    - **Always / never:** specific enough to pass or fail a draft.
-   - **This, not that:** 8 to 12 near-miss pairs from real sentences, each naming what changed. "This" is on-brand; "not that" comes from `off-brand/` or is a plausible drift of the same sentence, tagged (inferred). Near misses, never extremes.
+   - **This, not that:** 8 to 12 near-miss pairs from real sentences, each naming what changed. "This" is on-brand; "not that" comes from `off-brand/` or is a plausible drift of the same sentence, tagged (inferred). Near misses, never extremes. At least two pairs carry a hub message (the OKM or a pillar statement), so the writer sees the messaging said right and said almost right.
    - **Fluff check:** audit each off-brand sample on the fluff matrix, claim by claim, with the two questions: "How, exactly?" and "Would a buyer say this out loud?" Fill one row per fluff quadrant with a real line and a fix that lands in the fluff-free zone (specific and natural).
 5. **Language and terminology.** The jargon-vs-buzzword rule in one or two lines, then **Phrases to use** (top owned words and allowed jargon) and **Phrases to avoid** (top buzzwords, each with what to write instead) as short tables, then a link to `vocabulary.md` for the full lists. Keep the short lists consistent with step 4.
 6. **Branded language: the [product] / [signature element].** Name both in the heading. **Overview: visual and verbal consistency:** product, feature and method names, owned terms, and the signature element (a mascot, a named concept, a recurring phrase), and how it stays consistent. **Practical application:** where it appears, where it never does, and how to write it. Only what the samples, guides or hub show; blank otherwise.
 
-Then the **appendix**: the core four check from step 2, **Performance evidence** when live data was used (which traits, phrases, or formats appear in the top performers and not the bottom ones, with numbers and sources; never claim a trait causes performance), **Proof: before and after** (rewrite one off-brand sample using only the guide and the vocabulary; the before, the after, and what changed), sources, and open (inferred) tags.
+Then the **appendix**: the core four check from step 2, the **Brain test** (below), **Performance evidence** when live data was used (which traits, phrases, or formats appear in the top performers and not the bottom ones, with numbers and sources; never claim a trait causes performance), **Proof: before and after** (rewrite one off-brand sample using only the guide and the vocabulary; the before, the after, and what changed), sources, and open (inferred) tags.
+
+**Brain test: the hub, in this voice, to the ICP.** The proof that the three files work as one. Write a short hero block addressed to the rich avatar: a headline from the OKM, a subhead from the customer-facing value proposition, and three bullets from the pillar statements. Lift each line from the hub; change it only where the guide or the vocabulary demands, and say which rule. Lay it out as a table: slot, line, hub row it came from, what the voice changed (or "kept as is"). No new claims, numbers, or proof: if a line needs one the hub doesn't have, leave the gap and say so. If a hub line can't be said in this voice without breaking a rule, that is a finding: name the line and which file should change.
 
 ## 4. Draft the vocabulary
 
 - **Phrases to use:** owned words from the hub's owned key message (OKM), category, pillars and the signature element; allowed jargon, with evidence from `raw/voc/` that buyers use it.
 - **Phrases to avoid:** banned buzzwords from the off-brand samples and any existing guide, each checked with the "how?" test. Each gets a "write instead", taken from customer language in `raw/voc/` wherever possible.
-- **Customer words vs our words:** where `raw/voc/` and the brand's pages name the same thing differently.
+- **Customer words vs our words:** where `raw/voc/` and the brand's pages name the same thing differently. Start from "Their words" in `icp.md` and the "Problem in buyer language" row of the hub: the ICP's word wins unless the hub owns a term on purpose.
 
 ## 5. Write
 
@@ -91,14 +100,18 @@ Answer each honestly from what you wrote:
 - **Is any this-not-that pair an extreme rather than a near miss?**
 - **Could a competitor's page pass this guide unchanged?** If yes, the guide is too generic: say where.
 - **Are all four core questions answered in the hub,** clearly and consistently?
+- **Would the rich avatar hear themselves in it?** Does the persona fit who they are, and does the vocabulary use their words?
+- **Did the brain test pass?** Name any hub line the voice had to break, and which file should change.
 - **Does every fix in the fluff check land in the fluff-free zone,** specific and natural?
 - **Could a new hire, or Claude, write in this voice from the guide alone?** If not, say which section is too thin.
 
 Then:
 - The two file paths and the page.
+- The brain test hero block, as written.
 - The number of open (inferred) tags.
 - **Take home:** write your own this-not-that pairs from real sentences, and run your homepage through the fluff matrix.
 - The brand brain is now in place. The `brand-brain` skill loads it automatically before any customer-facing writing.
+- **Next (exercise 4):** `/update-brain` brings the module up to the latest version, including any fixes made from workshop feedback, and keeps your brand brain.
 
 ## Last. Connect it to the repo
 

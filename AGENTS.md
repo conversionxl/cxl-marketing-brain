@@ -11,7 +11,7 @@ In Claude Code, hooks load the two newest daily logs at the start of a session a
 
 ## Commands
 
-The routines are Markdown files in `.claude/commands/`: `start`, `brief`, `ingest`, `shutdown`, `lint`, `team-update`, and the Marketing Brain exercises `icp-dossier`, `positioning-messaging` and `brand-voice`. When the user names one ("run shutdown", "brief me on the Q4 launch"), open `.claude/commands/<name>.md` and follow it step by step. Treat `$ARGUMENTS` as whatever the user added after the name.
+The routines are Markdown files in `.claude/commands/`: `start`, `brief`, `ingest`, `shutdown`, `lint`, `team-update`, and the Marketing Brain exercises `icp-dossier`, `positioning-messaging`, `brand-voice` and `update-brain`. When the user names one ("run shutdown", "brief me on the Q4 launch"), open `.claude/commands/<name>.md` and follow it step by step. Treat `$ARGUMENTS` as whatever the user added after the name.
 
 ## Skills and memory
 

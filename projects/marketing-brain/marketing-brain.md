@@ -43,7 +43,8 @@ As of YYYY-MM-DD: templates untouched.
 **Exercises**
 - [ ] Exercise 1, ICP: run `/icp-dossier` → [[wiki/brand/icp|ICP]] and `outputs/icp-dossier.html`
 - [ ] Exercise 2, positioning and messaging: run `/positioning-messaging` → [[wiki/brand/positioning-messaging|Positioning and messaging]]
-- [ ] Exercise 3, brand voice: run `/brand-voice` → [[wiki/brand/voice-guide|Voice guide]] and [[wiki/brand/vocabulary|Vocabulary]]
+- [ ] Exercise 3, brand voice: run `/brand-voice` → [[wiki/brand/voice-guide|Voice guide]] and [[wiki/brand/vocabulary|Vocabulary]], written for the ICP and saying the hub's messages
+- [ ] Exercise 4, update: run `/update-brain` to pull the version updated from workshop feedback
 - [ ] Optional: ask Claude to "build an example campaign from my ICP" → `outputs/campaign.html`
 
 **Take home**

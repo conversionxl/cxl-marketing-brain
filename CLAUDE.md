@@ -72,7 +72,8 @@ Claude has no memory between sessions by default. This repo fixes that with plai
 | `/team-update [this-week\|last-week\|today]` | When you owe someone a status update. | Turns your daily logs into a short standup update in `team-updates/`. |
 | `/icp-dossier [example]` | Marketing Brain exercise 1. | Builds `wiki/brand/icp.md` and a dossier page from `raw/voc/`. |
 | `/positioning-messaging [example]` | Marketing Brain exercise 2. | Scrapes your pages and fills `wiki/brand/positioning-messaging.md`. |
-| `/brand-voice [example]` | Marketing Brain exercise 3. | Drafts `wiki/brand/voice-guide.md` and `vocabulary.md` from your samples. |
+| `/brand-voice [example]` | Marketing Brain exercise 3. | Drafts `wiki/brand/voice-guide.md` and `vocabulary.md` from your samples, written for the ICP and saying the hub's messages. |
+| `/update-brain [check]` | Marketing Brain exercise 4, and whenever CXL ships an update. | Updates the module from the plugin or a fresh copy of the repo. Keeps your brand brain. |
 
 ---
 
@@ -80,13 +81,14 @@ Claude has no memory between sessions by default. This repo fixes that with plai
 
 **`wiki/brand/` is this repo's tone of voice, messaging and positioning documentation.** Read it before writing anything customer-facing: `icp.md` for who, `positioning-messaging.md` for what to say, `voice-guide.md` and `vocabulary.md` for how to say it.
 
-The brand brain is four files in `wiki/brand/` that Claude reads before it writes anything customer-facing. Three exercises fill them, in order, because each feeds the next:
+The brand brain is four files in `wiki/brand/` that Claude reads before it writes anything customer-facing. Three exercises fill them, in order, because each feeds the next: the ICP decides who the hub is written for, and the voice says the hub's messages to that ICP. A fourth keeps the module current:
 
 | Exercise | Command | Reads | Writes | Framework |
 |---|---|---|---|---|
 | 1. ICP | `/icp-dossier` | `raw/voc/` only | `wiki/brand/icp.md`, `projects/marketing-brain/outputs/icp-dossier.html` | `icp-synthesis` skill (Nick Christensen) |
 | 2. Positioning and messaging | `/positioning-messaging` | ICP, `raw/brand/`, `raw/voc/` | `wiki/brand/positioning-messaging.md`, `projects/marketing-brain/outputs/messaging-hub.html` | `frameworks/positioning-messaging-hub.md` |
 | 3. Brand voice | `/brand-voice` | ICP, hub, `raw/brand/`, `raw/voc/` | `wiki/brand/voice-guide.md`, `wiki/brand/vocabulary.md`, `projects/marketing-brain/outputs/voice-guide.html` | `frameworks/brand-voice-guide.md`, `frameworks/vocabulary.md` |
+| 4. Update | `/update-brain` | A fresh copy of the module | Refreshed frameworks, templates and commands; your `wiki/brand/` files are kept | |
 | Optional: campaign | Ask for "an example campaign from my ICP" | The brain | `projects/marketing-brain/outputs/campaign.html` | `ad-copy` skill (Nick Christensen) |
 
 Each command takes `example` to run on Acme Deals, the fictional brand in `raw/voc/example/` and `raw/brand/example/`. Example runs write to `drafts/example-brain/`, never to `wiki/brand/`.

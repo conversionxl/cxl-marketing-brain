@@ -7,6 +7,8 @@ argument-hint: [example]
 
 Exercise 2 of the Marketing Brain. Fill the positioning and messaging hub from the ICP, your own published pages, and your brand guides.
 
+**The chain:** exercise 1 decided who buys and in what words (`icp.md`). This exercise decides what to say to them. The ICP is the hub's foundation, not a reference: every Part 1 row starts from it, and the messaging is written for the rich avatar. Exercise 3 then says these messages in the brand's voice, so write them to be lifted.
+
 Read `frameworks/positioning-messaging-hub.md` in full first (older setups have it as `frameworks/lion-words-positioning-messaging-hub.md`; with the plugin and neither file, read `${CLAUDE_PLUGIN_ROOT}/frameworks/positioning-messaging-hub.md`). It defines every field.
 
 ## Mode
@@ -37,9 +39,24 @@ Do all of this before step 1, and wait for the answers. Skip it in `example` mod
 
 ## 2. Fill the hub
 
-Work through Part 1 then Part 2 of the framework, row by row. The Markdown hub and the hub page carry the same sections and rows in the same order, so every cell on the page comes from a cell in the file, and the (inferred) count matches.
+**Start from the ICP.** Read `icp.md` in full and carry it into the hub with this map. Each cell filled this way cites the ICP section it came from (`icp.md: Pains`), and the original source the ICP cites:
+
+| Hub row | Comes from in `icp.md` |
+|---|---|
+| Customer: buying champion, company type(s) | The rich avatar (role, company type and size); the negative ICP says who the hub is not for |
+| Customer: primary use case, buying context | The rich avatar (why they buy, the outcome they are really buying); "Feeds the hub": the buying trigger |
+| Competitive alternatives | "Feeds the hub": what they use instead today, in their words. Add competitors from the pages and guides |
+| Problem in buyer language | "Their words", verbatim |
+| Sub-problems and struggles | Pains, in the customer's words where the ICP has them |
+| Value themes and outcomes | Desires, and the outcome they are really buying |
+| VOC validation (OKM and pillars) | "Their words", verbatim |
+
+If the pages or guides point at a different buyer than the ICP, the ICP wins: flag the mismatch under the evidence check and ask whether to fix the pages or the ICP. If the ICP has two rich avatars (two purchase motions), say which one the hub leads with, and keep the other in the buying context row.
+
+Then work through Part 1 then Part 2 of the framework, row by row. The Markdown hub and the hub page carry the same sections and rows in the same order, so every cell on the page comes from a cell in the file, and the (inferred) count matches.
 
 - **Customer** starts from the ICP. Do not re-derive the buyer.
+- **Write Part 2 to be lifted.** The owned key message, the customer-facing value proposition and the pillar statements are what exercise 3 says in the brand's voice and later workshops put in headlines. Each should make sense on its own, to the rich avatar, in one line.
 - **Competitive alternatives** include doing nothing, doing it by hand, and hiring someone, not only competitors.
 - **Problem in buyer language** and **VOC validation** are verbatim quotes from `raw/voc/` with their source. Never paraphrased.
 - **Proof points** come only from the scraped pages, guides, or `raw/voc/`. None found means blank, and the blank is a finding.
@@ -70,6 +87,7 @@ Then share it: if this session can publish an Artifact (claude.ai, Cowork, or Cl
 ## 4. Feedback prompts
 
 End with the three questions the workshop checks live, each answered honestly from what you wrote:
+- **Does it start from the ICP?** Name any Part 1 row that does not trace to `icp.md`, and any ICP pain or desire the hub dropped.
 - **Are the alternatives real?** Would a buyer recognise them as what they do today?
 - **Could a competitor claim the same differentiators?** Name any that fail this test.
 - **Does each pillar have proof, or is it blank?**
@@ -81,7 +99,7 @@ Then:
 - The file path and the pages scraped.
 - The number of open (inferred) tags.
 - **Take home:** test alternatives and differentiators against real sales conversations; add proof, never invent it; connect the tools you skipped and re-run the evidence check.
-- **Next:** `/brand-voice`.
+- **Next:** `/brand-voice`. It writes the voice for the rich avatar and proves it by saying this hub's owned key message, value proposition and pillars in that voice.
 
 ## Last. Connect it to the repo
 

@@ -17,13 +17,14 @@
 
 **Every exercise asks for research, documents and live data first** (`frameworks/live-data-and-research.md`): drop files into the folders, paste them into the chat for the command to file, or let it fetch them through a connected tool (Google Drive, Notion, ClickUp, Asana; a CRM, store, GA4, social or email platform). Surveys, user research and message tests go in `raw/voc/research/`; live customer pulls in `raw/voc/live/`.
 
-The brand brain is four files in `wiki/brand/` that Claude reads before it writes anything customer-facing. Three exercises fill them, in order, because each feeds the next:
+The brand brain is four files in `wiki/brand/` that Claude reads before it writes anything customer-facing. Three exercises fill them, in order, because each feeds the next: the ICP decides who the hub is written for, and the voice says the hub's messages to that ICP. A fourth keeps the module current:
 
 | Exercise | Command | Reads | Writes | Framework |
 |---|---|---|---|---|
 | 1. ICP | `/marketing-brain:icp-dossier` | `raw/voc/` only | `wiki/brand/icp.md`, `projects/marketing-brain/outputs/icp-dossier.html` | `icp-synthesis` skill (Nick Christensen) |
 | 2. Positioning and messaging | `/marketing-brain:positioning-messaging` | ICP, `raw/brand/`, `raw/voc/` | `wiki/brand/positioning-messaging.md`, `projects/marketing-brain/outputs/messaging-hub.html` | `frameworks/positioning-messaging-hub.md` |
 | 3. Brand voice | `/marketing-brain:brand-voice` | ICP, hub, `raw/brand/`, `raw/voc/` | `wiki/brand/voice-guide.md`, `wiki/brand/vocabulary.md`, `projects/marketing-brain/outputs/voice-guide.html` | `frameworks/brand-voice-guide.md`, `frameworks/vocabulary.md` |
+| 4. Update | `/marketing-brain:update-brain` | A fresh copy of the module | Refreshed frameworks, templates and commands; your `wiki/brand/` files are kept | |
 | Optional: campaign | Ask for "an example campaign from my ICP" | The brain | `projects/marketing-brain/outputs/campaign.html` | `ad-copy` skill (Nick Christensen) |
 
 Each command takes `example` to run on Acme Deals, the fictional brand in `raw/voc/example/` and `raw/brand/example/`. Example runs write to `drafts/example-brain/`, never to `wiki/brand/`.

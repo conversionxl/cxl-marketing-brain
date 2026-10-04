@@ -61,6 +61,14 @@ tags: [marketing-brain, icp]
 
 -
 
+## Feeds the hub
+<!-- What exercise 2 (/positioning-messaging) builds the positioning from. Customer's words, each with its source. Blank beats guessed. -->
+
+- **What they use instead today:** <!-- tools, competitors, hiring someone, doing it by hand, doing nothing -->
+- **What sent them looking (buying trigger):**
+- **Top 3 pains, in order:** <!-- become the hub's sub-problems -->
+- **Top 3 desires, in order:** <!-- become the hub's value themes -->
+
 ## Sources
 <!-- Which files and URLs this was built from, and how many records of each. -->
 

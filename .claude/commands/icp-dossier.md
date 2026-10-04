@@ -46,6 +46,8 @@ Follow the seven steps in the `icp-synthesis` skill. The rules that matter most 
 - Quotes stay verbatim: grammar, slang, and typos intact. Each carries its source: name, company, file.
 - No email addresses anywhere in the output.
 
+**Capture what the hub needs.** Exercise 2 builds the positioning on this ICP. While you read `raw/voc/`, collect three things for the "Feeds the hub" section, each in the customer's words with its source: what they used or did before (tools, competitors, hiring someone, doing it by hand, doing nothing), the trigger that sent them looking (a deadline, a new client, a failed tool, a hire), and the top three pains and top three desires in priority order. None found means blank, not guessed.
+
 ## 3. Write the ICP
 
 If the target file's `status` is not `template`, show what would change and ask before replacing anything.
@@ -68,7 +70,7 @@ End with the two questions the workshop checks live, answered from what you wrot
 Then:
 - The two file paths.
 - The number of open (inferred) tags, and the one input that would resolve the most of them.
-- **Next:** `/positioning-messaging`.
+- **Next:** `/positioning-messaging`. It starts from this file: the rich avatar becomes the hub's customer, "Their words" its buyer language, the pains its sub-problems, the desires its value themes, and "Feeds the hub" its alternatives and buying context. Every blank here is a blank there.
 
 ## Last. Connect it to the repo
 

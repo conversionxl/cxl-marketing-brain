@@ -15,6 +15,8 @@ tags: [marketing-brain, voice]
 
 ## Before the voice: the core four
 
+The voice speaks **to the ICP** (exercise 1) **using the messaging** (exercise 2). The guide names both at the top of section 1 and proves it in the appendix by saying the hub's messages to the rich avatar.
+
 Before you can create messaging that is sticky, memorable and compelling, you need the basics. Prospects should be able to answer four questions about the product. Most messaging problems come down to these four not being **clear, consistent, or agreed internally**. Get them locked in, then get creative. They come from the positioning and messaging hub (exercise 2).
 
 | | Question | Check |
@@ -72,6 +74,7 @@ The output is a **verbal identity document**, laid out exactly like this, top to
 ## What goes in each section
 
 ### 1. Our voice in a nutshell
+- **Written for / Saying,** two lines at the top: who the voice talks to (the rich avatar from [[wiki/brand/icp|icp]]) and what it says (the owned key message from [[wiki/brand/positioning-messaging|positioning-messaging]]), each cited.
 - **Persona line,** on its own: "COMPANY's voice personified is a **'[Role] with a [quality]'**", for example "a 'Trusted Coach with a playful streak'". A role your buyer would trust, and a quality that shows up in the writing.
 - **How it reads:** one prose paragraph, three to five sentences, not bullets. Start "Our copy reads like..." and describe what a reader experiences: what the writer does, how they treat the reader, and what they never do. End on the core personality in one line. For example: "Our copy reads like an expert who pulls up a chair, explains complex topics clearly without talking down to you, slips in the occasional light joke, and helps you feel confident and in control. Our core personality: professional competence with human warmth. We take the work seriously, but not ourselves too seriously."
 - **Voice blend:** "**Voice blend:** our audience hears the following layers:" then a short list, one layer per line, each a quality and what it sounds like. The blend is where the brand's personality meets the audience's: it should sound like the brand, and like someone the buyer would want to talk to.
@@ -108,6 +111,7 @@ Name the product and the signature element in the heading itself, for example "t
 
 ### Appendix, after the six sections
 - **Core four check:** can a prospect answer each of the four from the hub? Answered, and where.
+- **Brain test: the hub, in this voice, to the ICP.** A hero block for the rich avatar: headline from the owned key message, subhead from the customer-facing value proposition, three bullets from the pillar statements. Each line lifted from the hub and changed only where the guide or the vocabulary demands, with the rule named. A hub line the voice can't say is a finding for the hub or the guide.
 - **Proof: before and after.** One off-brand sample rewritten using only this guide and the vocabulary, and what changed.
 - **Sources** and **open (inferred) tags.**
 
