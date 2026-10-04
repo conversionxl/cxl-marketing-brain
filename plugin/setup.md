@@ -6,7 +6,7 @@ description: Add the Marketing Brain to your personal OS. Adds the brand brain f
 
 Add the Marketing Brain module to the personal OS in this folder.
 
-1. **Check the folder.** It needs a personal OS: a `CLAUDE.md`, ideally with `.claude/personal-os.json`. If there is no `CLAUDE.md`, stop and tell the user to install the **personal-os** plugin and run `/personal-os:setup` first. If `wiki/brand/` already exists, say that existing files are kept, then continue.
+1. **Check the folder.** Any folder works. A personal OS (a `CLAUDE.md` with `.claude/personal-os.json`) is recommended, not required: without one, the setup script starts a minimal `CLAUDE.md`, and everything in the Marketing Brain still works. Say in one line what the **personal-os** plugin would add (daily logs, memory, its own commands) and continue; never stop for it. If `wiki/brand/` already exists, say that existing files are kept, then continue.
 2. **Run the setup script** with the shell and show its output:
    `bash "${CLAUDE_PLUGIN_ROOT}/plugin/setup.sh" "<this folder's absolute path>"`
    It adds the `.gitignore` block for customer data before anything lands in `raw/voc/`, copies the module files without overwriting, and appends the Marketing Brain section to `CLAUDE.md` once. If bash is not available (Windows without Git Bash), point to `winget install Git.Git` and stop.
