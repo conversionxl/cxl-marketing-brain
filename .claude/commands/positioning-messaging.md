@@ -55,6 +55,8 @@ Always, in both modes. Render the hub as one self-contained HTML page in the Mes
 - Title it "Positioning and messaging hub for [Brand]", with status, date, and the count of open (inferred) tags in the header. No em dashes.
 - The page and the Markdown hub carry the brand's name only: no Lion Words or Diane Wiredu name, logo, link, or credit anywhere in the output. The credit lives in `frameworks/`.
 
+**Check the page against the file before sharing it.** Count the `(inferred)` tags in the Markdown hub and the visible (inferred) badges on the page, and count the blank cells in each. Both pairs must match, and the header's open-tag count must equal the Markdown's. If anything differs, fix the page from the file (the file is the source), then say in one line that the counts match.
+
 Then share it: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] Messaging Hub" and give the link. Otherwise give the file path and say to open it in a browser.
 
 ## 4. Feedback prompts
