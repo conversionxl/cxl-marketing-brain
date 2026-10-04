@@ -6,3 +6,9 @@ raw/voc/*
 !raw/voc/review-urls.md
 !raw/voc/example/
 !raw/voc/example/*.csv
+
+# Marketing Brain: strategy docs and performance data stay local too.
+raw/strategy/*
+!raw/strategy/README.md
+raw/performance/*
+!raw/performance/README.md

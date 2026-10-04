@@ -13,6 +13,10 @@ Voice of customer: what your customers say, in their own words. Exercise 1 (`/ic
 | Support tickets | Markdown, trimmed threads | Pains, in their words |
 | Sales or customer call notes | Markdown | Why they buy, and what almost stopped them |
 | Survey answers | CSV or Markdown | Patterns at volume |
+| User research, interview notes, message-test results | Any, in `research/` | Why they buy, and how they react to your words |
+| Live pulls from a CRM, store, or payment tool | CSV or Markdown, in `live/`. Commands save these for you | LTV, repeat rate, win rate, and churn per segment |
+
+You can also paste any of these into the chat while a command runs (it files them here), or let the command fetch them from a connected tool. See `frameworks/live-data-and-research.md`.
 
 Public review pages (G2, Capterra, Trustpilot, app stores) go in `review-urls.md`, one URL per line. `/icp-dossier` scrapes them when it runs.
 

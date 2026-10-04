@@ -36,6 +36,9 @@ As of YYYY-MM-DD: templates untouched.
 - [ ] 5 to 8 URLs in `raw/brand/urls.md`
 - [ ] A few on-brand and off-brand samples in `raw/brand/on-brand/` and `raw/brand/off-brand/`
 - [ ] Existing brand or style guides in `raw/brand/guides/` (nothing under NDA)
+- [ ] Surveys, user research, interview notes and message-test results in `raw/voc/research/`
+- [ ] Strategy docs (a pivot, a new market or product) and internal positioning or messaging docs in `raw/strategy/`
+- [ ] Connect the tools that hold live data, if you have them: store or payments, CRM, GA4, docs (Notion, ClickUp, Asana, Google Drive), social and email. See `frameworks/live-data-and-research.md`
 
 **Exercises**
 - [ ] Exercise 1, ICP: run `/icp-dossier` → [[wiki/brand/icp|ICP]] and `outputs/icp-dossier.html`
@@ -53,5 +56,6 @@ As of YYYY-MM-DD: templates untouched.
 
 ## Links and sources
 - Frameworks: [[frameworks/positioning-messaging-hub|Positioning and messaging hub]], [[frameworks/brand-voice-guide|Brand voice guide]], [[frameworks/vocabulary|Vocabulary]]
-- Inputs: `raw/voc/`, `raw/brand/`
+- Inputs: `raw/voc/` (with `research/` and `live/`), `raw/brand/`, `raw/strategy/`, `raw/performance/`
+- Research and live data: [[frameworks/live-data-and-research|Live data and research]]
 - Outputs: `outputs/icp-dossier.html`, `outputs/campaign.html` (generated)

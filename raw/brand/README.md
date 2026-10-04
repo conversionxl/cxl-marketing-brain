@@ -12,7 +12,7 @@ Your brand's own words: what you publish, what sounds right, what sounds wrong, 
 | `scraped/` | Nothing. The exercises save scraped pages here so they are not fetched twice | Exercises 2 and 3 |
 | `on-brand/` | Copy that sounds exactly right: your best emails, ads, landing page sections, posts | Exercise 3 |
 | `off-brand/` | Near misses: old copy, AI drafts that felt wrong, competitor lines you would never write. URLs of pages like that go in `off-brand/urls.md` | Exercise 3 |
-| `guides/` | Brand, style, or messaging docs you already have | Exercises 2 and 3 |
+| `guides/` | Brand, style, or messaging docs you already have, if they are safe to share. Internal or confidential ones go in `raw/strategy/` | Exercises 2 and 3 |
 
 Paste text into Markdown files. Label every sample with where it came from and when.
 

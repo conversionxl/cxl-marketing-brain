@@ -2,7 +2,7 @@
 type: brand
 status: template        # template | draft | final
 last_updated: ""
-sources: []             # wiki/brand/icp.md, scraped pages, files in raw/brand/
+sources: []             # wiki/brand/icp.md, scraped pages, files in raw/brand/, raw/strategy/, raw/voc/research/, raw/performance/, connected tools with date range
 tags: [marketing-brain, positioning, messaging]
 ---
 
@@ -70,6 +70,13 @@ tags: [marketing-brain, positioning, messaging]
 - **Differentiator 2:**
 - **Differentiator 3:**
 - **Differentiator 4:**
+
+## Evidence: is it working?
+<!-- From raw/performance/, raw/voc/research/ and the ICP. One row per message or page. Compare with the site average over the same dates. Blank means no data. -->
+
+| Message or page | What the data shows | Converting the ICP's core segment? | Verdict (supported / contradicted / can't judge) | Source |
+|---|---|---|---|---|
+| | | | | |
 
 ## Sources
 

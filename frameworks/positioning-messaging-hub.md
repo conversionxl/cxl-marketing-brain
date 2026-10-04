@@ -89,6 +89,10 @@ A pillar with no customer quote or no proof stays blank there: that gap is the f
 
 The test: could a competitor copy this row onto their own page and have it still be true? Then it is not a differentiator.
 
+## After the grid: evidence
+
+The hub says what you claim. The evidence section says whether it works. For the owned key message, each pillar, and each landing page that carries them, record what the performance data shows (conversion against the site average, leads and deals, orders, message-test results), whether the people converting match the ICP's core segment, and a verdict: supported, contradicted, or can't judge. It sits under the grid in the Markdown and on the page. How to get the data: [[frameworks/live-data-and-research|live-data-and-research]].
+
 ## Feedback lens
 
 Critique every draft with the fluff matrix in [[frameworks/brand-voice-guide|brand-voice-guide]]. Most first drafts of a hub land in corporate blandspeak.

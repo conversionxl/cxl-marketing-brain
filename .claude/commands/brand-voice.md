@@ -19,13 +19,17 @@ Read `frameworks/brand-voice-guide.md` and `frameworks/vocabulary.md` in full fi
 Do all of this before step 1, and wait for the answers. Skip it in `example` mode.
 
 1. **Is the module set up here?** Look for a `## Marketing Brain` section in `CLAUDE.md` and for `wiki/brand/`, `raw/voc/` and `raw/brand/`. If any is missing and this session has the marketing-brain plugin, run `bash "${CLAUDE_PLUGIN_ROOT}/plugin/setup.sh" "$PWD"` with the shell and show its output: it creates the folders, the customer-data `.gitignore` rule and the CLAUDE.md section, and never overwrites a file. Without the plugin, create only the missing folders and their README files, and say so.
-2. **On-brand samples.** Show what is in `raw/brand/on-brand/` and `raw/brand/urls.md`. If there is little, ask the user to paste 3 to 10 pieces that sound exactly right (emails, ads, landing page sections, posts). Save each as Markdown in `raw/brand/on-brand/`, labelled with where and when it ran.
-3. **Off-brand samples.** Show what is in `raw/brand/off-brand/` and `raw/brand/off-brand/urls.md`. If there is little, ask for near misses: old copy, AI drafts that felt wrong, competitor lines, as pasted text or URLs. Save text in `raw/brand/off-brand/`, URLs in `off-brand/urls.md`, each with a note on what is wrong with it.
-4. **Existing voice guides.** Ask for any tone of voice, style or brand guide the company already has. Save it to `raw/brand/guides/`. Nothing under NDA.
-5. **Go or wait.** Summarise what you now have, and ask whether to start or to add more first.
+2. **Existing voice guides, wherever they live.** Read `frameworks/live-data-and-research.md` first (with the plugin and no local copy, `${CLAUDE_PLUGIN_ROOT}/frameworks/live-data-and-research.md`). Ask for any tone of voice, style, or brand guide the company already has. It may live in Notion, ClickUp, Asana, Confluence, or a Google Doc owned by someone else. Take it three ways: dropped in a folder, pasted or dropped in the chat (you file it), or fetched through a connected docs tool from a name or link. Shareable guides go to `raw/brand/guides/`; internal or confidential ones to `raw/strategy/`. If someone else owns the voice, say the draft will need their sign-off.
+3. **Research.** Ask for message-testing results, surveys, user research, or content feedback that says how the audience reacts to the brand's words. Same three ways in; they go to `raw/voc/research/`.
+4. **Live data: which content performs?** Say which tools this session can already reach. Then ask which they use for: social (LinkedIn, X, Instagram, YouTube), blog or site (WordPress, Webflow, plus GA4 for engagement and conversion), email (Customer.io, Klaviyo, Mailchimp), and ads (Google, Meta, LinkedIn). For each one not connected, say how to connect it (section 2 of the framework) and offer to continue without it. Pull the top and bottom performers over a stated period (engagement rate, click-through, conversion), read only, and save the snapshot to `raw/performance/`.
+5. **On-brand samples.** Show what is in `raw/brand/on-brand/` and `raw/brand/urls.md`. If there is little, ask the user to paste 3 to 10 pieces that sound exactly right (emails, ads, landing page sections, posts). Save each as Markdown in `raw/brand/on-brand/`, labelled with where and when it ran.
+6. **Off-brand samples.** Show what is in `raw/brand/off-brand/` and `raw/brand/off-brand/urls.md`. If there is little, ask for near misses: old copy, AI drafts that felt wrong, competitor lines, as pasted text or URLs. Save text in `raw/brand/off-brand/`, URLs in `off-brand/urls.md`, each with a note on what is wrong with it.
+7. **Go or wait.** Summarise what you now have (guides, research, live data, on-brand and off-brand samples), and ask whether to start or to add more first.
 
 ## 1. Check the inputs
 
+- **Performance-backed samples.** From the step 0 snapshot, offer the top performers as on-brand candidates and the bottom performers as off-brand candidates, each with its number and source. **The user decides.** Performance is evidence, not taste: a high performer that sounds wrong is worth a conversation, not an automatic sample. Save each confirmed piece in `on-brand/` or `off-brand/` with its metric, period, and source at the top.
+- **Guides and research:** read `raw/brand/guides/`, `raw/strategy/` (voice and brand docs only), and `raw/voc/research/`. An existing guide is the starting point: carry its decisions over, cite it, and flag where the samples or the data disagree with it.
 - **On-brand samples** are the main input. If there are none, and nothing in `scraped/`, stop: a voice guide can't be drafted from nothing. Point to `raw/brand/README.md`, or to `/brand-voice example`.
 - **Off-brand URLs** in `raw/brand/off-brand/urls.md`: fetch each and save it to `raw/brand/off-brand/scraped-<short-slug>.md` with the URL and date at the top. Skip any already scraped.
 - **Off-brand samples** are what the this-not-that pairs are built from. If there are none, say the pairs will be weaker, and continue.
@@ -55,7 +59,7 @@ Then fill each section:
 5. **Language and terminology.** The jargon-vs-buzzword rule in one or two lines, then **Phrases to use** (top owned words and allowed jargon) and **Phrases to avoid** (top buzzwords, each with what to write instead) as short tables, then a link to `vocabulary.md` for the full lists. Keep the short lists consistent with step 4.
 6. **Branded language: the [product] / [signature element].** Name both in the heading. **Overview: visual and verbal consistency:** product, feature and method names, owned terms, and the signature element (a mascot, a named concept, a recurring phrase), and how it stays consistent. **Practical application:** where it appears, where it never does, and how to write it. Only what the samples, guides or hub show; blank otherwise.
 
-Then the **appendix**: the core four check from step 2, **Proof: before and after** (rewrite one off-brand sample using only the guide and the vocabulary; the before, the after, and what changed), sources, and open (inferred) tags.
+Then the **appendix**: the core four check from step 2, **Performance evidence** when live data was used (which traits, phrases, or formats appear in the top performers and not the bottom ones, with numbers and sources; never claim a trait causes performance), **Proof: before and after** (rewrite one off-brand sample using only the guide and the vocabulary; the before, the after, and what changed), sources, and open (inferred) tags.
 
 ## 4. Draft the vocabulary
 
@@ -74,6 +78,7 @@ Always, in both modes. Render the voice guide, with the vocabulary appended belo
 - Keep its structure exactly: the title, the BRAND VOICE callout, the linked contents list, the six sections, the appendix, then the vocabulary. Every contents link must land on its heading.
 - All three exercise pages share one look, the CXL web styling: Work Sans 900 headings, Lato body, and the teal, red, beige, black and white tokens. Copy the template's `<style>` block unchanged; never restyle a page.
 - Show every (inferred) tag as the template's red `inferred` chip.
+- When the appendix has performance evidence, render it as a table after the core four check.
 - Write it to `projects/marketing-brain/outputs/voice-guide.html` (own data) or `projects/marketing-brain/outputs/example-voice-guide.html` (`example`).
 
 Then share it: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] Verbal Identity" and give the link. Otherwise give the file path and say to open it in a browser.

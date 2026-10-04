@@ -2,7 +2,7 @@
 type: brand
 status: template        # template | draft | final
 last_updated: ""
-sources: []             # files in raw/brand/, scraped pages
+sources: []             # files in raw/brand/, scraped pages, raw/voc/research/, raw/performance/, connected tools with date range
 tags: [marketing-brain, voice]
 ---
 
@@ -117,6 +117,13 @@ Full lists, evidence, and customer words vs ours: [[wiki/brand/vocabulary|vocabu
 | Who is it for? | | |
 | Why should I care? | | |
 | What sets you apart? | | |
+
+### Performance evidence
+<!-- Only when live data was used. Traits, phrases or formats that appear in the top performers and not the bottom ones. Appears with, never "causes". -->
+
+| Pattern | Top performers | Bottom performers | Metric and period | Source |
+|---|---|---|---|---|
+| | | | | |
 
 ### Proof: before and after
 
