@@ -11,15 +11,17 @@ tags: [marketing-brain, icp]
 <!-- Filled by /icp-dossier (exercise 1) from raw/voc/ (and connected customer tools) only; raw/strategy/ for direction. Method: .claude/skills/icp-synthesis/. Blank beats guessed. Any line not traceable to raw/voc/ is tagged (inferred). -->
 
 ## The rich avatar
-<!-- The top ~10% by revenue, described as one real person you could call. -->
+<!-- The top ~10% by revenue, described specifically enough that you could find and call one. Labelled by what they do or buy, not given a persona name. -->
 
-- **Name:** <!-- in the spirit of "Marketing Agency Matt" -->
+- **Label:** <!-- a plain description of who they are or what they buy, e.g. "solo agency owners" or "the annual team-plan buyer". Never an invented persona name. -->
 - **Role:**
 - **Company type and size:**
 - **Business model:**
 - **Why they buy, and buy again:**
 - **The outcome they are really buying:**
 - **Share of customers / revenue:**
+
+<!-- Two purchase motions (e.g. individual and team)? Repeat "The rich avatar" once per motion, as "The rich avatar: [motion]". -->
 
 ## Segments below the avatar
 

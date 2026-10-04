@@ -5,7 +5,7 @@ description: Turn voice-of-customer data in raw/voc/ (a customer list with email
 
 # ICP synthesis
 
-> Adapted from the `icp-synthesis` skill in Nick Christensen's [ship-icp-ads-automate-monitoring](https://github.com/nickyc1/ship-icp-ads-automate-monitoring) (MIT, see `raw/voc/example/LICENSE`). Changes: paths point at `raw/voc/` and `wiki/brand/icp.md`, and the (inferred) tag rule is added. The method is Nick's.
+> Adapted from the `icp-synthesis` skill in Nick Christensen's [ship-icp-ads-automate-monitoring](https://github.com/nickyc1/ship-icp-ads-automate-monitoring) (MIT, see `raw/voc/example/LICENSE`). Changes: paths point at `raw/voc/` and `wiki/brand/icp.md`, the (inferred) tag rule is added, and avatars get plain descriptive labels instead of persona names. The method is Nick's.
 
 You turn a customer list into an ICP that is real enough to write copy from. Not a demographic, not a stock persona. A specific person you could call, pulled out of the data.
 
@@ -23,9 +23,13 @@ Ask the strategy questions in `frameworks/live-data-and-research.md` (section 3)
 
 Rank by trailing revenue. The top ~10% is where your avatar lives. At AppSumo, 10% of buyers drove about half the revenue; the other 90% bought once and left. Building around that 10% took the business from $7M to $90M.
 
-Look at what the top cohort has in common: the same job, the same business model, the same reason for buying again and again. Name them. "Marketing Agency Matt" was a one-person agency serving 5 to 20 clients, buying 2 to 3 deals a month for years, because *"lifetime deals are a cheat code for an agency. Overhead kills agencies."* He was punching way above his weight, and that was the whole point.
+Look at what the top cohort has in common: the same job, the same business model, the same reason for buying again and again. Label them in plain words, by what they do and buy: at AppSumo the avatar was one-person agencies serving 5 to 20 clients, buying 2 to 3 deals a month for years, because *"lifetime deals are a cheat code for an agency. Overhead kills agencies."* They were punching way above their weight, and that was the whole point.
+
+**Never give the avatar a persona name** ("Marketing Agency Matt", "Solo Agency Jordan"). An invented name reads as made up to the people the ICP is presented to, and it hides what the data shows. Use a label a stranger would understand: "the annual team-plan buyer", "solo agency owners", "repeat buyers on a business email". If the data says what they buy but not who they are, the label says what they buy.
 
 Codie Sanchez: *"Every single business has a rich avatar."* Your job is to find yours, not invent one.
+
+**Two purchase motions, two avatars.** When the business sells through clearly different motions, for example an individual buying for themselves and a manager buying seats for a team, rank each motion separately and write one avatar per motion, side by side. Do not let the higher-value motion swallow the higher-volume one: say what each is worth (revenue share, lifetime value, count) and let the strategy decide which leads.
 
 If the data has no revenue column, say so, rank by order count or the closest signal available, and tag the avatar (inferred).
 
