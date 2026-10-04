@@ -19,13 +19,19 @@ if ! grep -qx 'raw/voc/\*' .gitignore; then
   printf '\n' >> .gitignore
   cat "$ROOT/plugin/gitignore-block.txt" >> .gitignore
   gi="added"
+elif ! grep -qx 'raw/strategy/\*' .gitignore; then
+  # Older install: add only the strategy and performance lines.
+  printf '\n' >> .gitignore
+  sed -n '/strategy docs and performance data/,$p' "$ROOT/plugin/gitignore-block.txt" >> .gitignore
+  gi="strategy and performance lines added"
 else
   gi="already there"
 fi
 
 # 2. Module files, skipping anything that exists.
 created=0; kept=0
-for p in raw/voc raw/brand wiki/brand projects/marketing-brain \
+for p in raw/voc raw/brand raw/strategy raw/performance wiki/brand projects/marketing-brain \
+         frameworks/live-data-and-research.md \
          frameworks/positioning-messaging-hub.md \
          frameworks/brand-voice-guide.md frameworks/vocabulary.md \
          frameworks/messaging-hub-example.html \

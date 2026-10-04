@@ -11,7 +11,11 @@
 |---|---|
 | `raw/voc/` | Voice of customer: customer exports, reviews, tickets, call notes, survey answers. Gitignored except the README and the Acme Deals example. `/personal-os:ingest` leaves it alone. |
 | `raw/brand/` | The brand's own words: URLs, on-brand and off-brand samples, existing guides. Committed, so nothing confidential. `/personal-os:ingest` leaves it alone. |
+| `raw/strategy/` | Where the business is going: strategy and pivot docs, internal positioning and messaging docs, confidential brand books. Gitignored. Read for direction, never as evidence of who buys. |
+| `raw/performance/` | Evidence of what works: GA4, lead-gen, conversion, order, ad, email and social performance, including dated snapshots from connected tools. Gitignored. |
 | `wiki/brand/` | The brand brain: `icp.md`, `positioning-messaging.md`, `voice-guide.md`, `vocabulary.md`. A fixed contract later workshops read. |
+
+**Every exercise asks for research, documents and live data first** (`frameworks/live-data-and-research.md`): drop files into the folders, paste them into the chat for the command to file, or let it fetch them through a connected tool (Google Drive, Notion, ClickUp, Asana; a CRM, store, GA4, social or email platform). Surveys, user research and message tests go in `raw/voc/research/`; live customer pulls in `raw/voc/live/`.
 
 The brand brain is four files in `wiki/brand/` that Claude reads before it writes anything customer-facing. Three exercises fill them, in order, because each feeds the next:
 

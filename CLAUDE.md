@@ -31,7 +31,11 @@ Claude has no memory between sessions by default. This repo fixes that with plai
 | `raw/` | Unstructured dumps: meeting notes, voice memo transcripts, pasted emails, half-formed ideas. `/ingest` processes and files them. Exception: `raw/voc/` and `raw/brand/` are Marketing Brain inputs that stay put. |
 | `raw/voc/` | Voice of customer: customer exports, reviews, tickets, call notes, survey answers. Gitignored except the README and the Acme Deals example. |
 | `raw/brand/` | The brand's own words: URLs, on-brand and off-brand samples, existing guides. Committed, so nothing confidential. |
+| `raw/strategy/` | Where the business is going: strategy and pivot docs, internal positioning and messaging docs, confidential brand books. Gitignored. Read for direction, never as evidence of who buys. |
+| `raw/performance/` | Evidence of what works: GA4, lead-gen, conversion, order, ad, email and social performance, including dated snapshots from connected tools. Gitignored. |
 | `wiki/brand/` | The brand brain: `icp.md`, `positioning-messaging.md`, `voice-guide.md`, `vocabulary.md`. A fixed contract later workshops read. |
+
+**Every exercise asks for research, documents and live data first** (`frameworks/live-data-and-research.md`): drop files into the folders, paste them into the chat for the command to file, or let it fetch them through a connected tool (Google Drive, Notion, ClickUp, Asana; a CRM, store, GA4, social or email platform). Surveys, user research and message tests go in `raw/voc/research/`; live customer pulls in `raw/voc/live/`.
 | `daily-logs/` | One file per day, `YYYY-MM-DD-convo.md`, written automatically when a session ends. Claude's working memory across sessions. |
 | `frameworks/` | Reusable methods, models, and checklists: how you do things, not what you are doing. |
 | `wiki/` | Durable reference: people, tools, concepts, glossary. Facts that stay true for months. |
