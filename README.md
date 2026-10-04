@@ -7,17 +7,17 @@ Claude starts every session knowing nothing about the last one. The personal OS 
 The Marketing Brain adds a **brand brain**: four files that Claude reads before it writes anything customer-facing, so drafts come out on-brand and in your customers' words instead of generic. You fill them in three exercises: your ICP, your positioning and messaging, and your brand voice.
 
 **Three ways in:**
-- **Using the personal-os plugin?** Install the module as a plugin: see [Plugin route](#plugin-route) below. No code editor, no terminal.
+- **Using Claude?** Install the module as a plugin: see [Plugin route](#plugin-route) below. No code editor, no terminal. It works on its own, and best alongside the personal-os plugin.
 - **Starting fresh, or want a clean copy?** Follow [Set up](#set-up-10-minutes) below.
 - **Already set up the personal OS repo and want to keep your logs and projects?** Skip to [Add the module to your existing repo](#add-the-module-to-your-existing-repo).
 
 ## Plugin route
 
-Needs the **personal-os** plugin, set up in a folder with `/personal-os:setup` (see [its README](https://github.com/conversionxl/cxl-personal-os-plugins)).
+Works in any folder. For daily logs, memory and the personal OS commands, also set up the **personal-os** plugin with `/personal-os:setup` (see [its README](https://github.com/conversionxl/cxl-personal-os-plugins)). It is recommended, not required.
 
 1. In Claude, open **Customize**, then **Browse plugins**, **Personal**, **+**, **Add marketplace from GitHub**. Enter `https://github.com/conversionxl/cxl-marketing-brain` with **Sync automatically** on, then add **marketing-brain**. This is its own marketplace, separate from the one you added for personal-os.
    (Terminal or VS Code instead: `/plugin marketplace add conversionxl/cxl-marketing-brain`, then `/plugin install marketing-brain@cxl-marketing-brain`.)
-2. Open your personal OS folder in Cowork, or in the desktop app's Code tab with Environment: Local, and type `/marketing-brain:setup`.
+2. Open your personal OS folder (or any folder for this project) in Cowork, or in the desktop app's Code tab with Environment: Local, and type `/marketing-brain:setup`.
 
 Setup adds `raw/voc/`, `raw/brand/`, `wiki/brand/`, the frameworks, the project file, and a Marketing Brain section in your `CLAUDE.md`. It never overwrites a file, and it adds the `.gitignore` rule that keeps customer data local before anything lands in `raw/voc/`. The exercises are then `/marketing-brain:icp-dossier`, `/marketing-brain:positioning-messaging` and `/marketing-brain:brand-voice`, and the skills load by themselves.
 

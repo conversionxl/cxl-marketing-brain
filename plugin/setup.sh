@@ -8,9 +8,10 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TARGET="${1:-$PWD}"
 cd "$TARGET"
 
+# No personal OS here? Start a minimal CLAUDE.md so the module still works.
 if [ ! -f CLAUDE.md ]; then
-  echo "No CLAUDE.md here. Set up the personal OS first: /personal-os:setup"
-  exit 1
+  printf '# CLAUDE.md\n\nInstructions Claude reads in this folder.\n' > CLAUDE.md
+  cm_new="created (no personal OS here; the Marketing Brain works on its own)"
 fi
 
 # 1. Customer data stays local: the gitignore block goes in BEFORE raw/voc/.
@@ -56,5 +57,6 @@ fi
 echo "Folder: $TARGET"
 echo ".gitignore block: $gi"
 echo "Files created: $created. Existing files kept: $kept."
+[ -n "${cm_new:-}" ] && echo "CLAUDE.md: $cm_new"
 echo "CLAUDE.md Marketing Brain section: $cm"
-[ -f .claude/personal-os.json ] || echo "Note: no .claude/personal-os.json here. Daily logs need the personal-os plugin: /personal-os:setup"
+[ -f .claude/personal-os.json ] || echo "Optional: the personal-os plugin adds daily logs, memory and its own commands: /personal-os:setup"
