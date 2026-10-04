@@ -32,12 +32,13 @@ Do all of this before step 1, and wait for the answers. Skip it in `example` mod
 
 ## 2. Fill the hub
 
-Work through Part 1 then Part 2 of the framework, field by field.
+Work through Part 1 then Part 2 of the framework, row by row. The Markdown hub and the hub page carry the same sections and rows in the same order, so every cell on the page comes from a cell in the file, and the (inferred) count matches.
 
 - **Customer** starts from the ICP. Do not re-derive the buyer.
 - **Competitive alternatives** include doing nothing, doing it by hand, and hiring someone, not only competitors.
-- **Customer words** in each pillar are verbatim quotes from `raw/voc/` with their source. Never paraphrased.
+- **Problem in buyer language** and **VOC validation** are verbatim quotes from `raw/voc/` with their source. Never paraphrased.
 - **Proof points** come only from the scraped pages, guides, or `raw/voc/`. None found means blank, and the blank is a finding.
+- **Our solution** has one column per pillar, in the pillar order.
 - **Differentiators** are each set against a named alternative from Part 1.
 - Every line traces to a scraped page, a guide, the ICP, or a customer quote. Anything else is tagged **(inferred)**. Never generate a metric, a customer, a quote, or a case study.
 
