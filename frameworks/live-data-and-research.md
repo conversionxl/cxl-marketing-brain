@@ -11,11 +11,12 @@ The three exercises get much better when they read what the business already kno
 
 ## 1. Research and documents, before anything is scraped
 
-Ask for every piece of research and every relevant document before the command scrapes or synthesizes anything. Three ways in, all equal:
+Ask for every piece of research and every relevant document before the command scrapes or synthesizes anything. Four ways in, all equal:
 
 1. **The user drops files into the right folder** (table below) before running the command.
 2. **The user pastes or drops them into the chat.** The command saves each one into the right folder, as Markdown, labelled with its source and date, and says where it put it.
 3. **The command fetches them through a connected tool** (Google Drive, Notion, ClickUp, Asana, Confluence, SharePoint, Dropbox, or a research tool such as Wynter). Ask for the doc's name or link, fetch it, save a copy in the right folder with the link and date at the top.
+4. **The user drops files loosely in the top of `raw/`,** without sorting them. Each command checks there first, proposes a folder for each file from the table below, and moves them after the user confirms: verbatim, with a source and date line, and never into `raw/brand/` without the confidentiality check. `/personal-os:ingest` does the same when the personal-os plugin is installed.
 
 ### Where each document goes
 
