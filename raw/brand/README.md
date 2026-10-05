@@ -2,7 +2,7 @@
 
 Your brand's own words: what you publish, what sounds right, what sounds wrong, and any guides you already have. Exercises 2 and 3 read this folder. Exercise 1 does not.
 
-`/ingest` skips this folder. These files are module inputs, not inbox items.
+`/ingest` leaves the files in this folder alone: they are module inputs, not inbox items. Drop something in the top of `raw/` instead, and `/ingest` will offer to move it here.
 
 ## What goes where
 
