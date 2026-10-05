@@ -28,7 +28,7 @@ Claude has no memory between sessions by default. This repo fixes that with plai
 | Folder | What goes in it |
 |---|---|
 | `projects/` | One folder per active project, each with a canonical project file. The primary structure for all work. Start from `projects/_template.md`. |
-| `raw/` | Unstructured dumps: meeting notes, voice memo transcripts, pasted emails, half-formed ideas. `/ingest` processes and files them. Exception: `raw/voc/` and `raw/brand/` are Marketing Brain inputs that stay put. |
+| `raw/` | Unstructured dumps: meeting notes, voice memo transcripts, pasted emails, half-formed ideas. `/ingest` processes and files them, and moves Marketing Brain inputs into `raw/voc/`, `raw/strategy/`, `raw/performance/`, or `raw/brand/`. Files already in those folders stay put. |
 | `raw/voc/` | Voice of customer: customer exports, reviews, tickets, call notes, survey answers. Gitignored except the README and the Acme Deals example. |
 | `raw/brand/` | The brand's own words: URLs, on-brand and off-brand samples, existing guides. Committed, so nothing confidential. |
 | `raw/strategy/` | Where the business is going: strategy and pivot docs, internal positioning and messaging docs, confidential brand books. Gitignored. Read for direction, never as evidence of who buys. |

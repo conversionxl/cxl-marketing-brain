@@ -2,7 +2,7 @@
 
 Voice of customer: what your customers say, in their own words. Exercise 1 (`/icp-dossier`) reads this folder and nothing else, so your brand's own copy never leaks into "their words".
 
-`/ingest` skips this folder. These files are module inputs, not inbox items.
+`/ingest` leaves the files in this folder alone: they are module inputs, not inbox items. Drop something in the top of `raw/` instead, and `/ingest` will offer to move it here.
 
 ## What to add
 

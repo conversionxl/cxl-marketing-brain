@@ -9,8 +9,8 @@
 
 | Folder | What goes in it |
 |---|---|
-| `raw/voc/` | Voice of customer: customer exports, reviews, tickets, call notes, survey answers. Gitignored except the README and the Acme Deals example. `/personal-os:ingest` leaves it alone. |
-| `raw/brand/` | The brand's own words: URLs, on-brand and off-brand samples, existing guides. Committed, so nothing confidential. `/personal-os:ingest` leaves it alone. |
+| `raw/voc/` | Voice of customer: customer exports, reviews, tickets, call notes, survey answers. Gitignored except the README and the Acme Deals example. `/personal-os:ingest` leaves files here alone, and moves matching dumps from the top of `raw/` in. |
+| `raw/brand/` | The brand's own words: URLs, on-brand and off-brand samples, existing guides. Committed, so nothing confidential. `/personal-os:ingest` leaves files here alone, and moves matching dumps from the top of `raw/` in. |
 | `raw/strategy/` | Where the business is going: strategy and pivot docs, internal positioning and messaging docs, confidential brand books. Gitignored. Read for direction, never as evidence of who buys. |
 | `raw/performance/` | Evidence of what works: GA4, lead-gen, conversion, order, ad, email and social performance, including dated snapshots from connected tools. Gitignored. |
 | `wiki/brand/` | The brand brain: `icp.md`, `positioning-messaging.md`, `voice-guide.md`, `vocabulary.md`. A fixed contract later workshops read. |
