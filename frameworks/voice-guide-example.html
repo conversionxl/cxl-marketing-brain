@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
+  .banner { background: var(--surface, #fff); border: 1px dashed var(--cxl-red, #d61f2c); border-radius: 12px; padding: 10px 14px; font-size: .9rem; }
+  .src-note { font-size: .85rem; opacity: .75; }
   /* Layout: a single document column, the verbal identity guide first, its vocabulary appended below a rule. */
   :root {
     --cxl-teal: #6ce5e8; --cxl-red: #d61f2c; --cxl-beige: #faf7ef; --cxl-black: #000000; --cxl-white: #ffffff;
@@ -44,9 +46,10 @@
 </head>
 <body>
 <main class="doc">
-  <p class="eyebrow">Acme Deals · fictional example · draft, 2026-10-03</p>
-  <h1>Verbal Identity: Brand Voice &amp; Writing Guidelines</h1>
-  <blockquote class="callout">
+<p class="banner" role="note">Built from Acme Deals, a fictional brand with dummy data. Your own run will look different, and so will the CXL demo.</p>
+<p class="eyebrow">Acme Deals · fictional example · draft, 2026-10-07</p>
+<h1>Verbal Identity: Brand Voice &amp; Writing Guidelines</h1>
+<blockquote class="callout">
 <p>💡 <strong>BRAND VOICE:</strong> <em>How we communicate our brand personality, values, purpose, and messaging through language and voice.</em> <strong>Use case:</strong> <em>This applies to all the words we publish. Website copy, sales materials, emails, social media, customer comms, etc.</em></p>
 </blockquote>
 <ol>
@@ -68,11 +71,7 @@
 <hr />
 <h2 id="1-our-voice-in-a-nutshell">1. Our voice in a nutshell</h2>
 <p>Acme Deals' voice personified is a <strong>'Fellow Operator with a dealmaker's grin'</strong>.</p>
-<p>Our copy reads like another agency owner leaning over to show you the maths on their own stack. It names the money first: one payment, the monthly bill you stop paying, the margin you keep on every retainer. It talks in short, direct lines, the way operators talk to each other, and it borrows the customer's own phrases ("cheat code", "punch above your weight") instead of inventing polished ones. It never hypes, never promises speed it can't show, and never talks about itself. Our core personality: commercial sharpness with a wink. We take the margin seriously, and we enjoy getting a good deal.</p>
-<p><strong>Voice blend:</strong> our audience hears the following layers:
-- <strong>Operator:</strong> direct, practical, "operator to operator" (guides/voice-rules.md).
-- <strong>Dealmaker:</strong> the quiet satisfaction of a smart buy: "The agency cheat code", "Punch above your weight" (on-brand/ads.md).
-- <strong>Peer, not vendor:</strong> the customer's words, not the brand's. "People buy words that sound like their own thoughts" (guides/voice-rules.md).</p>
+<p>Our copy reads like another agency owner showing you the maths on their own stack: money first, in the customer's own words. It never hypes and never talks about itself.</p>
 <h2 id="2-brand-voice-traits-matrix">2. Brand voice traits (matrix)</h2>
 <div class="tbl"><table>
 <thead>
@@ -81,88 +80,32 @@
 <th>What it means</th>
 <th>Do</th>
 <th>Don't</th>
-<th>Changes</th>
-<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Margin-minded</strong></td>
-<td>Every line ties back to money the agency keeps.</td>
-<td>Name the mechanism: one payment, monthly bill, retainer, margin.</td>
-<td>Talk about value, growth, or ROI in the abstract.</td>
-<td>Vocabulary</td>
-<td>"Buy once, bill clients monthly" (on-brand/ads.md, 5/5)</td>
+<td>Vocabulary: money the agency keeps, named by its mechanism (one payment, retainer, margin), never value or ROI in the abstract.</td>
+<td>"Buy once, bill clients monthly"</td>
+<td>"Cost-effective multi-tool value for modern agencies"</td>
 </tr>
 <tr>
 <td><strong>Operator to operator</strong></td>
-<td>Talks like one owner to another: imperative, second person, no brand "we".</td>
-<td>Open on a verb. Address "you".</td>
-<td>Write "we", "our platform", or anything that sounds like a brand communicating.</td>
-<td>Cadence, tone</td>
-<td>"Stop renting your software." (on-brand/ads.md, 4/5)</td>
+<td>Tone: one owner talking to another. Second person, opens on a verb, no brand "we".</td>
+<td>"Stop renting your software"</td>
+<td>"Our revolutionary platform delivers synergy across your entire client portfolio"</td>
 </tr>
 <tr>
-<td><strong>In their words</strong></td>
-<td>Borrows the customer's phrases, grammar intact.</td>
-<td>Reuse "cheat code", "punch above your weight", "overhead", "margin".</td>
-<td>Paraphrase customer language into corporate-speak.</td>
-<td>Vocabulary</td>
-<td>"The agency cheat code" (on-brand/ads.md, 5/5), from "a cheat code for an agency" (Jordan Reyes, reviews.md)</td>
-</tr>
-<tr>
-<td><strong>Specific over impressive</strong></td>
-<td>Concrete counts and conditions beat big adjectives.</td>
-<td>Use numbers and named conditions: "10 clients", "No seats, no renewals".</td>
-<td>Use superlatives or unprovable speed claims.</td>
-<td>Vocabulary</td>
-<td>"Run 10 clients solo" (on-brand/ads.md, 4/5)</td>
+<td><strong>Plain-spoken</strong></td>
+<td>Cadence and vocabulary: clear over clever. Short lines, one idea each, no buzzwords, even when the facts are right.</td>
+<td>"No seats, no renewals"</td>
+<td>"Leverage our perpetual licensing architecture to eliminate per-seat SaaS overhead across 10+ client accounts"</td>
 </tr>
 </tbody>
 </table></div>
+<p class="src-note">Do lines: on-brand/ads.md. Don't lines: off-brand/ads.md, #6, #9 and #10. Traits from guides/voice-rules.md ("Operator to operator. Direct, sharp, clear over clever.").</p>
 <h2 id="3-tone-profile">3. Tone profile</h2>
-<div class="tbl"><table>
-<thead>
-<tr>
-<th>Context</th>
-<th>Tone</th>
-<th>What shifts</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Paid ads and headlines</strong></td>
-<td>Punchy, confident, a little cheeky.</td>
-<td>Shortest form: 2 to 6 words, often a fragment. One idea per asset.</td>
-<td>"Margin on every retainer" (on-brand/ads.md)</td>
-</tr>
-<tr>
-<td><strong>Ad descriptions</strong></td>
-<td>Plain and reassuring.</td>
-<td>Two or three short sentences; names the condition that removes risk.</td>
-<td>"No seats, no renewals, no surprise invoices. One payment, yours to keep." (on-brand/ads.md)</td>
-</tr>
-<tr>
-<td><strong>Landing page</strong> <span class="inf">inferred</span></td>
-<td>Same voice, more room for proof.</td>
-<td>Longer paragraphs allowed, but each claim carries a number or a customer quote.</td>
-<td><span class="inf">inferred</span> No landing page sample exists.</td>
-</tr>
-<tr>
-<td><strong>Support reply</strong> <span class="inf">inferred</span></td>
-<td>Calm, exact, no jokes.</td>
-<td>Answers the licensing or invoice question first, in one line. The wink drops.</td>
-<td><span class="inf">inferred</span> Tickets #4821, #5130 show what customers ask; no Acme replies exist.</td>
-</tr>
-<tr>
-<td><strong>Email</strong> <span class="inf">inferred</span></td>
-<td>Peer-to-peer, one deal per email.</td>
-<td>First line is the money: what it costs once, what it replaces monthly.</td>
-<td><span class="inf">inferred</span> No email sample exists.</td>
-</tr>
-</tbody>
-</table></div>
+<p>Not enough channels in the samples yet. Add samples from another channel and rerun. The only samples are ads.</p>
 <h2 id="4-writing-principles">4. Writing principles</h2>
 <h3 id="cadence-and-sentence-length">Cadence and sentence length</h3>
 <ul>
@@ -175,7 +118,7 @@
 <ul>
 <li>Lead with the outcome or the job to be done, not the product name (guides/voice-rules.md).</li>
 <li>Put a number, a condition, or a customer quote in every claim.</li>
-<li>Use the customer's word when there is one: "lifetime deals", "overhead", "retainer", "margin".</li>
+<li>Use the customer's word when there is one, grammar intact: "lifetime deals", "cheat code", "punch above your weight", "overhead", "retainer", "margin" (guides/voice-rules.md).</li>
 <li>Read it out loud. If it sounds like a brand communicating, rewrite it (guides/voice-rules.md).</li>
 </ul>
 <h3 id="never">Never</h3>
@@ -372,7 +315,7 @@
 <h3 id="practical-application">Practical application</h3>
 <ul>
 <li><strong>Where it appears:</strong> headlines, image overlays, and the opening line of a campaign. Once per asset at most.</li>
-<li><strong>Where it never appears:</strong> support replies, invoices, and anything about licensing terms (inferred: these need precision, not a wink).</li>
+<li><strong>Where it never appears:</strong> support replies, invoices, and anything about licensing terms <span class="inf">inferred</span> These need precision, not a wink.</li>
 <li><strong>How to write it:</strong> "the agency cheat code", lowercase in running text, never "Cheat Code™", and never with "secret" or "hack" next to it (off-brand #8).</li>
 </ul>
 <hr />
@@ -423,14 +366,13 @@
 <li><code>drafts/example-brain/icp.md</code> and <code>drafts/example-brain/positioning-messaging.md</code>.</li>
 <li><code>raw/voc/example/</code>: customer words.</li>
 </ul>
-<h3 id="open-inferred-tags">Open <span class="inf">inferred</span> tags</h3>
+<h3 id="open-tags">Open tags</h3>
 <ul>
-<li>Tone profile: landing page, support reply, and email rows. No samples.</li>
 <li>This, not that: the "Flexible licensing for growing teams" pair.</li>
 <li>Practical application: where the signature element never appears.</li>
 </ul>
-  <hr>
-  <h2 id="vocabulary-acme-deals-example">Vocabulary: Acme Deals (example)</h2>
+<hr>
+<h2 id="vocabulary-acme-deals-example">Vocabulary: Acme Deals (example)</h2>
 <h3 id="phrases-to-use">Phrases to use</h3>
 <h4 id="owned-words">Owned words</h4>
 <div class="tbl"><table>
@@ -616,7 +558,7 @@
 </tbody>
 </table></div>
 <p>Where they differ, customer-facing copy uses the customer's phrase.</p>
-<h3 id="open-inferred-tags">Open (inferred) tags</h3>
+<h3 id="open-tags-vocabulary">Open tags</h3>
 <ul>
 <li>None. Every line traces to a source.</li>
 </ul>

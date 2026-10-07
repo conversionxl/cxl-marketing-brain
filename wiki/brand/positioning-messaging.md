@@ -20,7 +20,7 @@ tags: [marketing-brain, positioning, messaging]
 
 ### Market
 - **Market category:**
-- **Today vs target:** <!-- positioned now vs where it wants to be, one line each. Delete when nothing is changing. -->
+- **Today vs target:** <!-- positioned now vs where it wants to be, one line each. Blank when nothing is changing. -->
 
 ### Competitive alternatives
 
