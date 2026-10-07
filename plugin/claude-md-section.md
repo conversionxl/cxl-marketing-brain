@@ -35,5 +35,6 @@ Each command takes `example` to run on Acme Deals, the fictional brand in `raw/v
 - **When two files disagree:** wording follows `voice-guide` > `vocabulary` > `positioning-messaging` > `icp`; facts follow the reverse. Say when you hit a disagreement.
 - **Brand voice vs your voice.** Copy written for the brand follows `wiki/brand/` (the `brand-brain` skill loads it). Messages the owner writes as themselves follow the `my-voice` skill.
 - **Customer data stays local.** Never copy an email address from `raw/voc/` into any other file.
+- **Your own folder names.** If `.claude/folders.json` exists, every folder named in this section (`wiki/brand/`, `raw/voc/`, `projects/` and the rest) is read at its mapped name instead, subfolders included. `/marketing-brain:setup` asks about it.
 
 Credits: the ICP workflow and the Acme Deals data are Nick Christensen's ([ship-icp-ads-automate-monitoring](https://github.com/nickyc1/ship-icp-ads-automate-monitoring), MIT). The positioning, messaging, and voice frameworks credit their author in `frameworks/`.

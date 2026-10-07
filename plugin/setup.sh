@@ -7,6 +7,9 @@ set -e
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TARGET="${1:-$PWD}"
 cd "$TARGET"
+# A folder map (.claude/folders.json) sends each module file to the user's own
+# folder; without one, every path below is the standard one.
+. "$ROOT/.claude/hooks/lib-folders.sh"
 
 # No personal OS here? Start a minimal CLAUDE.md so the module still works.
 if [ ! -f CLAUDE.md ]; then
@@ -28,6 +31,8 @@ elif ! grep -qx 'raw/strategy/\*' .gitignore; then
 else
   gi="already there"
 fi
+# Renamed folders get the same local-only rules, before any file lands in them.
+[ -f .claude/folders.json ] && map_gi="$(bash "$ROOT/.claude/hooks/folder-map.sh" gitignore "$PWD")"
 
 # 2. Module files, skipping anything that exists.
 created=0; kept=0
@@ -38,7 +43,7 @@ for p in raw/voc raw/brand raw/strategy raw/performance wiki/brand projects/mark
          frameworks/messaging-hub-example.html \
          frameworks/icp-dossier-example.html frameworks/voice-guide-example.html; do
   while IFS= read -r -d '' src; do
-    rel="${src#"$ROOT/"}"
+    rel="$(pos_map_path "$PWD" "${src#"$ROOT/"}")"
     if [ -e "$rel" ]; then kept=$((kept+1)); continue; fi
     mkdir -p "$(dirname "$rel")"
     cp "$src" "$rel"
@@ -57,6 +62,7 @@ fi
 echo "Folder: $TARGET"
 echo ".gitignore block: $gi"
 echo "Files created: $created. Existing files kept: $kept."
+[ -n "${map_gi:-}" ] && echo "$map_gi"
 [ -n "${cm_new:-}" ] && echo "CLAUDE.md: $cm_new"
 echo "CLAUDE.md Marketing Brain section: $cm"
 [ -f .claude/personal-os.json ] || echo "Optional: the personal-os plugin adds daily logs, memory and its own commands: /personal-os:setup"
