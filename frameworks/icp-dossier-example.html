@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
-  /* Layout: one reading column; avatar card, number strip, quote grid, two-up desires/pains, segment table. */
+  /* Layout: one reading column; example banner, who-buys-now card with the core fields, number strip, quote grid, desires, segment table, negative ICP. Same sections, same order, as wiki/brand/icp.md. */
   :root {
     --cxl-teal: #6ce5e8; --cxl-red: #d61f2c; --cxl-beige: #faf7ef; --cxl-black: #000000; --cxl-white: #ffffff;
     --bg: var(--cxl-beige); --surface: var(--cxl-white); --ink: var(--cxl-black); --muted: #4d4a44; --line: #e6e1d4;
@@ -52,84 +52,88 @@
   td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
   footer { color: var(--muted); font-size: .9rem; display: grid; gap: 8px; border-top: 1px solid var(--line); padding-top: 24px; }
   footer ul { margin: 0; padding-left: 20px; }
+  .banner { background: var(--surface); border: 1px dashed var(--flag); border-radius: 12px; padding: 12px 16px; font-size: .9rem; }
+  .wrap > * { min-width: 0; }
+  .card ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+  .blank { color: var(--muted); font-style: italic; }
+  .tag { display: inline-block; border-radius: 999px; padding: 0 8px; font-size: .7rem; font-weight: 700; background: var(--flag); color: var(--cxl-white); vertical-align: middle; }
 </style>
-<style>* { box-sizing: border-box; } body { margin: 0; }</style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <p class="eyebrow">ICP dossier · fictional example</p>
-    <h1>Solo agency owners</h1>
-    <p class="meta">Acme Deals · Status: draft · Updated 2026-10-03 · Open (inferred) tags: 0 · Built from raw/voc/example/ only</p>
-  </header>
+<p class="banner" role="note">Built from Acme Deals, a fictional brand with dummy data. Your own run will look different, and so will the CXL demo.</p>
 
-  <section class="card avatar" aria-labelledby="avatar">
-    <h2 id="avatar">The rich avatar</h2>
-    <p>The founder or owner of a 1 to 5 person marketing agency or consultancy who is also the whole delivery team. Runs on client retainers, buys two or three deals a month for years, and treats a one-time price as margin, not cost.</p>
-    <dl>
-      <dt>Titles</dt><dd>Founder, Owner / Operator, Managing Director, Freelance Consultant</dd>
-      <dt>Business model</dt><dd>Client retainers: "8 active client retainers" (Jordan), "12-ish clients" (Marisol)</dd>
-      <dt>Why they buy again</dt><dd>"I'm not buying software, I'm buying margin."</dd>
-      <dt>What they really buy</dt><dd>Staying small without looking small. No first hire, and a client list that thinks there's a whole team.</dd>
-    </dl>
-  </section>
+<header>
+<p class="eyebrow">ICP dossier · fictional example</p>
+<h1>Solo agency owners</h1>
+<p class="meta">Acme Deals · Stage: validated · B2B · Status: draft · Updated 2026-10-07 · Open tags: 0 · Built from raw/voc/example/ only</p>
+</header>
 
-  <section class="stats" aria-label="Key numbers">
-    <div class="stat"><b>74.0%</b><span>of revenue from the avatar cohort, 6 of 18 customers</span></div>
-    <div class="stat"><b>31.8%</b><span>of revenue from the top 10%, 2 customers</span></div>
-    <div class="stat"><b>25.7</b><span>average orders per avatar customer, vs 11.4 overall</span></div>
-    <div class="stat"><b>$6,230</b><span>average spend per avatar customer, vs $2,805 overall</span></div>
-  </section>
+<section class="card avatar" aria-labelledby="now">
+<h2 id="now">Who buys now</h2>
+<dl>
+<dt>Industry, company type and size</dt><dd>Marketing agencies and consultancies, 1 to 5 people</dd>
+<dt>Buying champion</dt><dd>The founder or owner, who is also the delivery team: Founder, Owner / Operator, Managing Director, Freelance Consultant</dd>
+<dt>What they buy</dt><dd>One-time lifetime deals, 2 or 3 a month for years, resold into client retainers</dd>
+<dt>Where they find you</dt><dd class="blank">Blank: no channel data</dd>
+<dt>Where they spend time</dt><dd class="blank">Blank: no data</dd>
+<dt>Pains</dt><dd>Overhead, the first hire, monthly bills, per-seat licences when every client runs under one login</dd>
+<dt>Objections and hesitations</dt><dd>Whether they will still use it in 6 months; whether one purchase covers every client account; whether they can rebrand and resell it</dd>
+<dt>Triggers and key dates</dt><dd>A one-time price on a tool they can resell; they decide fast. Key dates: blank</dd>
+</dl>
+</section>
 
-  <section aria-labelledby="words">
-    <h2 id="words">Their words</h2>
-    <div class="quotes">
-      <figure class="card quote" style="margin:0"><p>"I'm not buying software, I'm buying margin. Every lifetime deal I resell into a retainer pays for itself in a month and prints after that."</p><cite>Jordan Reyes, BrightPath Agency · sales-call-notes.md</cite></figure>
-      <figure class="card quote" style="margin:0"><p>"Overhead is what kills small agencies and this is the opposite of overhead."</p><cite>Jordan Reyes, BrightPath Agency · reviews.md</cite></figure>
-      <figure class="card quote" style="margin:0"><p>"The day I have to hire is the day my margin dies."</p><cite>Jordan Reyes, BrightPath Agency · sales-call-notes.md</cite></figure>
-      <figure class="card quote" style="margin:0"><p>"I'm a team of one wearing nine hats. Every tool I don't have to pay monthly for is one less thing draining the account."</p><cite>Marisol Vega, Delta Creative · reviews.md</cite></figure>
-      <figure class="card quote" style="margin:0"><p>"My clients genuinely think I have a whole team behind me. It's me and a stack of tools I picked up here."</p><cite>Tomas Becker, North Loop Digital · reviews.md</cite></figure>
-      <figure class="card quote" style="margin:0"><p>"I buy first and find the use case later if the deal is good enough. Sounds reckless but the math works when it's one payment."</p><cite>Ben Ortiz, CraftFunnel · reviews.md</cite></figure>
-    </div>
-  </section>
+<section class="stats" aria-label="Key numbers">
+<div class="stat"><b>74.0%</b><span>of revenue, 6 of 18 customers</span></div>
+<div class="stat"><b>25.7</b><span>orders per customer, vs 11.4 overall</span></div>
+<div class="stat"><b>$6,230</b><span>spend per customer, vs $2,805 overall</span></div>
+<div class="stat"><b>31.8%</b><span>of revenue from the top 2 customers</span></div>
+</section>
 
-  <section class="two" aria-label="Desires and pains">
-    <div class="card"><h3><span class="pill">Desires</span></h3>
-      <ul>
-        <li>Margin that grows without headcount</li>
-        <li>To resell what they buy, under their own logo</li>
-        <li>To look bigger than they are: "punching way above my weight"</li>
-        <li>Tools they'll "actually still use in 6 months"</li>
-      </ul></div>
-    <div class="card"><h3><span class="pill red">Pains</span></h3>
-      <ul>
-        <li>Overhead: "what kills small agencies"</li>
-        <li>The first hire: "the day my margin dies"</li>
-        <li>Monthly bills: "one less thing draining the account"</li>
-        <li>Per-seat licences when every client runs under one login</li>
-      </ul></div>
-  </section>
+<section aria-labelledby="words">
+<h2 id="words">Their words</h2>
+<div class="quotes">
+<figure class="card quote" style="margin:0"><p>"I'm not buying software, I'm buying margin. Every lifetime deal I resell into a retainer pays for itself in a month and prints after that."</p><cite>Jordan Reyes, BrightPath Agency · sales-call-notes.md</cite></figure>
+<figure class="card quote" style="margin:0"><p>"The day I have to hire is the day my margin dies."</p><cite>Jordan Reyes, BrightPath Agency · sales-call-notes.md</cite></figure>
+<figure class="card quote" style="margin:0"><p>"I'm a team of one wearing nine hats. Every tool I don't have to pay monthly for is one less thing draining the account."</p><cite>Marisol Vega, Delta Creative · reviews.md</cite></figure>
+<figure class="card quote" style="margin:0"><p>"My clients genuinely think I have a whole team behind me. It's me and a stack of tools I picked up here."</p><cite>Tomas Becker, North Loop Digital · reviews.md</cite></figure>
+</div>
+</section>
 
-  <section aria-labelledby="segs">
-    <h2 id="segs">Segments</h2>
-    <div class="scroll"><table>
-      <thead><tr><th>Segment</th><th>Who</th><th>Revenue</th><th>Avg orders</th><th>What moves them</th></tr></thead>
-      <tbody>
-        <tr><td><b>Solo agency owners</b><br><span class="pill">Avatar</span></td><td>Agency and consultancy owners, 1 to 5 people (6)</td><td class="num">74.0%</td><td class="num">25.7</td><td>Margin, no overhead, resale into retainers</td></tr>
-        <tr><td><b>Lone in-house marketer</b></td><td>The only marketer at SaaS or ecommerce, 6 to 200 (4)</td><td class="num">22.9%</td><td class="num">10.2</td><td>Time, not price: "Monday is reporting hell"</td></tr>
-        <tr><td><b>One-off buyers and explorers</b></td><td>Coaches, designers, students, early founders (8)</td><td class="num">3.0%</td><td class="num">1.2</td><td>Price: "grabbed it because it was cheap"</td></tr>
-      </tbody>
-    </table></div>
-  </section>
+<section class="card" aria-labelledby="desires">
+<h2 id="desires">Desires</h2>
+<ul>
+<li>Margin that grows without headcount</li>
+<li>Tools they can put a logo on and resell to clients</li>
+<li>To look bigger than they are: "punching way above my weight"</li>
+<li>Tools they'll "actually still use in 6 months"</li>
+</ul>
+</section>
 
-  <footer>
-    <p><b>Method.</b> Ranked 18 customers by total spend, named the cohort the top five share, layered reviews, tickets and call notes, and cross-checked against the calls. Every line traces to a file. Quotes are verbatim.</p>
-    <ul>
-      <li>customers.csv: 18 customers, 205 orders, $50,481</li>
-      <li>reviews.md: 10 reviews · support-tickets.md: 6 tickets · sales-call-notes.md: 4 calls</li>
-    </ul>
-    <p>Blank, not guessed: buying deadline, company revenue, first-touch channel. Acme Deals is fictional; its data is Nick Christensen's (MIT).</p>
-  </footer>
+<section aria-labelledby="segs">
+<h2 id="segs">Segments below</h2>
+<div class="scroll"><table>
+<thead><tr><th>Segment</th><th>Who</th><th>Revenue</th><th>Avg orders</th><th>What moves them</th></tr></thead>
+<tbody>
+<tr><td><b>Solo agency owners</b><br><span class="pill">Core</span></td><td>Agency and consultancy owners, 1 to 5 people (6)</td><td class="num">74.0%</td><td class="num">25.7</td><td>Margin, no overhead, resale into retainers</td></tr>
+<tr><td><b>Lone in-house marketer</b><br><span class="pill">Adjacent</span></td><td>The only marketer at SaaS or ecommerce, 6 to 200 people (4)</td><td class="num">22.9%</td><td class="num">10.2</td><td>Time, not price: "Monday is reporting hell"</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="card" aria-labelledby="neg">
+<h2 id="neg">Negative ICP</h2>
+<p><b>One-off buyers and explorers</b> (8 customers): coaches, designers, students and early founders. 3.0% of revenue, 1.2 orders each, bought on price: "Grabbed it because it was cheap, haven't really dug in yet." Copy should not speak to them.</p>
+</section>
+
+<footer>
+<p><b>Method.</b> Ranked 18 customers by total spend, named the cohort the top five share, layered reviews, tickets and call notes, and cross-checked against the calls. Every line traces to a file. Quotes are verbatim. No strategy docs, so one profile: who buys now.</p>
+<ul>
+<li>customers.csv: 18 customers, 205 orders, $50,481</li>
+<li>reviews.md: 10 reviews · support-tickets.md: 6 tickets · sales-call-notes.md: 4 calls</li>
+</ul>
+<p>Blank, not guessed: where they find you, where they spend time, key dates, company revenue. Acme Deals is fictional; its data is Nick Christensen's (MIT).</p>
+</footer>
 </div>
 </body>
 </html>
