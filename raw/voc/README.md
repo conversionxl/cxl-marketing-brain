@@ -15,6 +15,7 @@ Voice of customer: what your customers say, in their own words. Exercise 1 (`/ic
 | Survey answers | CSV or Markdown | Patterns at volume |
 | User research, interview notes, message-test results | Any, in `research/` | Why they buy, and how they react to your words |
 | Live pulls from a CRM, store, or payment tool | CSV or Markdown, in `live/`. Commands save these for you | LTV, repeat rate, win rate, and churn per segment |
+| No customer data yet: public posts and reviews about your market or competitors (review sites, LinkedIn, forums, communities, Reddit threads copied by hand) | Markdown, verbatim, each with its URL and date, in `proxy/` | A hypothesis ICP in real buyers' words. Tagged proxy: what the market says, not your customers |
 
 You can also paste any of these into the chat while a command runs (it files them here), or let the command fetch them from a connected tool. See `frameworks/live-data-and-research.md`.
 

@@ -38,6 +38,6 @@ tags: [marketing-brain, voice, vocabulary]
 |---|---|---|
 | | | |
 
-## Open (inferred) tags
+## Open tags
 
 -

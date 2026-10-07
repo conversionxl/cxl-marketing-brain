@@ -15,7 +15,7 @@ In Claude Code, hooks load the two newest daily logs at the start of a session a
 
 ## Commands
 
-The routines are Markdown files in `.claude/commands/`: `start`, `brief`, `ingest`, `shutdown`, `lint`, `team-update`, and the Marketing Brain exercises `icp-dossier`, `positioning-messaging` and `brand-voice`. When the user names one ("run shutdown", "brief me on the Q4 launch"), open `.claude/commands/<name>.md` and follow it step by step. Treat `$ARGUMENTS` as whatever the user added after the name.
+The routines are Markdown files in `.claude/commands/`: `start`, `brief`, `ingest`, `shutdown`, `lint`, `team-update`, and the Marketing Brain exercises `icp-dossier`, `positioning-messaging`, `brand-voice` and `sync`. When the user names one ("run shutdown", "brief me on the Q4 launch"), open `.claude/commands/<name>.md` and follow it step by step. Treat `$ARGUMENTS` as whatever the user added after the name.
 
 ## Skills and memory
 
@@ -24,4 +24,4 @@ The routines are Markdown files in `.claude/commands/`: `start`, `brief`, `inges
 
 ## Brand brain
 
-**`wiki/brand/` is this repo's tone of voice, messaging and positioning documentation.** Read it before writing anything customer-facing: `icp.md` for who, `positioning-messaging.md` for what to say, `voice-guide.md` and `vocabulary.md` for how to say it.
+**`wiki/brand/` is this repo's tone of voice, messaging and positioning documentation.** Read it before writing anything customer-facing: `icp.md` for who, `positioning-messaging.md` for what to say, `voice-guide.md` and `vocabulary.md` for how to say it. Read the `.md` files, never the pages in `projects/marketing-brain/outputs/`. After you edit a brand file, rebuild its page from the `.md` and check the other brand files, as `.claude/skills/brand-sync/SKILL.md` describes; every brand file passes `frameworks/quality-rules.md`.

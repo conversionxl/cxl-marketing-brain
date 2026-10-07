@@ -8,7 +8,7 @@ tags: [marketing-brain, positioning, messaging]
 
 # Positioning and messaging
 
-<!-- Filled by /positioning-messaging (exercise 2). Framework: frameworks/positioning-messaging-hub.md. Same sections and rows, in the same order, as the hub page (frameworks/messaging-hub-example.html). Customer starts from icp.md. Every cell cites its source. Proof points and customer words are never invented: missing means blank. Any line not traceable to a source is tagged (inferred). -->
+<!-- Filled by /positioning-messaging (exercise 2). Framework: frameworks/positioning-messaging-hub.md. Same sections and rows, in the same order, as the hub page (frameworks/messaging-hub-example.html). Customer starts from icp.md. Every cell cites its source. Proof points and customer words are never invented: missing means blank. Any line not traceable to a source is tagged (inferred). Rules: frameworks/quality-rules.md. No summary section. -->
 
 ## Part 1: Positioning
 
@@ -20,18 +20,20 @@ tags: [marketing-brain, positioning, messaging]
 
 ### Market
 - **Market category:**
+- **Today vs target:** <!-- positioned now vs where it wants to be, one line each. Delete when nothing is changing. -->
 
 ### Competitive alternatives
 
-| | 1 | 2 | 3 |
+| | DIY or do nothing | Direct competitor | Different approach |
 |---|---|---|---|
 | **Alternative solutions** | | | |
 | **Limitations** | | | |
 
 ### Problems we solve
-- **Problem summary:**
-- **Problem in buyer language:**
+- **Problem summary:** <!-- the one overarching problem -->
+- **Problem in buyer language:** <!-- one verbatim quote with its source, or blank -->
 
+<!-- 2 or 3 sub-problems. Pillar 1 answers sub-problem 1, and so on. -->
 | | 1 | 2 | 3 |
 |---|---|---|---|
 | **Sub-problems** | | | |
@@ -48,7 +50,7 @@ tags: [marketing-brain, positioning, messaging]
 - **VOC validation / reframe messages:**
 
 ### Value proposition
-- **Internal (shorthand):**
+- **Internal (shorthand):** <!-- one sticky sentence that names the differentiator; about the customer, not the mission -->
 - **Customer-facing:**
 
 ### Messaging pillars and our solution
@@ -82,6 +84,6 @@ tags: [marketing-brain, positioning, messaging]
 
 -
 
-## Open (inferred) tags
+## Open tags
 
 -

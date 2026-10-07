@@ -1,55 +1,66 @@
 ---
 type: brand
 status: template        # template | draft | final
+stage: ""               # hypothesis | partly validated | validated
+business_type: ""       # B2B | B2C | services
 last_updated: ""
-sources: []             # files in raw/voc/ (incl. research/, live/), raw/strategy/, review URLs, connected tools with date range
+sources: []             # files in raw/voc/ (incl. research/, live/, proxy/), raw/strategy/, review URLs, connected tools with date range
 tags: [marketing-brain, icp]
 ---
 
 # ICP
 
-<!-- Filled by /icp-dossier (exercise 1) from raw/voc/ (and connected customer tools) only; raw/strategy/ for direction. Method: .claude/skills/icp-synthesis/. Blank beats guessed. Any line not traceable to raw/voc/ is tagged (inferred). -->
+<!-- Filled by /icp-dossier (exercise 1) from raw/voc/ (and connected customer tools); raw/strategy/ for direction only. Method: .claude/skills/icp-synthesis/. Rules: frameworks/quality-rules.md. Blank beats guessed. Untraceable lines are tagged (inferred); proxy and hypothesis lines are tagged too. No summary section. Leave out any section the stage can't fill rather than padding it. -->
 
-## The rich avatar
-<!-- The top ~10% by revenue, described specifically enough that you could find and call one. Labelled by what they do or buy, not given a persona name. -->
+## Who buys now
+<!-- The core fields, from the data. At the validated stage this is the rich avatar: the top ~10% by revenue, labelled by what they do or buy, never a persona name. B2C: replace buying champion and department with "Buyer and occasion". -->
 
-- **Label:** <!-- a plain description of who they are or what they buy, e.g. "solo agency owners" or "the annual team-plan buyer". Never an invented persona name. -->
-- **Role:**
-- **Company type and size:**
-- **Business model:**
-- **Why they buy, and buy again:**
-- **The outcome they are really buying:**
-- **Share of customers / revenue:**
+- **Label:** <!-- e.g. "solo agency owners", "the annual team-plan buyer" -->
+- **Industry, company type and size:**
+- **Buying champion and department:**
+- **What they buy:**
+- **Where they find you:**
+- **Where they spend time:**
+- **Pains:**
+- **Objections and hesitations:**
+- **Triggers and key dates:**
+- **Share of customers / revenue:** <!-- validated stage only -->
 
-<!-- Two purchase motions (e.g. individual and team)? Repeat "The rich avatar" once per motion, as "The rich avatar: [motion]". -->
+<!-- Two purchase motions (e.g. individual and team)? Repeat this section once per motion, as "Who buys now: [motion]". -->
 
-## Segments below the avatar
+## Who you want next
+<!-- Only when the strategy names a different target. Same fields, every line tagged (inferred) until the data backs it. Never blended into "Who buys now". Delete this section when the two match. -->
+
+- **Label:**
+- **What would validate it:**
+- **Decision:** <!-- which profile copy speaks to today, decided by whom, and why -->
+
+## Segments below
+<!-- Partly validated and validated stages. -->
 
 | Segment | Who | Value | What moves them |
 |---|---|---|---|
 | | | | |
 
 ## Segment scorecard
-<!-- From live data or exports. Blank where the data has no signal. State the customer count behind every row. -->
+<!-- Validated stage only. Blank where the data has no signal. State the customer count behind every row. -->
 
-| Segment | Customers | Value (LTV, revenue share) | Loyalty (repeat, retention, churn) | Conversion (win rate, cycle, lead to customer) | Cost to serve | Tier |
+| Segment | Customers | Value | Loyalty | Conversion | Cost to serve | Tier |
 |---|---|---|---|---|---|---|
 | | | | | | | Core / Adjacent / Stretch |
 
 ## Negative ICP
-<!-- Who churns fast, buys once on discount, or costs more than they pay. Copy should not speak to them. -->
+<!-- Who churns fast, buys once on discount, or costs more than they pay. Validated stage. -->
 
 -
 
-## Data vs strategy
-<!-- The user's own answer, anything in raw/strategy/, and what the data says. Where they differ, the decision and the reason. -->
+## Jobs to be done
+<!-- Optional. Only when interviews or VOC show the jobs in the buyer's words. Otherwise delete this section. -->
 
-- **What the data says:**
-- **What the strategy says:**
-- **Decision:** <!-- which ICP the brain is written for, decided by whom, and why -->
+-
 
 ## Their words (verbatim)
-<!-- Exact quotes, grammar and slang intact. Each with its source: "Name, company, file". -->
+<!-- Exact quotes, grammar and slang intact. Each with its source: "Name, company, file" or the proxy URL. -->
 
 -
 
@@ -57,7 +68,8 @@ tags: [marketing-brain, icp]
 
 -
 
-## Pains
+## To validate
+<!-- Hypothesis and partly validated stages: each open line and the one input that would confirm it. -->
 
 -
 
@@ -66,7 +78,7 @@ tags: [marketing-brain, icp]
 
 -
 
-## Open (inferred) tags
-<!-- Every (inferred) line above, listed here until it is confirmed or cut. -->
+## Open tags
+<!-- Every (inferred), (vague), hypothesis and proxy line above, listed here until it is confirmed or cut. -->
 
 -

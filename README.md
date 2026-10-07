@@ -19,6 +19,15 @@ Works in any folder. For daily logs, memory and the personal OS commands, also s
    (Terminal or VS Code instead: `/plugin marketplace add conversionxl/cxl-marketing-brain`, then `/plugin install marketing-brain@cxl-marketing-brain`.)
 2. Open your personal OS folder (or any folder for this project) in Cowork, or in the desktop app's Code tab with Environment: Local, and type `/marketing-brain:setup`.
 
+**Not showing up?**
+- After **Sync**, the plugin isn't added until you click **Add** in the menu that opens. This step is easy to miss.
+- A plugin added in the Claude app or on claude.ai reaches VS Code through your Claude account, but it can take a few minutes. Fully quit and reopen VS Code if it still isn't there.
+- Still missing: run the two commands above. They go in the **Claude chat in VS Code or the terminal** (start `claude` first in a terminal). The exercise commands (`/marketing-brain:...`) always go in the Claude chat.
+
+**No plugins, or not using Claude?** Download this repo (**Code → Download ZIP**), unzip it, open the folder in any editor with an AI chat (VS Code, Cursor, Antigravity), and ask in plain words: "Run the setup command from `plugin/setup.md`", then "Run the ICP dossier command from `.claude/commands/icp-dossier.md`", and so on. Nothing gets uploaded to claude.ai; the files stay in the folder.
+
+**Adding your files and URLs.** Every command asks for what it needs. Drag files into the chat, or drop them into the folder it names (it files loose drops for you), and paste URLs one per line. Keep the files the brain uses all the time in the project folder. Link a shared drive (SharePoint, Google Drive) through a connector only for large archives: Claude has to search it each time, which is slower and costs more.
+
 Setup adds `raw/voc/`, `raw/brand/`, `wiki/brand/`, the frameworks, the project file, and a Marketing Brain section in your `CLAUDE.md`. It never overwrites a file, and it adds the `.gitignore` rule that keeps customer data local before anything lands in `raw/voc/`. The exercises are then `/marketing-brain:icp-dossier`, `/marketing-brain:positioning-messaging` and `/marketing-brain:brand-voice`, and the skills load by themselves.
 
 
@@ -103,7 +112,9 @@ New versions don't install themselves on a personal marketplace. To update: **Pl
 - `raw/voc/` holds customer data and **stays on your machine**: it is gitignored. Strip or hash emails before you share your screen.
 - `raw/brand/` holds your own public pages and samples and **is committed**: nothing confidential, nothing under NDA, no client material.
 
-**No customer data?** Every command takes `example`: `/icp-dossier example` runs on Acme Deals, a fictional brand with customer data and brand samples included. Example runs write to `drafts/example-brain/`, so your own brain stays clean.
+**No customer data?** Two routes. `/icp-dossier` builds a hypothesis ICP from your own judgement, public reviews and posts about your market, and research, every line tagged until real data replaces it. Or learn the method first: every command takes `example`, which runs on Acme Deals, a fictional brand with customer data and brand samples included. Example runs write to `drafts/example-brain/`, so your own brain stays clean.
+
+**The `.md` files are the brain.** Claude and any other AI tool read `wiki/brand/*.md`; the pages in `projects/marketing-brain/outputs/` are views of them. Ask Claude to change a brand file and the page updates with it. After editing a file by hand, run `/sync`.
 
 **The rule that runs through all of it:** every line in the brain traces to a source. Anything Claude can't trace is tagged **(inferred)**, and metrics, customers, quotes, and case studies are never made up. A file with open tags isn't finished.
 
@@ -154,6 +165,7 @@ team-updates/      Weekly standup updates built from your logs
 | `/icp-dossier [example]` | Marketing Brain exercise 1 | Your ICP from customer data, plus a dossier page |
 | `/positioning-messaging [example]` | Marketing Brain exercise 2 | Your positioning and messaging hub, from your pages |
 | `/brand-voice [example]` | Marketing Brain exercise 3 | Your voice guide and vocabulary, from your samples |
+| `/sync [example]` | After editing brand files by hand | Brings the `.md` files and their pages back in step. Edits made through Claude sync on their own |
 
 ## What runs automatically
 

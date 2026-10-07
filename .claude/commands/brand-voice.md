@@ -7,7 +7,11 @@ argument-hint: [example]
 
 Exercise 3 of the Marketing Brain. Draft the voice guide and the vocabulary from what the brand already sounds like, what it should never sound like, and the first two brain files.
 
-Read `frameworks/brand-voice-guide.md` and `frameworks/vocabulary.md` in full first (with the plugin and no local copy, read them from `${CLAUDE_PLUGIN_ROOT}/frameworks/`). They define every section and the output format.
+Read `frameworks/brand-voice-guide.md` and `frameworks/vocabulary.md` in full first (with the plugin and no local copy, read them from `${CLAUDE_PLUGIN_ROOT}/frameworks/`). They define every section and the output format. Read `frameworks/quality-rules.md` too: every output passes it.
+
+**Framework versions.** With the plugin, compare the `version` in each local framework's frontmatter with the plugin's copy in `${CLAUDE_PLUGIN_ROOT}/frameworks/` (no `version` means 1). If the local copy is older, use the plugin's copy for this run, say so in one line, and offer to update the local file. Show what changed and replace it only on a yes: the user may have edited it.
+
+The `.md` files are the brain; the guide page is a view of them. Always write the `.md` files, even when the session has no folder (claude.ai chat, Cowork without a folder): then hand them over as files with the page, and say they belong in `wiki/brand/`.
 
 ## Mode
 
@@ -22,7 +26,7 @@ Do all of this before step 1, and wait for the answers. Skip it in `example` mod
 2. **Existing voice guides, wherever they live.** Read `frameworks/live-data-and-research.md` first (with the plugin and no local copy, `${CLAUDE_PLUGIN_ROOT}/frameworks/live-data-and-research.md`). Ask for any tone of voice, style, or brand guide the company already has. It may live in Notion, ClickUp, Asana, Confluence, or a Google Doc owned by someone else. Take it three ways: dropped in a folder, pasted or dropped in the chat (you file it), or fetched through a connected docs tool from a name or link. Shareable guides go to `raw/brand/guides/`; internal or confidential ones to `raw/strategy/`. If someone else owns the voice, say the draft will need their sign-off.
 3. **Research.** Ask for message-testing results, surveys, user research, or content feedback that says how the audience reacts to the brand's words. Same three ways in; they go to `raw/voc/research/`.
 4. **Live data: which content performs?** Say which tools this session can already reach. Then ask which they use for: social (LinkedIn, X, Instagram, YouTube), blog or site (WordPress, Webflow, plus GA4 for engagement and conversion), email (Customer.io, Klaviyo, Mailchimp), and ads (Google, Meta, LinkedIn). For each one not connected, say how to connect it (section 2 of the framework) and offer to continue without it. Pull the top and bottom performers over a stated period (engagement rate, click-through, conversion), read only, and save the snapshot to `raw/performance/`.
-5. **On-brand samples.** Show what is in `raw/brand/on-brand/` and `raw/brand/urls.md`. If there is little, ask the user to paste 3 to 10 pieces that sound exactly right (emails, ads, landing page sections, posts). Save each as Markdown in `raw/brand/on-brand/`, labelled with where and when it ran.
+5. **On-brand samples.** Show what is in `raw/brand/on-brand/` and `raw/brand/urls.md`. If there is little, ask for 3 to 10 pieces that sound exactly right, following "Which samples to feed it" in the framework: only pieces they want copied, from as many channels as they have (emails that perform, onboarding and welcome flows, ads and campaigns that worked, landing page sections, social posts, thought leadership, sales proposals, one-pagers, client emails), plus the brand's values. Say plainly: leave out anything you have doubts about, even if it's on the website. Save each as Markdown in `raw/brand/on-brand/`, labelled with where and when it ran.
 6. **Off-brand samples.** Show what is in `raw/brand/off-brand/` and `raw/brand/off-brand/urls.md`. If there is little, ask for near misses: old copy, AI drafts that felt wrong, competitor lines, as pasted text or URLs. Save text in `raw/brand/off-brand/`, URLs in `off-brand/urls.md`, each with a note on what is wrong with it.
 7. **Go or wait.** Summarise what you now have (guides, research, live data, on-brand and off-brand samples), and ask whether to start or to add more first.
 
@@ -48,9 +52,9 @@ Lay the guide out exactly as "The output format" in `frameworks/brand-voice-guid
 
 Then fill each section:
 
-1. **Our voice in a nutshell.** The persona line, "[Brand]'s voice personified is a **'[Role] with a [quality]'**", drawn from how the on-brand samples sound. Then one prose paragraph starting "Our copy reads like...", three to five sentences, ending on the core personality. Then "**Voice blend:** our audience hears the following layers:" and the layers as a short list.
-2. **Brand voice traits (matrix).** 3 to 5 traits, each with what it means, do, don't, which pillar it changes (vocabulary, cadence, or tone), and an example from a real sample. A trait with no effect gets cut, not kept.
-3. **Tone profile.** One row per context the brand writes in (for example sales page, email, social post, support reply), each with the tone, what shifts, and an example from a sample. Fill only contexts the samples cover; list the rest as (inferred).
+1. **Our voice in a nutshell.** Short and punchy. The persona line, "[Brand]'s voice personified is a **'[Role] with a [quality]'**", drawn from how the on-brand samples sound: bold and specific to this brand, dialled up, never a generic persona. Then at most two sentences starting "Our copy reads like...". No voice blend.
+2. **Brand voice traits (matrix).** 3 or 4 traits, in a 4-column table: trait, what it means, do, don't. Each trait is a voice quality you can hear (like challenger), never a behaviour ("show the work" belongs in section 4) or a generic word ("human", "friendly"). "What it means" says what the trait changes in vocabulary, cadence or tone; a trait with no visible effect gets cut. Do and Don't are quoted copy lines: Do from a real on-brand sample, Don't from an off-brand sample or a plausible drift of the same line, tagged (inferred).
+3. **Tone profile.** Only when the samples cover more than one channel: one row per channel they cover, with the tone, what shifts, and an example. With one channel, keep the heading and the one line the framework gives. No (inferred) rows.
 4. **Writing principles.**
    - **Cadence and sentence length:** measure them from the on-brand samples: average and longest sentence, how paragraphs open, fragments and questions. State the numbers. Rhythm rules, not word caps.
    - **Always / never:** specific enough to pass or fail a draft.
@@ -69,24 +73,27 @@ Then the **appendix**: the core four check from step 2, **Performance evidence**
 
 ## 5. Write
 
-Every line traces to a sample, a scraped page, a guide, or a customer quote. Anything else is tagged **(inferred)**. Never invent a quote. The output carries the brand's name only: no Lion Words or Diane Wiredu name, logo, link, or credit, in the files or in the summary. The credit lives in `frameworks/`. If a target file's `status` is not `template`, show what would change and ask before replacing anything. Set `status: draft`, `last_updated`, and `sources` on both files, and list every (inferred) line under "Open (inferred) tags".
+Every line traces to a sample, a scraped page, a guide, or a customer quote. Anything else is tagged **(inferred)**. Never invent a quote. The output carries the brand's name only: no Lion Words or Diane Wiredu name, logo, link, or credit, in the files or in the summary. The credit lives in `frameworks/`. If a target file's `status` is not `template`, show what would change and ask before replacing anything. Set `status: draft`, `last_updated`, and `sources` on both files, and list every tagged line under "Open tags". Then run the quality rules on both files: compact, no summary layer, the vagueness sweep, the fluff check on example lines.
 
 ## 6. Build the voice guide page
 
 Always, in both modes. Render the voice guide, with the vocabulary appended below a rule, as one self-contained HTML page. Use `frameworks/voice-guide-example.html` (the Acme Deals guide) as the template; with the plugin and no local copy, read `${CLAUDE_PLUGIN_ROOT}/frameworks/voice-guide-example.html`.
 
-- Keep its structure exactly: the title, the BRAND VOICE callout, the linked contents list, the six sections, the appendix, then the vocabulary. Every contents link must land on its heading.
+- Keep its structure: the title, the BRAND VOICE callout, the linked contents list, the six sections, the appendix, then the vocabulary. Every contents link must land on its heading. Where the template and the current framework differ (templates can lag a release: a voice blend, a traits table with more than four columns), the framework and the `.md` win. The page carries only what the `.md` files hold.
 - All three exercise pages share one look, the CXL web styling: Work Sans 900 headings, Lato body, and the teal, red, beige, black and white tokens. Copy the template's `<style>` block unchanged; never restyle a page.
-- Show every (inferred) tag as the template's red `inferred` chip.
+- Show every tag ((inferred), (vague)) as the template's red `inferred` chip, with the tag's own word.
+- No summary block. In `example` mode, put the example banner from the quality rules at the top.
+- **Check the page against the files:** the tag count on the page equals the count in the two `.md` files.
 - When the appendix has performance evidence, render it as a table after the core four check.
 - Write it to `projects/marketing-brain/outputs/voice-guide.html` (own data) or `projects/marketing-brain/outputs/example-voice-guide.html` (`example`).
 
-Then share it: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] Verbal Identity" and give the link. Otherwise give the file path and say to open it in a browser.
+Then share it, following the `share-output` skill: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] Verbal Identity" and give the link. Otherwise give the file path and say to open it in a browser.
 
 ## 7. Checks
 
 Answer each honestly from what you wrote:
-- **Does each trait change vocabulary, cadence, or tone?** Name any that don't.
+- **Does each trait change vocabulary, cadence, or tone?** Name any that don't. Is any trait a behaviour or a generic word?
+- **Is the nutshell short and bold,** or could a competitor use the same persona line?
 - **Jargon kept, buzzwords cut?** Name anything in the wrong list.
 - **Is any this-not-that pair an extreme rather than a near miss?**
 - **Could a competitor's page pass this guide unchanged?** If yes, the guide is too generic: say where.
@@ -94,9 +101,11 @@ Answer each honestly from what you wrote:
 - **Does every fix in the fluff check land in the fluff-free zone,** specific and natural?
 - **Could a new hire, or Claude, write in this voice from the guide alone?** If not, say which section is too thin.
 
+Then run the **review and trim** step from the quality rules: list every tagged line and offer cut, correct, or keep for each.
+
 Then:
-- The two file paths and the page.
-- The number of open (inferred) tags.
+- **Where your files are:** the two `.md` files (`wiki/brand/voice-guide.md` and `vocabulary.md`, the ones Claude reads) and the page. To change anything, edit a `.md` directly or say what to change in chat. The page updates from it. After hand edits, run `/marketing-brain:sync`.
+- The number of open tags.
 - **Take home:** write your own this-not-that pairs from real sentences, and run your homepage through the fluff matrix.
 - The brand brain is now in place. The `brand-brain` skill loads it automatically before any customer-facing writing.
 

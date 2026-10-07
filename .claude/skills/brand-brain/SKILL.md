@@ -7,12 +7,15 @@ description: Read the brand brain in wiki/brand/ before writing anything custome
 
 The brand brain is four files in `wiki/brand/`. Load them before the first line of any customer-facing copy. Copy written without them is generic by default.
 
+Read the `.md` files, never the HTML pages in `projects/marketing-brain/outputs/`: the pages are views of the files and can lag behind them. Any command in any repo that needs the ICP, messaging or voice reads these files first and asks the user only for what is missing, so the brand is defined once.
+
 ## Load
 
 1. Read `wiki/brand/README.md`, then `icp.md`, `positioning-messaging.md`, `voice-guide.md`, and `vocabulary.md`.
 2. Check each file's `status` in the frontmatter:
    - `template`: empty. Say which file is empty, point to the exercise that fills it (`/icp-dossier`, `/positioning-messaging`, `/brand-voice`), and ask whether to continue without it. Never fill the gap from your own assumptions.
-   - `draft`: usable. Mention in one line that it still has open (inferred) tags, and do not lean on a tagged line as fact.
+   - `draft`: usable. Mention in one line that it still has open tags, and do not lean on a tagged line as fact.
+3. **Tagged lines are unconfirmed.** Lines tagged (inferred), (vague), hypothesis or proxy (see `frameworks/quality-rules.md`) can steer direction, but never become a claim, a number or a promise in copy. An ICP at the hypothesis stage means the whole buyer is a guess: say so before writing.
    - `final`: use it.
 
 ## Apply
