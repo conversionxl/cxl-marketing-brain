@@ -15,6 +15,41 @@ The customer data is the **only** source of truth for who buys and what they say
 
 If a pattern is a reasonable reading of the data but not stated in it, write it and tag it **(inferred)**. Never generate metrics, customers, or quotes.
 
+Two kinds of evidence are allowed in only with a tag, never as customer data: **proxy** (public posts and reviews about the market or competitors, in `raw/voc/proxy/`) and **hypothesis** (the stage below, when there is no customer data). Tags are defined in `frameworks/quality-rules.md`.
+
+## Stage: how much you know
+
+Pick the stage from what is in `raw/voc/` and the connected tools, say which and why, and let the user override it. The stage sets how deep the ICP goes. A short, clear ICP beats a long one padded with guesses: it is easier to act on and easier to correct.
+
+| Stage | When | What to build |
+|---|---|---|
+| **Hypothesis** | No customer data | The core fields only, every line tagged hypothesis. Build it by triangulation, below. |
+| **Partly validated** | Some data, but not both halves: reviews or tickets with no customer list, or a list with no quotes | The core fields and "their words", tagged where the data is thin, plus a short "To validate" list: for each open line, the one input that would confirm it. |
+| **Validated** | A customer list with revenue or order history, plus qualitative data | The full method below: avatar, scorecard, tiers, negative ICP. |
+
+**Triangulation** (hypothesis stage, and gaps at the partly validated stage). Combine three sources, and say which line came from which:
+1. **The user's own judgement:** who they believe buys, and why. Ask, and write it down as their claim.
+2. **Real public evidence:** reviews and posts about competitors, or about brands the user aspires to, collected as proxy VOC. This is what real buyers in the category say.
+3. **AI research:** what the category, job titles and buying triggers typically look like, from web research with sources.
+
+Where all three agree, the line is a strong hypothesis. Where they disagree, show the disagreement instead of picking one. Replace hypothesis lines with customer data as soon as it exists, and move the stage up.
+
+## The core fields
+
+Every ICP, at every stage, answers these. Anything beyond them is either in the scorecard or cut.
+
+- **Industry** and company type and size
+- **Buying champion:** the role that finds you and argues for you, and their department
+- **What they buy:** the product, plan or service, and how often
+- **Where they find you:** the channel or source
+- **Where they spend time:** the communities, publications, events and platforms they use. This guides the first channel bets.
+- **Pains**, **objections** and **hesitations**, in their words where you have them
+- **Triggers and key dates:** what makes them go looking, and when (budget cycles, renewals, seasons, deadlines)
+
+**B2C:** replace the buying champion and department with the buyer and the buying occasion (who buys, for whom, when). Drop buying-committee objections; keep the personal ones. **Services** (agencies, consultancies) use the B2B fields.
+
+**Jobs to be done:** optional. Add a short section only when interviews or VOC show the jobs in the buyer's words. Never write jobs from inference alone.
+
 ## Step 0: Strategy first, then live data
 
 Ask the strategy questions in `frameworks/live-data-and-research.md` (section 3) before reading the data, and write the user's answer down: it is the hypothesis the data tests. Then pull live data through whatever store, payment, CRM, support, or product analytics tools are connected, following section 2 of that file: read only, smallest set, saved as a dated snapshot in `raw/voc/live/`, no personal data outside the local folders.
@@ -55,9 +90,15 @@ Rank the segments on value and loyalty first, then conversion and cost to serve 
 
 Say how many customers sit behind each number. A segment of four is a hint, not a finding.
 
-## Step 1c: Compare the data with the strategy
+## Step 1c: Who buys now vs who you want next
 
-Put the data's core segment next to the user's answer from Step 0 and anything in `raw/strategy/`. If they match, say so. If they differ (a pivot, a new market, a segment the business wants to leave), **do not choose.** Show both, with what each would win and cost, and ask which one the brain should be written for. Record the decision and the reason in the ICP.
+Put the data's core segment next to the user's answer from Step 0 and anything in `raw/strategy/`. If they match, say so and write one profile.
+
+If they differ (a pivot, a new market, a segment the business wants to leave), write **two separate profiles, never blended**:
+- **Who buys now:** from the data. This is the ICP the brain is built on.
+- **Who you want next:** from the strategy. Every line tagged (inferred) until the data backs it, with what would validate it (for example: "five closed deals from this segment in the CRM").
+
+Show what each would win and cost, and record which one copy should speak to today, decided by whom, and why. Validate a shift before it replaces "who buys now".
 
 ## Step 2: Map the segments below the avatar
 
@@ -68,6 +109,9 @@ The avatar isn't the only buyer, just the most valuable. Identify the other dist
 For each high-value record, add what's verifiable: title, company, company size, industry. Public, checkable, grounded. Tier your confidence: full CRM data beats a LinkedIn guess beats a pattern-match. Mark which tier each field came from.
 
 ## Step 4: Layer the qualitative
+
+Use only inputs that describe the buyer. A press release, a brand deck or a generic market report says what the company claims, not who buys: leave it out and say so. Fewer relevant data points beat many; irrelevant ones make the output vaguer.
+
 
 Numbers tell you who. Words tell you why. Pull from support tickets, reviews (including the pages in `raw/voc/review-urls.md`), NPS verbatims, survey answers, user research and message-testing reports in `raw/voc/research/`, connected support and call-recording tools, and especially recorded sales calls. This is where the buying motivation and the real objections live.
 
@@ -85,7 +129,7 @@ Write the result to `wiki/brand/icp.md`, following its template. Every later exe
 
 ## Output
 
-- `wiki/brand/icp.md`: the avatar at the top, the segment scorecard and tiers, the negative ICP, the data-versus-strategy decision, the segments below, a "their words" section of verbatim language with a source on every quote, the pains and desires, the sources, and the open (inferred) tags.
+- `wiki/brand/icp.md`: the stage, the core fields for who buys now (and who you want next, when it differs), the avatar, the segment scorecard and tiers, the negative ICP, the data-versus-strategy decision, the segments below, a "their words" section of verbatim language with a source on every quote, the pains and desires, the sources, and the open (inferred) tags.
 - `projects/marketing-brain/outputs/icp-dossier.html`: the same content as a single-page dossier you can open in a browser and share.
 
 No email addresses in either file. Refer to customers by name, company, and source file.

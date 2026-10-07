@@ -46,8 +46,11 @@ As of YYYY-MM-DD: templates untouched.
 - [ ] Exercise 3, brand voice: run `/brand-voice` → [[wiki/brand/voice-guide|Voice guide]] and [[wiki/brand/vocabulary|Vocabulary]]
 - [ ] Optional: ask Claude to "build an example campaign from my ICP" → `outputs/campaign.html`
 
+**Iterating**
+- The `.md` files in `wiki/brand/` are the brain; the pages in `outputs/` are views of them. Edit a `.md` directly, or ask Claude to change it ("in @wiki/brand/icp.md, cut the third pain"). The page updates from it. After hand edits, run `/sync`.
+
 **Take home**
-- [ ] ICP: add more customer data, resolve every (inferred) tag
+- [ ] ICP: add more customer data, move up a stage, resolve every open tag
 - [ ] Positioning and messaging: test alternatives and differentiators against real sales conversations; add proof, never invent it
 - [ ] Voice: write your own this-not-that pairs from real sentences
 

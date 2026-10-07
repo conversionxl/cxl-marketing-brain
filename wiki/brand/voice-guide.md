@@ -29,18 +29,19 @@ tags: [marketing-brain, voice]
 
 [COMPANY]'s voice personified is a **'[Role] with a [quality]'**.
 
-<!-- One prose paragraph: "Our copy reads like..." Then the core personality in one line. -->
-
-**Voice blend:** our audience hears the following layers:
--
+<!-- At most two sentences: "Our copy reads like..." Short, bold, specific to this brand. No voice blend. -->
 
 ## 2. Brand voice traits (matrix)
 
-| Trait | What it means | Do | Don't | Changes | Example |
-|---|---|---|---|---|---|
-| | | | | | |
+<!-- 3 or 4 traits. Voice qualities you can hear (challenger, dry, plain-spoken), never behaviours or generic words like "human". "What it means" says what the trait changes in vocabulary, cadence or tone. Do and Don't are quoted copy lines. -->
+
+| Trait | What it means | Do | Don't |
+|---|---|---|---|
+| | | | |
 
 ## 3. Tone profile
+
+<!-- Only when the samples cover more than one channel. Otherwise replace the table with: "Not enough channels in the samples yet. Add samples from another channel and rerun." -->
 
 | Context | Tone | What shifts | Example |
 |---|---|---|---|
@@ -135,6 +136,6 @@ Full lists, evidence, and customer words vs ours: [[wiki/brand/vocabulary|vocabu
 
 -
 
-### Open (inferred) tags
+### Open tags
 
 -

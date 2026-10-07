@@ -1,5 +1,6 @@
 ---
 type: framework
+version: 2
 source: Lion Words, Diane Wiredu
 used_by: /brand-voice, wiki/brand/voice-guide.md
 tags: [marketing-brain, voice]
@@ -36,7 +37,13 @@ Aside from vision, values and personality, voice comes down to three things you 
 | **Cadence** | The rhythm and sentence length: how sentences follow each other, where the short punches land, how long they run. |
 | **Tone** | How the voice flexes by context: a launch, a support reply, an apology. |
 
-A trait only counts if it changes one of these three.
+A trait only counts if it changes one of these three. Define the voice through them, never through adjectives alone: "friendly" tells Claude nothing, "short sentences, second person, no jargon the buyer wouldn't use" does.
+
+## Which samples to feed it
+
+Only samples you want copied. The guide learns from whatever you give it, so leave out anything you have doubts about, anything that underperformed, and anything that sounds like where the brand used to be. Don't feed it the whole website if you don't like the website.
+
+Good sources: emails that perform (welcome and onboarding flows, newsletters), campaigns and ads that worked, social posts, thought leadership, sales proposals, one-pagers, client emails, and the brand's values. The voice should hold across every touchpoint, so samples from several channels make a stronger guide. Off-brand samples are the near misses: old copy, AI drafts that felt wrong, competitor lines.
 
 ## The output format
 
@@ -72,18 +79,27 @@ The output is a **verbal identity document**, laid out exactly like this, top to
 ## What goes in each section
 
 ### 1. Our voice in a nutshell
-- **Persona line,** on its own: "COMPANY's voice personified is a **'[Role] with a [quality]'**", for example "a 'Trusted Coach with a playful streak'". A role your buyer would trust, and a quality that shows up in the writing.
-- **How it reads:** one prose paragraph, three to five sentences, not bullets. Start "Our copy reads like..." and describe what a reader experiences: what the writer does, how they treat the reader, and what they never do. End on the core personality in one line. For example: "Our copy reads like an expert who pulls up a chair, explains complex topics clearly without talking down to you, slips in the occasional light joke, and helps you feel confident and in control. Our core personality: professional competence with human warmth. We take the work seriously, but not ourselves too seriously."
-- **Voice blend:** "**Voice blend:** our audience hears the following layers:" then a short list, one layer per line, each a quality and what it sounds like. The blend is where the brand's personality meets the audience's: it should sound like the brand, and like someone the buyer would want to talk to.
+Short and punchy. This is the line people remember, so dial the voice up: bold, specific to this brand, never a generic persona.
+- **Persona line,** on its own: "COMPANY's voice personified is a **'[Role] with a [quality]'**", for example "a 'Trusted Coach with a playful streak'". A role your buyer would trust, and a quality that shows up in the writing. Test it: could a competitor use the same line? Then sharpen it.
+- **How it reads:** at most two sentences. Start "Our copy reads like..." and say what the writer does and what they never do. For example: "Our copy reads like an expert who pulls up a chair and explains the hard part without talking down to you. We take the work seriously, never ourselves."
+
+No voice blend, no layers list: the traits matrix carries the detail.
 
 ### 2. Brand voice traits (matrix)
-Three to five traits. Every trait names the pillar it changes. If you can't fill that column, cut the trait.
+Three or four traits, never more. Each is a **voice trait**: a quality you can hear in the writing, like *challenger*, *dry*, *plain-spoken*. Not a behaviour ("show the work", "cite sources": those are writing principles, section 4) and not a generic word every brand claims ("human", "friendly", "authentic").
 
-| Trait | What it means | Do | Don't | Changes (vocabulary / cadence / tone) | Example from a real sample |
-|---|---|---|---|---|---|
+Each trait is defined through what it does to the three pillars: which words it picks (vocabulary), how the sentences move (cadence), how it flexes (tone). An adjective with no visible effect on the page fails: cut it.
+
+Four columns, no more:
+
+| Trait | What it means | Do | Don't |
+|---|---|---|---|
+
+- **What it means:** what the trait changes on the page, in vocabulary, cadence or tone.
+- **Do** and **Don't** are quoted copy lines, never statements: `"Most teams reach for a template. Start with your last three lost deals."` not "Challenge common advice". The Do line comes from a real on-brand sample; the Don't is a real off-brand line or a plausible drift of the same sentence, tagged (inferred).
 
 ### 3. Tone profile
-How the voice flexes by context, while staying the same voice. One row per context the brand actually writes in.
+How the voice flexes by context, while staying the same voice. **Fill the table only when the samples cover more than one channel** (for example emails, landing pages and social). With samples from one channel, keep the heading so the numbering and links hold, and put one line under it: "Not enough channels in the samples yet. Add samples from another channel and rerun." One row per context the samples actually cover; no (inferred) rows.
 
 | Context | Tone | What shifts | Example |
 |---|---|---|---|
@@ -137,6 +153,8 @@ That gives four quadrants, three of them fluff. Diane's own example lines show o
 2. **Use customer language** to describe buyer needs and frustrations.
 
 Fluff is rarely intentional. It's bad habits mixed with a little fear of saying what you really mean. The fix is simpler than it looks.
+
+The shared quality rules in [[frameworks/quality-rules|quality-rules]] apply this matrix to every example line in all three outputs.
 
 ### How to audit a draft
 Place every claim on the matrix. For each one outside the fluff-free zone, ask two questions: **"How, exactly?"** (moves it right, toward specific) and **"Would a buyer say this out loud?"** (moves it up, toward natural). Use this lens to critique drafts in all three exercises, not only this one.

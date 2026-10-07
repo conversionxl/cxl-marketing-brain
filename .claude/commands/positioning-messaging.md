@@ -7,7 +7,11 @@ argument-hint: [example]
 
 Exercise 2 of the Marketing Brain. Fill the positioning and messaging hub from the ICP, your own published pages, and your brand guides.
 
-Read `frameworks/positioning-messaging-hub.md` in full first (older setups have it as `frameworks/lion-words-positioning-messaging-hub.md`; with the plugin and neither file, read `${CLAUDE_PLUGIN_ROOT}/frameworks/positioning-messaging-hub.md`). It defines every field.
+Read `frameworks/positioning-messaging-hub.md` in full first (older setups have it as `frameworks/lion-words-positioning-messaging-hub.md`; with the plugin and neither file, read `${CLAUDE_PLUGIN_ROOT}/frameworks/positioning-messaging-hub.md`). It defines every field. Read `frameworks/quality-rules.md` too (same fallback paths): every output passes it.
+
+**Framework versions.** With the plugin, compare the `version` in each local framework's frontmatter with the plugin's copy in `${CLAUDE_PLUGIN_ROOT}/frameworks/` (no `version` means 1). If the local copy is older, use the plugin's copy for this run, say so in one line, and offer to update the local file. Show what changed and replace it only on a yes: the user may have edited it.
+
+The `.md` is the brain; the hub page is a view of it. Always write the `.md`, even when the session has no folder (claude.ai chat, Cowork without a folder): then hand the `.md` over as a file with the page, and say it belongs in `wiki/brand/`.
 
 ## Mode
 
@@ -21,7 +25,7 @@ Do all of this before step 1, and wait for the answers. Skip it in `example` mod
 1. **Is the module set up here?** Look for a `## Marketing Brain` section in `CLAUDE.md` and for `wiki/brand/`, `raw/voc/` and `raw/brand/`. If any is missing and this session has the marketing-brain plugin, run `bash "${CLAUDE_PLUGIN_ROOT}/plugin/setup.sh" "$PWD"` with the shell and show its output: it creates the folders, the customer-data `.gitignore` rule and the CLAUDE.md section, and never overwrites a file. Without the plugin, create only the missing folders and their README files, and say so. Then **sort loose drops:** if files sit in the top level of `raw/` (anything but `README.md` and the subfolders), propose a folder for each from the table in section 1 of `frameworks/live-data-and-research.md`, as `file | folder | why`, and move them after the user confirms. Keep them verbatim, add a source and date line (for a CSV, put it in the plan instead), and ask before anything goes into `raw/brand/`, which is committed to git.
 2. **Strategy and ownership.** Read `frameworks/live-data-and-research.md` first (with the plugin and no local copy, `${CLAUDE_PLUGIN_ROOT}/frameworks/live-data-and-research.md`). Ask: has anything changed since the ICP was written (a pivot, a new product, market or price)? And who owns positioning and messaging here? If it is someone else, the user may only be able to pull what exists, and the draft will need that person's sign-off. Save any strategy doc to `raw/strategy/`.
 3. **Existing positioning and messaging, wherever it lives.** Ask: "Do you have positioning, messaging, brand or pitch docs already? A messaging house, a positioning statement, a sales deck script, a brand book section. They often live in Notion, ClickUp, Asana, Confluence, or a Google Doc someone else owns." Take them three ways: dropped in a folder, pasted or dropped in the chat (you file them), or fetched through a connected docs tool from a name or link. Internal or confidential docs go to `raw/strategy/`; docs safe to share go to `raw/brand/guides/`. Label each with its source and date. When in doubt, file it locally.
-4. **Research.** Ask for message-testing results (for example Wynter), surveys, user research, and win/loss or sales-call notes about why people buy. Same three ways in; they go to `raw/voc/research/`.
+4. **Research.** Ask for message-testing results (for example Wynter), surveys, user research, win/loss data and interviews, sales-call notes or recordings (Fathom, Granola, Gong), support chats, and reviews about why people buy or don't. Same three ways in; they go to `raw/voc/research/`. Win/loss is the first thing to ask for: it shows which alternatives you really lose to.
 5. **Live data: is the current messaging working?** Say which tools this session can already reach. Then ask which they use for: web analytics (GA4, Search Console), leads and deals (HubSpot, Salesforce, Pipedrive), orders (Shopify, Stripe, WooCommerce), ads (Google, Meta, LinkedIn), and email (Customer.io, Klaviyo, Mailchimp). For each one not connected, say how to connect it (section 2 of the framework) and offer to continue without it. Pulls are read only and saved as dated snapshots in `raw/performance/`.
 6. **Your own pages (on-brand).** Show what is in `raw/brand/urls.md`. If it has fewer than 5 URLs, ask for 5 to 8 pages that sound like the brand at its best: the homepage, 3 to 5 blog posts, 2 to 3 social posts. Save them there, one per line.
 7. **Pages you'd never want to sound like (off-brand).** Ask for 2 to 5 URLs: old versions of their pages, competitor pages, generic copy in their category. Save them in `raw/brand/off-brand/urls.md`. Exercise 3 uses them; asking now saves a step later.
@@ -40,7 +44,12 @@ Do all of this before step 1, and wait for the answers. Skip it in `example` mod
 Work through Part 1 then Part 2 of the framework, row by row. The Markdown hub and the hub page carry the same sections and rows in the same order, so every cell on the page comes from a cell in the file, and the (inferred) count matches.
 
 - **Customer** starts from the ICP. Do not re-derive the buyer.
-- **Competitive alternatives** include doing nothing, doing it by hand, and hiring someone, not only competitors.
+- **Competitive alternatives** are one of each type: DIY or do nothing, a direct competitor, a different approach. Each limitation names concretely what the buyer loses with that alternative (time, money, risk, trust), not a slogan.
+- **Problems:** one overarching problem and 2 or 3 sub-problems, in plain words. Pillars map one-to-one to the sub-problems, in the same order.
+- **Value proposition:** one sticky sentence that names the differentiator. About the customer's value, never the company's mission.
+- **Capabilities** say what the customer can now do that they couldn't before. Specific enough to picture.
+- **B2C or vitamin products** (from the ICP's business type): lead problems and pillars with the benefit, keep pains where they are real.
+- **Today vs target:** fill it from the strategy answers when the positioning is changing; write the rest of the hub for the target and tag what the evidence doesn't yet support.
 - **Problem in buyer language** and **VOC validation** are verbatim quotes from `raw/voc/` with their source. Never paraphrased.
 - **Proof points** come only from the scraped pages, guides, or `raw/voc/`. None found means blank, and the blank is a finding.
 - **Our solution** has one column per pillar, in the pillar order.
@@ -49,23 +58,27 @@ Work through Part 1 then Part 2 of the framework, row by row. The Markdown hub a
 
 **Evidence check: is it working?** After the hub is filled, fill its "Evidence" section from `raw/performance/`, `raw/voc/research/`, and the ICP. For the owned key message, each pillar, and each landing page: does the data show it converting, and is it converting the ICP's core segment or someone else? Compare each page with the site average over the same dates. Say plainly which messages the evidence supports, which it contradicts, and which it cannot judge (no data, or too little). Never turn a weak signal into a claim.
 
-If the target file's `status` is not `template`, show what would change and ask before replacing anything. Set `status: draft`, `last_updated`, and `sources`. List every (inferred) line under "Open (inferred) tags".
+**Core four gate.** Check the filled hub against the core four in the framework: clarity (category, use case), who it's for, value, advantage over alternatives. Each passes or fails, with the reason. A fail is fixed from the sources or stays flagged; don't move on silently.
+
+Then run the quality rules on the file: compact, no summary layer, the vagueness sweep, the fluff check on example lines.
+
+If the target file's `status` is not `template`, show what would change and ask before replacing anything. Set `status: draft`, `last_updated`, and `sources`. List every tagged line under "Open tags".
 
 ## 3. Build the messaging hub page
 
 Always, in both modes. Render the hub as one self-contained HTML page in the Messaging House layout. Use `frameworks/messaging-hub-example.html` (the Acme Deals hub from the workshop) as the template; with the plugin and no local copy, read `${CLAUDE_PLUGIN_ROOT}/frameworks/messaging-hub-example.html`.
 
-- Keep its structure exactly: the Positioning then Messaging parts, the same rows, the colour code (black section labels, beige row labels, teal anchor lines, teal-tint customer-facing wording, white supporting detail, red title and (inferred) flags), the legend, the visible **(inferred)** tags, striped cells for blanks, the open-tags box and the sources footer, and the light and dark themes.
+- Keep its structure. Where the template and the current `wiki/brand/positioning-messaging.md` differ (templates can lag a release), the `.md` wins: the page carries the same rows as the file, in the same order. Otherwise keep exactly: the Positioning then Messaging parts, the same rows, the colour code (black section labels, beige row labels, teal anchor lines, teal-tint customer-facing wording, white supporting detail, red title and (inferred) flags), the legend, the visible **(inferred)** tags, striped cells for blanks, the open-tags box and the sources footer, and the light and dark themes.
 - Put the evidence check in a note box under the grid, above the open-tags box: one line per message or page, with the number and its source.
 - Replace every cell with this hub's content. Never carry Acme text over. A field with no source is a striped blank cell, not a guess.
 - All three exercise pages share one look, the CXL web styling: Work Sans 900 headings, Lato body, and the teal, red, beige, black and white tokens. Copy the template's `<style>` block unchanged; never restyle a page.
 - **`example` mode:** the template already is the Acme Deals hub. Copy it to `projects/marketing-brain/outputs/example-messaging-hub.html` and update only the date, the status, and the open-tag count in the header; change a cell only where your Markdown hub differs from it, and say which.
-- Title it "Positioning and messaging hub for [Brand]", with status, date, and the count of open (inferred) tags in the header. No em dashes.
+- Title it "Positioning and messaging hub for [Brand]", with status, date, and the count of open tags in the header. No summary block. No em dashes. In `example` mode, put the example banner from the quality rules at the top.
 - The page and the Markdown hub carry the brand's name only: no Lion Words or Diane Wiredu name, logo, link, or credit anywhere in the output. The credit lives in `frameworks/`.
 
-**Check the page against the file before sharing it.** Count the `(inferred)` tags in the Markdown hub and the visible (inferred) badges on the page, and count the blank cells in each. Both pairs must match, and the header's open-tag count must equal the Markdown's. If anything differs, fix the page from the file (the file is the source), then say in one line that the counts match.
+**Check the page against the file before sharing it.** Count the tags ((inferred) and (vague)) in the Markdown hub and the visible tag badges on the page, and count the blank cells in each. Both pairs must match, and the header's open-tag count must equal the Markdown's. If anything differs, fix the page from the file (the file is the source), then say in one line that the counts match.
 
-Then share it: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] Messaging Hub" and give the link. Otherwise give the file path and say to open it in a browser.
+Then share it, following the `share-output` skill: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] Messaging Hub" and give the link. Otherwise give the file path and say to open it in a browser.
 
 ## 4. Feedback prompts
 
@@ -77,9 +90,13 @@ End with the three questions the workshop checks live, each answered honestly fr
 
 Then run the draft through the fluff matrix in `frameworks/brand-voice-guide.md` and name the two lines most in need of a rewrite, with the quadrant each falls in.
 
+Then run the **review and trim** step from the quality rules: list every tagged line and offer cut, correct, or keep for each.
+
+**Optional: battle cards.** Ask once: "Want a battle card for each competitive alternative?" Off unless the user says yes. Build them as the framework's "Optional: battle cards" section says.
+
 Then:
-- The file path and the pages scraped.
-- The number of open (inferred) tags.
+- **Where your files are:** the `.md` (`wiki/brand/positioning-messaging.md`, the one Claude reads) and the page. To change anything, edit the `.md` directly or say what to change in chat. The page updates from it. After hand edits, run `/marketing-brain:sync`.
+- The pages scraped and the number of open tags.
 - **Take home:** test alternatives and differentiators against real sales conversations; add proof, never invent it; connect the tools you skipped and re-run the evidence check.
 - **Next:** `/brand-voice`.
 

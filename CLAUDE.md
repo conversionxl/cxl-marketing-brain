@@ -74,6 +74,7 @@ Claude has no memory between sessions by default. This repo fixes that with plai
 | `/icp-dossier [example]` | Marketing Brain exercise 1. | Builds `wiki/brand/icp.md` and a dossier page from `raw/voc/`. |
 | `/positioning-messaging [example]` | Marketing Brain exercise 2. | Scrapes your pages and fills `wiki/brand/positioning-messaging.md`. |
 | `/brand-voice [example]` | Marketing Brain exercise 3. | Drafts `wiki/brand/voice-guide.md` and `vocabulary.md` from your samples. |
+| `/sync [example]` | After editing brand files by hand. | Brings the `.md` files and their pages back in step. Edits made through Claude sync on their own. |
 
 ---
 
@@ -93,6 +94,7 @@ The brand brain is four files in `wiki/brand/` that Claude reads before it write
 Each command takes `example` to run on Acme Deals, the fictional brand in `raw/voc/example/` and `raw/brand/example/`. Example runs write to `drafts/example-brain/`, never to `wiki/brand/`.
 
 **Rules for the brand brain:**
+- **The `.md` files are the brain.** Read `wiki/brand/*.md`, never the pages in `projects/marketing-brain/outputs/`, which are views of them. After any edit to a brand file, follow the `brand-sync` skill: rebuild the page from the `.md` and check the other brand files. Every brand file passes `frameworks/quality-rules.md`.
 - **The (inferred) rule.** Every line in `wiki/brand/` traces to a scraped page, a file in `raw/brand/`, or a customer quote in `raw/voc/`. Any line that doesn't is tagged **(inferred)**. Metrics, customers, quotes, and case studies are never generated: missing means blank. A file with open tags is not finished.
 - **Customer words stay separate from brand words.** The ICP reads only `raw/voc/`, so the brand's own copy never leaks into "their words". Customer quotes are verbatim, grammar and slang intact.
 - **The paths are a contract.** Later workshops, starting with Campaign Engine, read `wiki/brand/` by these exact file names. Never rename or move them.
