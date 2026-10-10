@@ -53,12 +53,12 @@ Lay the guide out exactly as "The output format" in `frameworks/brand-voice-guid
 Then fill each section:
 
 1. **Our voice in a nutshell.** Short and punchy. The persona line, "[Brand]'s voice personified is a **'[Role] with a [quality]'**", drawn from how the on-brand samples sound: bold and specific to this brand, dialled up, never a generic persona. Then at most two sentences starting "Our copy reads like...". No voice blend.
-2. **Brand voice traits (matrix).** 3 or 4 traits, in a 4-column table: trait, what it means, do, don't. Each trait is a voice quality you can hear (like challenger), never a behaviour ("show the work" belongs in section 4) or a generic word ("human", "friendly"). "What it means" says what the trait changes in vocabulary, cadence or tone; a trait with no visible effect gets cut. Do and Don't are quoted copy lines: Do from a real on-brand sample, Don't from an off-brand sample or a plausible drift of the same line, tagged (inferred).
+2. **Brand voice traits (matrix).** 3 or 4 traits, in a 4-column table: trait, what it means, do, don't. Each trait is a voice quality you can hear (like challenger), never a behaviour ("show the work" belongs in section 4) or a generic word ("human", "friendly"). "What it means" says what the trait changes in vocabulary, cadence or tone; a trait with no visible effect gets cut. Do and Don't are quoted copy lines: Do from a real on-brand sample, Don't from an off-brand sample or a plausible drift of the same line, tagged (inferred). Two or three pairs per trait, one row each, every pair like for like: the same message in the same format (headline for headline, button for button), with a caption under the Don't naming what changed. Real near misses first: an old line and the one that replaced it.
 3. **Tone profile.** Only when the samples cover more than one channel: one row per channel they cover, with the tone, what shifts, and an example. With one channel, keep the heading and the one line the framework gives. No (inferred) rows.
 4. **Writing principles.**
    - **Cadence and sentence length:** measure them from the on-brand samples: average and longest sentence, how paragraphs open, fragments and questions. State the numbers. Rhythm rules, not word caps.
-   - **Always / never:** specific enough to pass or fail a draft.
-   - **This, not that:** 8 to 12 near-miss pairs from real sentences, each naming what changed. "This" is on-brand; "not that" comes from `off-brand/` or is a plausible drift of the same sentence, tagged (inferred). Near misses, never extremes.
+   - **Always / never:** specific enough to pass or fail a draft. Say which assets a rule applies to when it doesn't apply to all.
+   - **This, not that:** one line pointing to the traits matrix. The pairs live there only.
    - **Fluff check:** audit each off-brand sample on the fluff matrix, claim by claim, with the two questions: "How, exactly?" and "Would a buyer say this out loud?" Fill one row per fluff quadrant with a real line and a fix that lands in the fluff-free zone (specific and natural).
 5. **Language and terminology.** The jargon-vs-buzzword rule in one or two lines, then **Phrases to use** (top owned words and allowed jargon) and **Phrases to avoid** (top buzzwords, each with what to write instead) as short tables, then a link to `vocabulary.md` for the full lists. Keep the short lists consistent with step 4.
 6. **Branded language: the [product] / [signature element].** Name both in the heading. **Overview: visual and verbal consistency:** product, feature and method names, owned terms, and the signature element (a mascot, a named concept, a recurring phrase), and how it stays consistent. **Practical application:** where it appears, where it never does, and how to write it. Only what the samples, guides or hub show; blank otherwise.
@@ -73,7 +73,7 @@ Then the **appendix**: the core four check from step 2, **Performance evidence**
 
 ## 5. Write
 
-Every line traces to a sample, a scraped page, a guide, or a customer quote. Anything else is tagged **(inferred)**. Never invent a quote. The output carries the brand's name only: no Lion Words or Diane Wiredu name, logo, link, or credit, in the files or in the summary. The credit lives in `frameworks/`. If a target file's `status` is not `template`, show what would change and ask before replacing anything. Set `status: draft`, `last_updated`, and `sources` on both files, and list every tagged line under "Open tags". Then run the quality rules on both files: compact, no summary layer, the vagueness sweep, the fluff check on example lines.
+Every line traces to a sample, a scraped page, a guide, or a customer quote. Anything else is tagged **(inferred)**. Never invent a quote. The output carries the brand's name only: no Lion Words or Diane Wiredu name, logo, link, or credit, in the files or in the summary. The credit lives in `frameworks/`. If a target file's `status` is not `template`, show what would change and ask before replacing anything. Set `status: draft`, `last_updated`, and `sources` on both files, and list every tagged line under "Open tags". Then run the quality rules on both files: compact, no summary layer, the vagueness sweep, the fluff check on example lines. Then run **the quality gate** (rule 8): Gate 0, then Gate 3 in the framework. Rewrite every blocking fail from the samples; tag what they can't fix (gate) and write a fix chip for it, plus two or three keep chips, into the voice guide's Gate notes table (rule 9). Print the gate table.
 
 ## 6. Build the voice guide page
 
@@ -81,9 +81,10 @@ Always, in both modes. Render the voice guide, with the vocabulary appended belo
 
 - Keep its structure: the title, the BRAND VOICE callout, the linked contents list, the six sections, the appendix, then the vocabulary. Every contents link must land on its heading. Where the template and the current framework differ (templates can lag a release: a voice blend, a traits table with more than four columns), the framework and the `.md` win. The page carries only what the `.md` files hold.
 - All three exercise pages share one look, the CXL web styling: Work Sans 900 headings, Lato body, and the teal, red, beige, black and white tokens. Copy the template's `<style>` block unchanged; never restyle a page.
-- Show every tag ((inferred), (vague)) as the template's red `inferred` chip, with the tag's own word.
+- Show every tag ((inferred), (vague), (gate)) as the template's red `inferred` chip, with the tag's own word.
+- Render every Gate notes row as a feedback chip on its section, trait row or table row, with the template's chip markup and script (quality rules, rule 9), and add the chip counts under the title.
 - No summary block. In `example` mode, put the example banner from the quality rules at the top.
-- **Check the page against the files:** the tag count on the page equals the count in the two `.md` files.
+- **Check the page against the files:** the tag count on the page equals the count in the two `.md` files, and the chips equal the Gate notes rows.
 - When the appendix has performance evidence, render it as a table after the core four check.
 - Write it to `projects/marketing-brain/outputs/voice-guide.html` (own data) or `projects/marketing-brain/outputs/example-voice-guide.html` (`example`).
 
@@ -95,7 +96,7 @@ Answer each honestly from what you wrote:
 - **Does each trait change vocabulary, cadence, or tone?** Name any that don't. Is any trait a behaviour or a generic word?
 - **Is the nutshell short and bold,** or could a competitor use the same persona line?
 - **Jargon kept, buzzwords cut?** Name anything in the wrong list.
-- **Is any this-not-that pair an extreme rather than a near miss?**
+- **Is any Do and Don't pair an extreme rather than a near miss, or two different messages?**
 - **Could a competitor's page pass this guide unchanged?** If yes, the guide is too generic: say where.
 - **Are all four core questions answered in the hub,** clearly and consistently?
 - **Does every fix in the fluff check land in the fluff-free zone,** specific and natural?
@@ -106,7 +107,7 @@ Then run the **review and trim** step from the quality rules: list every tagged 
 Then:
 - **Where your files are:** the two `.md` files (`wiki/brand/voice-guide.md` and `vocabulary.md`, the ones Claude reads) and the page. To change anything, edit a `.md` directly or say what to change in chat. The page updates from it. After hand edits, run `/marketing-brain:sync`.
 - The number of open tags.
-- **Take home:** write your own this-not-that pairs from real sentences, and run your homepage through the fluff matrix.
+- **Take home:** replace any (inferred) Don't line with a real near miss from your own drafts, and run your homepage through the fluff matrix.
 - The brand brain is now in place. The `brand-brain` skill loads it automatically before any customer-facing writing.
 
 ## Last. Connect it to the repo

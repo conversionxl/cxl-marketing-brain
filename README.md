@@ -118,6 +118,8 @@ New versions don't install themselves on a personal marketplace. To update: **Pl
 
 **The rule that runs through all of it:** every line in the brain traces to a source. Anything Claude can't trace is tagged **(inferred)**, and metrics, customers, quotes, and case studies are never made up. A file with open tags isn't finished.
 
+**Every output runs a quality gate before you see it.** Pass/fail questions drawn from expert reviews of the first cohort's demos: is the use case the buyer's job or a description of your service, would the market category show up on G2, does each Do and Don't pair say the same thing two ways. Claude fixes what the sources can fix. What they can't becomes a **feedback chip** on the page: a short red label, with a note on hover or tap that says what is wrong, what to do, and the test to run. A few teal chips mark lines worth copying. Tags tell you a line is unconfirmed; chips tell you what to do about it. The rules are in `frameworks/quality-rules.md` (rules 8 and 9).
+
 **The paths in `wiki/brand/` are fixed.** Later workshops, starting with Campaign Engine, read these exact files. Add to them; don't rename them.
 
 ## Credits

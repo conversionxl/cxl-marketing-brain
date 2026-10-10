@@ -93,6 +93,19 @@
   footer ul { padding-left: 18px; margin: 8px 0; }
   a { color: inherit; }
 </style>
+<style>
+  /* Feedback chips (quality rules, rule 9): a short label, the note on hover, focus or tap. Red outline = fix; teal dot = keep. */
+  .fb { display: inline-flex; align-items: center; gap: 5px; margin: 6px 6px 0 0; padding: 1px 9px 1px 7px; border-radius: 999px;
+        font: 700 11px/1.6 var(--font-head); letter-spacing: .02em; text-transform: none; cursor: help; white-space: nowrap; vertical-align: middle;
+        background: var(--surface, #fff); color: var(--ink); border: 1.5px solid var(--flag, var(--inf-line, #d61f2c)); }
+  .fb::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--flag, var(--inf, #d61f2c)); }
+  .fb.ok { border-color: var(--ink); }
+  .fb.ok::before { background: var(--cxl-teal); box-shadow: 0 0 0 1px var(--ink); }
+  .fb:focus-visible { outline: 3px solid var(--cxl-teal); outline-offset: 2px; }
+  .fb.key { cursor: default; margin: 0; }
+  #fbtip { position: fixed; z-index: 50; max-width: min(320px, calc(100vw - 32px)); padding: 10px 12px; border-radius: 8px;
+           background: var(--ink); color: var(--bg); font: 400 13px/1.45 var(--font-body); box-shadow: 0 6px 24px rgba(0,0,0,.18); pointer-events: none; }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -100,7 +113,7 @@
 <header>
 <p class="kicker mono">Positioning &amp; Messaging Hub · Fictional example</p>
 <h1>Positioning and messaging hub for Acme Deals</h1>
-<p class="meta"><span>Status: <b>draft</b></span><span>Updated: <b>2026-10-07</b></span><span>Open tags: <b>1</b></span><span>Source: <b>drafts/example-brain/positioning-messaging.md</b></span></p>
+<p class="meta"><span>Status: <b>draft</b></span><span>Updated: <b>2026-10-07</b></span><span>Open tags: <b>1</b></span><span>Gate: <b>2 to fix, 2 to keep</b></span><span>Source: <b>drafts/example-brain/positioning-messaging.md</b></span></p>
 </header>
 
 <div class="legend">
@@ -109,6 +122,7 @@
 <span><i class="sw white"></i>Supporting detail and evidence</span>
 <span><span class="inf">inferred</span>No source states this. Open until resolved.</span>
 <span><i class="sw blank"></i>Blank: no source, left empty on purpose</span>
+<span><span class="fb key">Fix</span><span class="fb ok key">Keep</span>Gate feedback: hover or tap for what to do</span>
 </div>
 
 <div class="canvas">
@@ -120,7 +134,7 @@
 <tbody>
 <tr class="part"><td colspan="8" class="mono">Positioning: where we stand</td></tr>
 <tr><th class="sec" rowspan="2" scope="rowgroup">CUSTOMER<small>Who we're for</small></th><th class="rl" scope="row">Target segment</th><td class="lab">Buying champion (persona)</td><td colspan="2">Solo agency owners: the founder or owner of a 1 to 5 person marketing agency or consultancy who is also the whole delivery team. Finds, argues for, and owns the result alone: there is no one else in the decision.<span class="src">icp.md</span></td><td class="lab">Company type(s)</td><td colspan="2"><b>Buy:</b> marketing agencies and independent consultancies of 1 to 5 people, on client retainers (74.0% of revenue).<br><b>Also buy, for different reasons:</b> lone in-house marketers at SaaS and ecommerce companies of 6 to 200 (22.9%).<br><b>Don't buy repeatedly:</b> one-off project buyers and explorers (3.0% combined).<span class="src">icp.md</span></td></tr>
-<tr><th class="rl" scope="row">Use case</th><td class="lab">Primary use case</td><td colspan="2">Add a tool to the agency's stack once and resell it into client retainers. "I buy the tool once, resell it into 8 client retainers, and pocket the difference every month."<span class="src">Jordan Reyes, reviews.md</span></td><td class="lab">Buying context</td><td colspan="2">The trigger is the deal, not a need: "I buy first and find the use case later if the deal is good enough." Nobody else is involved. The one check is whether it will still be in use in 6 months. Deadline pressure: blank, not in the data.<span class="src">Ben Ortiz, reviews.md; Aisha Nelson, reviews.md; Marisol Vega, sales-call-notes.md</span></td></tr>
+<tr><th class="rl" scope="row">Use case</th><td class="lab">Primary use case</td><td colspan="2">Add a tool to the agency's stack once and resell it into client retainers. "I buy the tool once, resell it into 8 client retainers, and pocket the difference every month."<span class="src">Jordan Reyes, reviews.md</span><button type="button" class="fb ok" data-tip="Passes: this is the job the agency owner is trying to get done, in their own words, not a description of what Acme Deals sells. Test: could the buyer say this sentence about their own week?">The buyer&#x27;s job</button></td><td class="lab">Buying context</td><td colspan="2">The trigger is the deal, not a need: "I buy first and find the use case later if the deal is good enough." Nobody else is involved. The one check is whether it will still be in use in 6 months. Deadline pressure: blank, not in the data.<span class="src">Ben Ortiz, reviews.md; Aisha Nelson, reviews.md; Marisol Vega, sales-call-notes.md</span></td></tr>
 <tr class="gap"><td colspan="8"></td></tr>
 <tr><th class="sec" rowspan="2" scope="rowgroup">MARKET<small>Where we compete</small></th><th class="rl" scope="row">Market category</th><td colspan="6">Lifetime deals for agencies.<span class="src">on-brand/ads.md; "lifetime deals" is the customer's own term, Jordan Reyes, reviews.md and sales-call-notes.md</span></td></tr>
 <tr><th class="rl" scope="row">Today vs target</th><td colspan="6" class="blank">Blank. No strategy docs in example mode, so nothing is changing.</td></tr>
@@ -141,10 +155,10 @@
 <tr><th class="rl" scope="row">What it means</th><td colspan="6">The agency pays for a tool one time and charges for it inside every client retainer, every month. The cost is fixed; the income recurs. That gap is the agency's margin, and it grows without a hire.<span class="src">on-brand/ads.md; Jordan Reyes, sales-call-notes.md</span></td></tr>
 <tr><th class="rl" scope="row">VOC validation / reframe messages</th><td colspan="6"><blockquote>"I'm not buying software, I'm buying margin. Every lifetime deal I resell into a retainer pays for itself in a month and prints after that."<span class="src">Jordan Reyes, BrightPath Agency, sales-call-notes.md</span></blockquote><p style="margin:8px 0 0">Reframe: software as margin, not cost.<span class="src">same quote</span></p></td></tr>
 <tr class="gap"><td colspan="8"></td></tr>
-<tr><th class="sec" rowspan="2" scope="rowgroup">VALUE PROPOSITION<small>Value we enable</small></th><th class="rl" scope="row">Internal<small>shorthand</small></th><td colspan="6" class="anchor">Pay once, bill every client monthly: the margin grows, the overhead doesn't.<span class="src">on-brand/ads.md: "Buy once, bill clients monthly", "Overhead stays flat"</span></td></tr>
-<tr><th class="rl" scope="row">Customer-facing</th><td colspan="6" class="facing">Own it once, bill it into retainers, keep the margin.<span class="src">on-brand/ads.md, verbatim</span></td></tr>
+<tr><th class="sec" rowspan="2" scope="rowgroup">VALUE PROPOSITION<small>Value we enable</small></th><th class="rl" scope="row">Internal<small>shorthand</small></th><td colspan="6" class="anchor">Pay once, bill every client monthly: the margin grows, the overhead doesn't.<span class="src">on-brand/ads.md: "Buy once, bill clients monthly", "Overhead stays flat"</span><button type="button" class="fb ok" data-tip="Passes: one breath, names the difference (pay once against paying monthly) and the outcome (margin up, overhead flat). Test: could you say it out loud to a buyer, and could a subscription tool not say it?">Clear and sticky</button></td></tr>
+<tr><th class="rl" scope="row">Customer-facing</th><td colspan="6" class="facing">Own it once, bill it into retainers, keep the margin.<span class="src">on-brand/ads.md, verbatim</span><button type="button" class="fb" data-tip="This line only lands with an owner who already knows they can resell tools to clients. A newer owner needs the problem first (&quot;Every tool bills you monthly. Your clients don&#x27;t.&quot;). Say which awareness level it targets. Test: does the buyer already know they have this problem?">Which buyer is it for?</button></td></tr>
 <tr class="gap"><td colspan="8"></td></tr>
-<tr><th class="sec" rowspan="2" scope="rowgroup">MESSAGING PILLARS</th><th class="rl" scope="row">Value theme</th><td colspan="2" class="anchor">Money</td><td colspan="2" class="anchor">Capability</td><td colspan="2" class="anchor">Status</td></tr>
+<tr><th class="sec" rowspan="2" scope="rowgroup">MESSAGING PILLARS</th><th class="rl" scope="row">Value theme<button type="button" class="fb" data-tip="&quot;Money&quot;, &quot;Capability&quot; and &quot;Status&quot; are true of almost any agency tool. Say how Acme Deals delivers each: &quot;Money: one payment, billed into every retainer&quot;. Test: does each theme say how this brand delivers it?">Theme without the how</button></th><td colspan="2" class="anchor">Money</td><td colspan="2" class="anchor">Capability</td><td colspan="2" class="anchor">Status</td></tr>
 <tr><th class="rl" scope="row">Messaging pillar statement<small>key idea</small></th><td colspan="2" class="anchor">Own it, don't rent it.<span class="src">on-brand/ads.md</span></td><td colspan="2" class="anchor">Resell to every client.<span class="src">on-brand/ads.md</span></td><td colspan="2" class="anchor">Run more clients without hiring.<span class="src">on-brand/ads.md</span></td></tr>
 <tr class="gap"><td colspan="8"></td></tr>
 <tr><th class="sec" rowspan="6" scope="rowgroup">OUR SOLUTION<small>Product / solution</small></th><th class="rl" scope="row">Capability<small>what you can now do</small></th><td colspan="2">Add a tool to the stack with one payment: no seat count, no renewal date.<span class="src">on-brand/ads.md</span></td><td colspan="2">Put the agency's logo on a tool and bill it into every client retainer.<span class="src">on-brand/ads.md; unverified, see Differentiation</span></td><td colspan="2">Take on more client accounts on owned tools, without a first hire.<span class="src">on-brand/ads.md: "Run more clients without hiring"</span></td></tr>
@@ -190,5 +204,30 @@
 <p>Acme Deals is a fictional brand; its data is Nick Christensen's (MIT). Built with /positioning-messaging, CXL AI Native Marketer cohort.</p>
 </footer>
 </div>
+<div id="fbtip" role="tooltip" hidden></div>
+<script>
+(() => {
+  const tip = document.getElementById('fbtip');
+  let pinned = null;
+  function show(el) {
+    tip.textContent = el.dataset.tip; tip.hidden = false;
+    const r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+    let x = Math.min(Math.max(16, r.left), window.innerWidth - w - 16);
+    let y = r.bottom + 8; if (y + h > window.innerHeight - 8) y = r.top - h - 8;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  }
+  function hide() { tip.hidden = true; }
+  document.querySelectorAll('button.fb').forEach(el => {
+    el.setAttribute('aria-label', el.textContent + ': ' + el.dataset.tip);
+    el.addEventListener('mouseenter', () => show(el));
+    el.addEventListener('mouseleave', () => { if (pinned !== el) hide(); });
+    el.addEventListener('focus', () => show(el));
+    el.addEventListener('blur', () => { pinned = null; hide(); });
+    el.addEventListener('click', () => { pinned = pinned === el ? null : el; pinned ? show(el) : hide(); });
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { pinned = null; hide(); } });
+  window.addEventListener('scroll', () => { if (!tip.hidden) { pinned = null; hide(); } }, true);
+})();
+</script>
 </body>
 </html>

@@ -43,12 +43,26 @@
   .vocab-head { font-family: var(--font-head); font-weight: 900; font-size: 1.9rem; margin: 0; }
 </style>
 <style>* { box-sizing: border-box; } body { margin: 0; }</style>
+<style>
+  /* Feedback chips (quality rules, rule 9): a short label, the note on hover, focus or tap. Red outline = fix; teal dot = keep. */
+  .fb { display: inline-flex; align-items: center; gap: 5px; margin: 6px 6px 0 0; padding: 1px 9px 1px 7px; border-radius: 999px;
+        font: 700 11px/1.6 var(--font-head); letter-spacing: .02em; text-transform: none; cursor: help; white-space: nowrap; vertical-align: middle;
+        background: var(--surface, #fff); color: var(--ink); border: 1.5px solid var(--flag, var(--inf-line, #d61f2c)); }
+  .fb::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--flag, var(--inf, #d61f2c)); }
+  .fb.ok { border-color: var(--ink); }
+  .fb.ok::before { background: var(--cxl-teal); box-shadow: 0 0 0 1px var(--ink); }
+  .fb:focus-visible { outline: 3px solid var(--cxl-teal); outline-offset: 2px; }
+  .fb.key { cursor: default; margin: 0; }
+  #fbtip { position: fixed; z-index: 50; max-width: min(320px, calc(100vw - 32px)); padding: 10px 12px; border-radius: 8px;
+           background: var(--ink); color: var(--bg); font: 400 13px/1.45 var(--font-body); box-shadow: 0 6px 24px rgba(0,0,0,.18); pointer-events: none; }
+</style>
 </head>
 <body>
 <main class="doc">
 <p class="banner" role="note">Built from Acme Deals, a fictional brand with dummy data. Your own run will look different, and so will the CXL demo.</p>
 <p class="eyebrow">Acme Deals · fictional example · draft, 2026-10-07</p>
 <h1>Verbal Identity: Brand Voice &amp; Writing Guidelines</h1>
+<p class="src-note" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:-12px 0 20px">Gate: 2 to fix, 2 to keep <span class="fb key">Fix</span><span class="fb ok key">Keep</span> Hover or tap a chip for what to do.</p>
 <blockquote class="callout">
 <p>💡 <strong>BRAND VOICE:</strong> <em>How we communicate our brand personality, values, purpose, and messaging through language and voice.</em> <strong>Use case:</strong> <em>This applies to all the words we publish. Website copy, sales materials, emails, social media, customer comms, etc.</em></p>
 </blockquote>
@@ -70,7 +84,7 @@
 </ol>
 <hr />
 <h2 id="1-our-voice-in-a-nutshell">1. Our voice in a nutshell</h2>
-<p>Acme Deals' voice personified is a <strong>'Fellow Operator with a dealmaker's grin'</strong>.</p>
+<p>Acme Deals' voice personified is a <strong>'Fellow Operator with a dealmaker's grin'</strong>. <button type="button" class="fb ok" data-tip="Passes: a writer can picture who is talking, and a competitor selling to enterprises couldn&#x27;t use the same line. Test: could a competitor use this persona unchanged?">Persona you can picture</button></p>
 <p>Our copy reads like another agency owner showing you the maths on their own stack: money first, in the customer's own words. It never hypes and never talks about itself.</p>
 <h2 id="2-brand-voice-traits-matrix">2. Brand voice traits (matrix)</h2>
 <div class="tbl"><table>
@@ -84,28 +98,64 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Margin-minded</strong></td>
+<td><strong>Margin-minded <button type="button" class="fb ok" data-tip="Passes: the trait changes the words on the page (retainer, margin, one payment), not just the mood. A reader could spot it in any line. Test: does this trait change vocabulary, cadence or tone?">Trait you can hear</button></strong></td>
 <td>Vocabulary: money the agency keeps, named by its mechanism (one payment, retainer, margin), never value or ROI in the abstract.</td>
 <td>"Buy once, bill clients monthly"</td>
-<td>"Cost-effective multi-tool value for modern agencies"</td>
+<td>"Cost-effective multi-tool value for modern agencies"<span class="src-note" style="display:block;margin-top:4px">Vague value made specific, in the customer's words · off-brand #6</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>"Cut overhead, keep the margin"</td>
+<td>"Unlock game-changing margins for your agency"<span class="src-note" style="display:block;margin-top:4px">Hype words out, the mechanism in · off-brand #1</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>"Own your stack instead of renting it back every single month"</td>
+<td>"Set up your whole agency stack in just minutes" <span class="inf">gate</span> <button type="button" class="fb" data-tip="These two lines say different things: one is about owning, the other about speed. AI can&#x27;t learn the voice from a pair that changes the message. Swap the Don&#x27;t for a wrong way of saying &quot;own your stack&quot;, like &quot;Flexible ownership options for your agency stack&quot;. Test: same message, same format, said the right way and the wrong way?">Pair not like for like</button><span class="src-note" style="display:block;margin-top:4px">Speed claim swapped for the money mechanism · off-brand #5</span></td>
 </tr>
 <tr>
 <td><strong>Operator to operator</strong></td>
 <td>Tone: one owner talking to another. Second person, opens on a verb, no brand "we".</td>
-<td>"Stop renting your software"</td>
-<td>"Our revolutionary platform delivers synergy across your entire client portfolio"</td>
+<td>"Built for solo agencies"</td>
+<td>"Acme Deals: the best-in-class software marketplace for agencies"<span class="src-note" style="display:block;margin-top:4px">Opens on the buyer, not the brand; "best-in-class" cut · off-brand #2</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>"One payment, every client"</td>
+<td>"Our revolutionary platform delivers synergy across your entire client portfolio"<span class="src-note" style="display:block;margin-top:4px">No "our", no hype; concrete terms · off-brand #9</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>"Run 10 clients solo"</td>
+<td>"Anyone can run 10 clients solo, no experience needed"<span class="src-note" style="display:block;margin-top:4px">Drops the banned reassurance, keeps the claim · off-brand #4</span></td>
 </tr>
 <tr>
 <td><strong>Plain-spoken</strong></td>
 <td>Cadence and vocabulary: clear over clever. Short lines, one idea each, no buzzwords, even when the facts are right.</td>
 <td>"No seats, no renewals"</td>
-<td>"Leverage our perpetual licensing architecture to eliminate per-seat SaaS overhead across 10+ client accounts"</td>
+<td>"Leverage our perpetual licensing architecture to eliminate per-seat SaaS overhead across 10+ client accounts"<span class="src-note" style="display:block;margin-top:4px">Plain words for the same licensing fact · off-brand #10</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>"Tools you resell for margin"</td>
+<td>"Leverage seamless tools to supercharge client growth"<span class="src-note" style="display:block;margin-top:4px">Blandspeak to specific: says what you do with the tool · off-brand #3</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>"Own your stack instead of renting it back every single month"</td>
+<td>"Own your stack, delight your clients, scale your team, and grow your revenue"<span class="src-note" style="display:block;margin-top:4px">One idea, not four · off-brand #7</span></td>
 </tr>
 </tbody>
 </table></div>
-<p class="src-note">Do lines: on-brand/ads.md. Don't lines: off-brand/ads.md, #6, #9 and #10. Traits from guides/voice-rules.md ("Operator to operator. Direct, sharp, clear over clever.").</p>
+<p class="src-note">Do lines: on-brand/ads.md. Don't lines: off-brand/ads.md, as numbered. Traits from guides/voice-rules.md ("Operator to operator. Direct, sharp, clear over clever."). Every pair is the same message in the same format, the right way and the wrong way.</p>
 <h2 id="3-tone-profile">3. Tone profile</h2>
-<p>Not enough channels in the samples yet. Add samples from another channel and rerun. The only samples are ads.</p>
+<p>Not enough channels in the samples yet. Add samples from another channel and rerun. The only samples are ads. <button type="button" class="fb" data-tip="The voice is calibrated on ads only, so nobody knows yet how it flexes in an email, a landing page or a support reply. Add five on-brand samples from one more channel to raw/brand/on-brand/ and rerun. Test: is a blank fillable from inputs you already have?">Only one channel</button></p>
 <h2 id="4-writing-principles">4. Writing principles</h2>
 <h3 id="cadence-and-sentence-length">Cadence and sentence length</h3>
 <ul>
@@ -129,78 +179,7 @@
 <li>Speed promises with no proof: "in just minutes" (off-brand #5).</li>
 </ul>
 <h3 id="this-not-that">This, not that</h3>
-<div class="tbl"><table>
-<thead>
-<tr>
-<th>This</th>
-<th>Not that</th>
-<th>What changed</th>
-<th>Source</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Cut overhead, keep the margin</td>
-<td>Unlock game-changing margins for your agency</td>
-<td>Vocabulary: hype words out; the mechanism (cut overhead) in</td>
-<td>off-brand #1</td>
-</tr>
-<tr>
-<td>Built for solo agencies</td>
-<td>Acme Deals: the best-in-class software marketplace for agencies</td>
-<td>Opens on the buyer, not the brand; "best-in-class" cut</td>
-<td>off-brand #2</td>
-</tr>
-<tr>
-<td>Tools you resell for margin</td>
-<td>Leverage seamless tools to supercharge client growth</td>
-<td>Corporate blandspeak to specific: says what you do with the tool</td>
-<td>off-brand #3</td>
-</tr>
-<tr>
-<td>Run 10 clients solo</td>
-<td>Anyone can run 10 clients solo, no experience needed</td>
-<td>Tone: drops the banned reassurance, keeps the claim</td>
-<td>off-brand #4</td>
-</tr>
-<tr>
-<td>Own your stack instead of renting it back every single month</td>
-<td>Set up your whole agency stack in just minutes</td>
-<td>Swaps an unproven speed claim for the money mechanism</td>
-<td>off-brand #5</td>
-</tr>
-<tr>
-<td>Buy once, bill clients monthly</td>
-<td>Cost-effective multi-tool value for modern agencies</td>
-<td>Customer words restored; vague value made specific</td>
-<td>off-brand #6</td>
-</tr>
-<tr>
-<td>Own your stack instead of renting it back every single month</td>
-<td>Own your stack, delight your clients, scale your team, and grow your revenue</td>
-<td>Cadence: one idea, not four</td>
-<td>off-brand #7</td>
-</tr>
-<tr>
-<td>The agency cheat code</td>
-<td>The secret formula for explosive agency growth #agencylife</td>
-<td>Vocabulary: the customer's phrase, not marketer hype; hashtag cut</td>
-<td>off-brand #8</td>
-</tr>
-<tr>
-<td>One payment, every client</td>
-<td>Our revolutionary platform delivers synergy across your entire client portfolio</td>
-<td>Tone: no "our", no hype; concrete terms</td>
-<td>off-brand #9</td>
-</tr>
-<tr>
-<td>No seats, no renewals</td>
-<td>Flexible licensing for growing teams</td>
-<td>Specific conditions instead of an adjective (inferred drift)</td>
-<td>on-brand/ads.md <span class="inf">inferred</span></td>
-</tr>
-</tbody>
-</table></div>
+<p>The pairs live in the <a href="#2-brand-voice-traits-matrix">traits matrix</a>, three per trait.</p>
 <h3 id="fluff-check">Fluff check</h3>
 <div class="tbl"><table>
 <thead>
@@ -368,7 +347,7 @@
 </ul>
 <h3 id="open-tags">Open tags</h3>
 <ul>
-<li>This, not that: the "Flexible licensing for growing teams" pair.</li>
+<li>Traits matrix, margin-minded: the "Set up your whole agency stack in just minutes" pair <span class="inf">gate</span>. Its chip says what to do.</li>
 <li>Practical application: where the signature element never appears.</li>
 </ul>
 <hr>
@@ -563,5 +542,30 @@
 <li>None. Every line traces to a source.</li>
 </ul>
 </main>
+<div id="fbtip" role="tooltip" hidden></div>
+<script>
+(() => {
+  const tip = document.getElementById('fbtip');
+  let pinned = null;
+  function show(el) {
+    tip.textContent = el.dataset.tip; tip.hidden = false;
+    const r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+    let x = Math.min(Math.max(16, r.left), window.innerWidth - w - 16);
+    let y = r.bottom + 8; if (y + h > window.innerHeight - 8) y = r.top - h - 8;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  }
+  function hide() { tip.hidden = true; }
+  document.querySelectorAll('button.fb').forEach(el => {
+    el.setAttribute('aria-label', el.textContent + ': ' + el.dataset.tip);
+    el.addEventListener('mouseenter', () => show(el));
+    el.addEventListener('mouseleave', () => { if (pinned !== el) hide(); });
+    el.addEventListener('focus', () => show(el));
+    el.addEventListener('blur', () => { pinned = null; hide(); });
+    el.addEventListener('click', () => { pinned = pinned === el ? null : el; pinned ? show(el) : hide(); });
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { pinned = null; hide(); } });
+  window.addEventListener('scroll', () => { if (!tip.hidden) { pinned = null; hide(); } }, true);
+})();
+</script>
 </body>
 </html>
