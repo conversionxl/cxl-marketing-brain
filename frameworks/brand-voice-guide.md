@@ -1,6 +1,6 @@
 ---
 type: framework
-version: 2
+version: 3
 source: Lion Words, Diane Wiredu
 used_by: /brand-voice, wiki/brand/voice-guide.md
 tags: [marketing-brain, voice]
@@ -97,6 +97,9 @@ Four columns, no more:
 
 - **What it means:** what the trait changes on the page, in vocabulary, cadence or tone.
 - **Do** and **Don't** are quoted copy lines, never statements: `"Most teams reach for a template. Start with your last three lost deals."` not "Challenge common advice". The Do line comes from a real on-brand sample; the Don't is a real off-brand line or a plausible drift of the same sentence, tagged (inferred).
+- **Two or three pairs per trait,** one row each. The trait and what it means sit on the first row; the rows below leave those cells empty. Under each Don't, a short caption names what changed ("plain verb, not an abstract noun").
+- **Every pair is like for like:** the same message, in the same format (headline for headline, button for button, body copy for body copy), said the right way and the plausible wrong way. A headline set against a sub-head, or a line nobody on the team would ever write, teaches AI nothing. The best pairs are real near misses: an old headline and the one that replaced it, a rejected draft and the approved one.
+- **The pairs live here and nowhere else.** No separate "this, not that" list repeats them.
 
 ### 3. Tone profile
 How the voice flexes by context, while staying the same voice. **Fill the table only when the samples cover more than one channel** (for example emails, landing pages and social). With samples from one channel, keep the heading so the numbering and links hold, and put one line under it: "Not enough channels in the samples yet. Add samples from another channel and rerun." One row per context the samples actually cover; no (inferred) rows.
@@ -106,8 +109,8 @@ How the voice flexes by context, while staying the same voice. **Fill the table 
 
 ### 4. Writing principles
 - **Cadence and sentence length:** measured from real samples: average and longest sentence, how paragraphs open, fragments and questions. Rules about rhythm, not word caps: use as many words as necessary, but not one more.
-- **Always / never:** specific enough to pass or fail a draft.
-- **This, not that:** 8 to 12 near-miss pairs from real sentences. Nuance, not extremes: "We cut your reporting time" vs "We streamline your reporting workflow", not vs "Synergize your paradigm". Each pair names what changed: the pillar, or the fluff quadrant.
+- **Always / never:** specific enough to pass or fail a draft. When a rule applies to some assets only, say which: "a TL;DR on posts over 800 words" is a blog rule, not an ad rule.
+- **This, not that:** lives in the traits matrix (section 2), two or three pairs per trait. Nuance, not extremes: "We cut your reporting time" vs "We streamline your reporting workflow", not vs "Synergize your paradigm". Don't repeat the pairs here.
 - **Fluff check:** the fluff matrix below, with one real off-brand line per fluff quadrant, its fix, and the fluff-free target.
 
 ### 5. Language and terminology
@@ -126,6 +129,21 @@ Name the product and the signature element in the heading itself, for example "t
 - **Core four check:** can a prospect answer each of the four from the hub? Answered, and where.
 - **Proof: before and after.** One off-brand sample rewritten using only this guide and the vocabulary, and what changed.
 - **Sources** and **open (inferred) tags.**
+
+## Quality gate: the voice guide (Gate 3)
+
+Runs after Gate 0 in `frameworks/quality-rules.md` (rule 8). A fail on a blocking check is rewritten from the samples; if they can't fix it, the line is tagged (gate) and gets a fix chip that says what to do (rule 9).
+
+| Check | Question | Type |
+|---|---|---|
+| V.1 Like for like | For every Do and Don't pair: same message, same format, and a wrong version someone on the team might actually write? | Blocking |
+| V.2 Copy, not instruction | Is every Do and Don't a quoted copy line, not an instruction? | Blocking |
+| V.3 Trait count | Three or four traits, each a quality you can hear, labelled in plain words? | Blocking |
+| V.4 No duplicates | Does any pair appear twice in the guide? | Blocking |
+| V.5 Tone shows | Does every trait and tone the guide names appear in at least one example line? | Blocking |
+| V.6 Nutshell | Could a writer picture the persona, and could a competitor not use the same line? | Flag |
+| V.7 Scoped rules | Does each writing principle say which assets it applies to, when it doesn't apply to all? | Flag |
+| V.8 Vocabulary | Is each owned term factual, and actually used by the brand? | Flag |
 
 ## The fluff matrix
 

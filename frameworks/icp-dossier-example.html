@@ -58,6 +58,19 @@
   .blank { color: var(--muted); font-style: italic; }
   .tag { display: inline-block; border-radius: 999px; padding: 0 8px; font-size: .7rem; font-weight: 700; background: var(--flag); color: var(--cxl-white); vertical-align: middle; }
 </style>
+<style>
+  /* Feedback chips (quality rules, rule 9): a short label, the note on hover, focus or tap. Red outline = fix; teal dot = keep. */
+  .fb { display: inline-flex; align-items: center; gap: 5px; margin: 6px 6px 0 0; padding: 1px 9px 1px 7px; border-radius: 999px;
+        font: 700 11px/1.6 var(--font-head); letter-spacing: .02em; text-transform: none; cursor: help; white-space: nowrap; vertical-align: middle;
+        background: var(--surface, #fff); color: var(--ink); border: 1.5px solid var(--flag, var(--inf-line, #d61f2c)); }
+  .fb::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--flag, var(--inf, #d61f2c)); }
+  .fb.ok { border-color: var(--ink); }
+  .fb.ok::before { background: var(--cxl-teal); box-shadow: 0 0 0 1px var(--ink); }
+  .fb:focus-visible { outline: 3px solid var(--cxl-teal); outline-offset: 2px; }
+  .fb.key { cursor: default; margin: 0; }
+  #fbtip { position: fixed; z-index: 50; max-width: min(320px, calc(100vw - 32px)); padding: 10px 12px; border-radius: 8px;
+           background: var(--ink); color: var(--bg); font: 400 13px/1.45 var(--font-body); box-shadow: 0 6px 24px rgba(0,0,0,.18); pointer-events: none; }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -66,20 +79,21 @@
 <header>
 <p class="eyebrow">ICP dossier · fictional example</p>
 <h1>Solo agency owners</h1>
-<p class="meta">Acme Deals · Stage: validated · B2B · Status: draft · Updated 2026-10-07 · Open tags: 0 · Built from raw/voc/example/ only</p>
+<p class="meta">Acme Deals · Stage: validated · B2B · Status: draft · Updated 2026-10-07 · Open tags: 1 · Gate: 2 to fix, 2 to keep · Built from raw/voc/example/ only</p>
+<p class="meta" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span class="fb key">Fix</span><span class="fb ok key">Keep</span> Hover or tap a chip for what to do.</p>
 </header>
 
 <section class="card avatar" aria-labelledby="now">
 <h2 id="now">Who buys now</h2>
 <dl>
 <dt>Industry, company type and size</dt><dd>Marketing agencies and consultancies, 1 to 5 people</dd>
-<dt>Buying champion</dt><dd>The founder or owner, who is also the delivery team: Founder, Owner / Operator, Managing Director, Freelance Consultant</dd>
+<dt>Buying champion</dt><dd>The founder or owner, who is also the delivery team: Founder, Owner / Operator, Managing Director, Freelance Consultant <button type="button" class="fb ok" data-tip="Passes: names the titles that show up on the order and the call, so ads and outreach can target them. Test: could you pick this person out of a list of job titles?">Roles you can find</button></dd>
 <dt>What they buy</dt><dd>One-time lifetime deals, 2 or 3 a month for years, resold into client retainers</dd>
 <dt>Where they find you</dt><dd class="blank">Blank: no channel data</dd>
 <dt>Where they spend time</dt><dd class="blank">Blank: no data</dd>
 <dt>Pains</dt><dd>Overhead, the first hire, monthly bills, per-seat licences when every client runs under one login</dd>
 <dt>Objections and hesitations</dt><dd>Whether they will still use it in 6 months; whether one purchase covers every client account; whether they can rebrand and resell it</dd>
-<dt>Triggers and key dates</dt><dd>A one-time price on a tool they can resell; they decide fast. Key dates: blank</dd>
+<dt>Triggers and key dates</dt><dd>A one-time price on a tool they can resell; they decide fast. Key dates: blank <span class="tag">gate</span> <button type="button" class="fb" data-tip="Says what sets them off but not what it makes them ask or do next. Add it from the calls: &quot;a one-time price, so they check whether one licence covers every client account, then buy the same day&quot;. Test: does each trigger say the question it raises and what the buyer does next?">Trigger without impact</button></dd>
 </dl>
 </section>
 
@@ -91,7 +105,7 @@
 </section>
 
 <section aria-labelledby="words">
-<h2 id="words">Their words</h2>
+<h2 id="words">Their words <button type="button" class="fb ok" data-tip="Passes: every quote is word for word, slang and all, with the file it came from. Copy built on these sounds like the buyer, not like marketing. Test: would the customer recognise their own sentence?">Verbatim, with sources</button></h2>
 <div class="quotes">
 <figure class="card quote" style="margin:0"><p>"I'm not buying software, I'm buying margin. Every lifetime deal I resell into a retainer pays for itself in a month and prints after that."</p><cite>Jordan Reyes, BrightPath Agency · sales-call-notes.md</cite></figure>
 <figure class="card quote" style="margin:0"><p>"The day I have to hire is the day my margin dies."</p><cite>Jordan Reyes, BrightPath Agency · sales-call-notes.md</cite></figure>
@@ -122,7 +136,7 @@
 </section>
 
 <section class="card" aria-labelledby="neg">
-<h2 id="neg">Negative ICP</h2>
+<h2 id="neg">Negative ICP <button type="button" class="fb" data-tip="Mixes signs you can see before they buy (coaches, students, bought on price) with signs you only see after (1.2 orders each). Split them: screen out the first in targeting, watch for the second in retention. Test: is the negative ICP split into before and after?">Before or after?</button></h2>
 <p><b>One-off buyers and explorers</b> (8 customers): coaches, designers, students and early founders. 3.0% of revenue, 1.2 orders each, bought on price: "Grabbed it because it was cheap, haven't really dug in yet." Copy should not speak to them.</p>
 </section>
 
@@ -135,5 +149,30 @@
 <p>Blank, not guessed: where they find you, where they spend time, key dates, company revenue. Acme Deals is fictional; its data is Nick Christensen's (MIT).</p>
 </footer>
 </div>
+<div id="fbtip" role="tooltip" hidden></div>
+<script>
+(() => {
+  const tip = document.getElementById('fbtip');
+  let pinned = null;
+  function show(el) {
+    tip.textContent = el.dataset.tip; tip.hidden = false;
+    const r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+    let x = Math.min(Math.max(16, r.left), window.innerWidth - w - 16);
+    let y = r.bottom + 8; if (y + h > window.innerHeight - 8) y = r.top - h - 8;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  }
+  function hide() { tip.hidden = true; }
+  document.querySelectorAll('button.fb').forEach(el => {
+    el.setAttribute('aria-label', el.textContent + ': ' + el.dataset.tip);
+    el.addEventListener('mouseenter', () => show(el));
+    el.addEventListener('mouseleave', () => { if (pinned !== el) hide(); });
+    el.addEventListener('focus', () => show(el));
+    el.addEventListener('blur', () => { pinned = null; hide(); });
+    el.addEventListener('click', () => { pinned = pinned === el ? null : el; pinned ? show(el) : hide(); });
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { pinned = null; hide(); } });
+  window.addEventListener('scroll', () => { if (!tip.hidden) { pinned = null; hide(); } }, true);
+})();
+</script>
 </body>
 </html>

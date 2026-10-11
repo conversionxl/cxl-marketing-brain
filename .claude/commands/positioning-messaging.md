@@ -60,7 +60,7 @@ Work through Part 1 then Part 2 of the framework, row by row. The Markdown hub a
 
 **Core four gate.** Check the filled hub against the core four in the framework: clarity (category, use case), who it's for, value, advantage over alternatives. Each passes or fails, with the reason. A fail is fixed from the sources or stays flagged; don't move on silently.
 
-Then run the quality rules on the file: compact, no summary layer, the vagueness sweep, the fluff check on example lines.
+Then run the quality rules on the file: compact, no summary layer, the vagueness sweep, the fluff check on example lines. Then run **the quality gate** (rule 8): Gate 0, then Gate 2 at the end of the framework. Rewrite every blocking fail from the sources; tag what they can't fix (gate) and write a fix chip for it, plus two or three keep chips, into the file's Gate notes table (rule 9). Print the gate table.
 
 If the target file's `status` is not `template`, show what would change and ask before replacing anything. Set `status: draft`, `last_updated`, and `sources`. List every tagged line under "Open tags".
 
@@ -69,6 +69,7 @@ If the target file's `status` is not `template`, show what would change and ask 
 Always, in both modes. Render the hub as one self-contained HTML page in the Messaging House layout. Use `frameworks/messaging-hub-example.html` (the Acme Deals hub from the workshop) as the template; with the plugin and no local copy, read `${CLAUDE_PLUGIN_ROOT}/frameworks/messaging-hub-example.html`.
 
 - Keep its structure. Where the template and the current `wiki/brand/positioning-messaging.md` differ (templates can lag a release), the `.md` wins: the page carries the same rows as the file, in the same order. Otherwise keep exactly: the Positioning then Messaging parts, the same rows, the colour code (black section labels, beige row labels, teal anchor lines, teal-tint customer-facing wording, white supporting detail, red title and (inferred) flags), the legend, the visible **(inferred)** tags, striped cells for blanks, the open-tags box and the sources footer, and the light and dark themes.
+- Render every Gate notes row as a feedback chip on its cell or row label, with the template's chip markup and script (quality rules, rule 9): red for fix, teal for keep. Add the chip counts to the header and the chips to the legend.
 - Put the evidence check in a note box under the grid, above the open-tags box: one line per message or page, with the number and its source.
 - Replace every cell with this hub's content. Never carry Acme text over. A field with no source is a striped blank cell, not a guess.
 - All three exercise pages share one look, the CXL web styling: Work Sans 900 headings, Lato body, and the teal, red, beige, black and white tokens. Copy the template's `<style>` block unchanged; never restyle a page.
@@ -76,7 +77,7 @@ Always, in both modes. Render the hub as one self-contained HTML page in the Mes
 - Title it "Positioning and messaging hub for [Brand]", with status, date, and the count of open tags in the header. No summary block. No em dashes. In `example` mode, put the example banner from the quality rules at the top.
 - The page and the Markdown hub carry the brand's name only: no Lion Words or Diane Wiredu name, logo, link, or credit anywhere in the output. The credit lives in `frameworks/`.
 
-**Check the page against the file before sharing it.** Count the tags ((inferred) and (vague)) in the Markdown hub and the visible tag badges on the page, and count the blank cells in each. Both pairs must match, and the header's open-tag count must equal the Markdown's. If anything differs, fix the page from the file (the file is the source), then say in one line that the counts match.
+**Check the page against the file before sharing it.** Count the tags ((inferred), (vague) and (gate)) in the Markdown hub and the visible tag badges on the page, count the blank cells in each, and count the Gate notes rows against the chips. All three pairs must match, and the header's open-tag count must equal the Markdown's. If anything differs, fix the page from the file (the file is the source), then say in one line that the counts match.
 
 Then share it, following the `share-output` skill: if this session can publish an Artifact (claude.ai, Cowork, or Claude Code with the Artifact tool), publish the page as a private artifact titled "[Brand] Messaging Hub" and give the link. Otherwise give the file path and say to open it in a browser.
 
@@ -90,7 +91,7 @@ End with the three questions the workshop checks live, each answered honestly fr
 
 Then run the draft through the fluff matrix in `frameworks/brand-voice-guide.md` and name the two lines most in need of a rewrite, with the quadrant each falls in.
 
-Then run the **review and trim** step from the quality rules: list every tagged line and offer cut, correct, or keep for each.
+Then run the **review and trim** step from the quality rules: list every tagged line and offer cut, correct, or keep for each. For every fix chip, say what it asks for in one line, so the owner knows where to start.
 
 **Optional: battle cards.** Ask once: "Want a battle card for each competitive alternative?" Off unless the user says yes. Build them as the framework's "Optional: battle cards" section says.
 

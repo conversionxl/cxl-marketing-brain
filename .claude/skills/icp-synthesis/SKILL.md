@@ -43,12 +43,15 @@ Every ICP, at every stage, answers these. Anything beyond them is either in the 
 - **What they buy:** the product, plan or service, and how often
 - **Where they find you:** the channel or source
 - **Where they spend time:** the communities, publications, events and platforms they use. This guides the first channel bets.
-- **Pains**, **objections** and **hesitations**, in their words where you have them
-- **Triggers and key dates:** what makes them go looking, and when (budget cycles, renewals, seasons, deadlines)
+- **Pains**, **objections** and **hesitations**, in their words where you have them. Carry the objections forward: the hub's differentiation has to answer at least one
+- **Triggers and key dates:** what makes them go looking, and when (budget cycles, renewals, seasons, deadlines). For each trigger, say what it makes the buyer ask and do next: "a regulation audit" stops short, "a regulation audit, so the CTO needs proof the code is secure before the review" doesn't
+- **Desires and pains for every segment,** not only firmographics. The thinnest segment gets the same depth as the avatar, or a line saying what data would fill it
 
 **B2C:** replace the buying champion and department with the buyer and the buying occasion (who buys, for whom, when). Drop buying-committee objections; keep the personal ones. **Services** (agencies, consultancies) use the B2B fields.
 
-**Jobs to be done:** optional. Add a short section only when interviews or VOC show the jobs in the buyer's words. Never write jobs from inference alone.
+**Jobs to be done:** required when interviews or VOC show the jobs in the buyer's words; left out otherwise. Never write jobs from inference alone. Each job is one line ("When..., I want to..., so I can...") with the quote behind it.
+
+**Negative ICP:** split it in two. **Screen out before buying:** signs you can see up front (company type, budget, channel). **Shows up after:** signs that a customer was a bad fit, seen in refunds, churn or support. Both are useful; only the first one targets.
 
 ## Step 0: Strategy first, then live data
 
@@ -126,6 +129,18 @@ Check the synthesized avatar against real sales calls. Does the person on the ca
 ## Step 7: Compile into the brand brain
 
 Write the result to `wiki/brand/icp.md`, following its template. Every later exercise and workshop reads that file, so the synthesis compounds instead of living in one chat.
+
+## Quality gate: the ICP (Gate 1)
+
+Runs after Gate 0 in `frameworks/quality-rules.md` (rule 8). A fail on a blocking check is fixed from the data; if it can't be, the line is tagged (gate) and gets a fix chip that says what to do (rule 9).
+
+| Check | Question | Type |
+|---|---|---|
+| I.1 Psychographics | Does every segment, including the thinnest, have desires and pains, not only firmographics? | Blocking |
+| I.2 Trigger impact | Does every trigger say the question it raises and what the buyer does next? | Blocking |
+| I.3 Objections carried | Are objections and hesitations filled, and does at least one show up in the hub's differentiation? (Check once the hub exists.) | Blocking |
+| I.4 Before vs after | Is the negative ICP split into signs to screen out before buying and signs that show up after? | Flag |
+| I.5 Jobs | When VOC shows the jobs, is there a jobs section in the buyer's words? | Flag |
 
 ## Output
 
