@@ -13,7 +13,7 @@ This repository is two different things, and you use **one of them per folder**:
 | | The **marketing-brain** plugin (recommended) | The starter repo |
 |---|---|---|
 | What it is | The Marketing Brain commands and skills, installed into Claude | The personal OS with the Marketing Brain built in, as a folder of files |
-| How you get it | Install it from **Customize** in Claude (below). **Don't download or clone this repository** | **Use this template** to make your own private copy (see [Set up](#set-up-10-minutes)) |
+| How you get it | Install it from **Settings → Plugins** in Claude (below). **Don't download or clone this repository** | **Use this template** to make your own private copy (see [Set up](#set-up-10-minutes)) |
 | Your work lives in | A folder of your own, where you run `/marketing-brain:setup` | Your copy of the repo |
 | Needs | Claude (desktop app, Cowork, VS Code or terminal) | Claude Code in VS Code or a terminal |
 
@@ -25,12 +25,12 @@ Already set up the personal OS repo and want to keep your logs and projects? Ski
 
 Works in any folder. For daily logs, memory and the personal OS commands, also set up the **personal-os** plugin with `/personal-os:setup` (see [its README](https://github.com/conversionxl/cxl-personal-os-plugins)). It is recommended, not required.
 
-1. In Claude (claude.ai or the desktop app), open **Customize**, then **Browse plugins**, **Personal**, **+**, **Add marketplace from GitHub**. Enter `https://github.com/conversionxl/cxl-marketing-brain` with **Sync automatically** on, then add **marketing-brain**. This is its own marketplace, separate from the one you added for personal-os.
+1. In Claude (claude.ai or the desktop app), open **Settings → Plugins**, click **Add → Add marketplace**, and choose the GitHub repo option. Enter `conversionxl/cxl-marketing-brain`, then add **Marketing brain**. It then shows under **From marketplaces you added**. This is its own marketplace, separate from the one you added for personal-os.
 2. Open your personal OS folder (or any folder for this project) in Cowork, or in the desktop app's Code tab with Environment: Local, and type `/marketing-brain:setup`.
 
 The plugin is saved to your claude.ai account and Claude syncs it to chat, Cowork, the desktop app, VS Code and the terminal. You install it once, and you never download this repository for it.
 
-**Only if you can't use Customize:** in the Claude chat in VS Code or a terminal (start `claude` first), type `/plugin marketplace add conversionxl/cxl-marketing-brain`, then `/plugin install marketing-brain@cxl-marketing-brain`. This makes a second, local copy on this computer only. Never use it as well as the Customize route.
+**Only if you can't use Settings → Plugins:** in the Claude chat in VS Code or a terminal (start `claude` first), type `/plugin marketplace add conversionxl/cxl-marketing-brain`, then `/plugin install marketing-brain@cxl-marketing-brain`. This makes a second, local copy on this computer only. Never use it as well as the Settings → Plugins route.
 
 **Not using Claude?** Use the starter repo instead of the plugin: download this repository (**Code → Download ZIP**), unzip it, open the folder in any editor with an AI chat (VS Code, Cursor, Antigravity), and ask in plain words: "Run the setup command from `plugin/setup.md`", then "Run the ICP dossier command from `.claude/commands/icp-dossier.md`", and so on. Nothing gets uploaded to claude.ai; the files stay in the folder.
 
@@ -42,12 +42,12 @@ Setup adds `raw/voc/`, `raw/brand/`, `wiki/brand/`, the frameworks, the project 
 
 | Copy | How it got there | Listed in `/plugin` as |
 |---|---|---|
-| **Synced** (the one to keep) | Added in **Customize** on claude.ai or the desktop app | `marketing-brain@synced` |
+| **Synced** (the one to keep) | Added in **Settings → Plugins** on claude.ai or the desktop app | `marketing-brain@synced` |
 | **Local** | Typed `/plugin marketplace add` and `/plugin install` in a terminal or VS Code | `marketing-brain@cxl-marketing-brain` |
 
 - **Every `/marketing-brain:` command listed twice?** You have both. Keep the synced copy. Ask Claude: *"Remove the local copy of the marketing-brain plugin and its cxl-marketing-brain marketplace. Keep the synced one."* Then fully quit and reopen Claude. (By hand: `/plugin uninstall marketing-brain@cxl-marketing-brain`, then `/plugin marketplace remove cxl-marketing-brain`.)
 - **Commands listed both as `/icp-dossier` and `/marketing-brain:icp-dossier`?** You opened a copy of this repository and installed the plugin too. Pick one: either work in your own folder with the plugin, or in your copy of the starter repo without it.
-- **Not showing up after you added it?** After **Sync**, the plugin isn't added until you click **Add** in the menu that opens. This step is easy to miss. In VS Code or the terminal, the sync can take a few minutes: fully quit and reopen. Don't fix it by adding the local copy: that's how you end up with two.
+- **Not showing up after you added it?** After you add the marketplace, the plugin isn't installed until you click **Add** next to it. This step is easy to miss. In VS Code or the terminal, the sync can take a few minutes: fully quit and reopen. Don't fix it by adding the local copy: that's how you end up with two.
 
 
 ## Set up (10 minutes)
@@ -115,7 +115,7 @@ https://github.com/conversionxl/cxl-marketing-brain. Show me the plan before cha
 
 ## Updating
 
-New versions don't install themselves on a personal marketplace. To update: **Plugins → Add → Manage marketplaces → ⋮** next to the marketplace → **Check for updates**. Your folder, logs and projects are untouched. (Automatic sync needs the Claude GitHub App to have access to the repo; that is not set up.)
+New versions don't install themselves on a personal marketplace. To update: **Settings → Plugins → Add → Manage marketplaces → ⋮** next to the marketplace → **Check for updates**. Your folder, logs and projects are untouched. (Automatic sync needs the Claude GitHub App to have access to the repo; that is not set up.)
 
 ## The Marketing Brain
 
