@@ -1,6 +1,6 @@
 ---
 type: framework
-version: 3
+version: 4
 source: Lion Words, Diane Wiredu
 used_by: /brand-voice, wiki/brand/voice-guide.md
 tags: [marketing-brain, voice]
@@ -8,7 +8,7 @@ tags: [marketing-brain, voice]
 
 # Brand voice guide
 
-> **Credit:** Diane Wiredu, [Lion Words](https://www.lionwords.com/). Her verbal identity guide structure and her approach to voice, taught in the CXL AI Native Marketer cohort, Marketing Brain workshop. The credit lives here, in the framework. The guide this produces carries the brand's name only: no Lion Words or Diane Wiredu name, logo, link or credit in any output.
+> **Credit:** Diane Wiredu, [Lion Words](https://www.lionwords.com/). Her verbal identity guide structure and her approach to voice, taught in the CXL AI Native Marketer cohort, Marketing Brain workshop. The credit lives here, in the framework. The voice guide page this produces credits her in one footer byline, linked to her [LinkedIn](https://www.linkedin.com/in/dianewiredu/); the Markdown guide and vocabulary carry the brand's name only.
 
 **Brand** is your business's personality. **Brand voice** is how you communicate that personality through language, in every word you publish: website copy, sales materials, emails, social media, customer comms. Done well, it works like meeting someone you click with: instant connection, and you can't quite say why.
 
