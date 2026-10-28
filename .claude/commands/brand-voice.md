@@ -119,3 +119,4 @@ Before the final summary, make sure this repository treats the brand brain as it
 2. **AGENTS.md**, if the repo has one, has the same line, so Codex, Copilot, Cursor and other tools follow it too. Add it if not.
 3. **Other voice or brand docs in the repo** (for example a `tone-of-voice.md`, a `brand/` folder, or a style section in `CLAUDE.md`): list them, say they now overlap with `wiki/brand/`, and ask whether to point them at `wiki/brand/` or leave them. Change nothing without a yes.
 4. Say in one line what now points at the file you just wrote.
+5. **Say what is next**, in one line. With the plugin: "Next: type `/marketing-brain:setup` to check your voice guide, test the brain on real copy, and see what comes after." Without it: "Your brain is complete: ask me to write one customer-facing piece from it to test it." If `/marketing-brain:setup` started this run, go back to its checkpoint instead.

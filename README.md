@@ -26,7 +26,7 @@ Already set up the personal OS repo and want to keep your logs and projects? Ski
 Works in any folder. For daily logs, memory and the personal OS commands, also set up the **personal-os** plugin with `/personal-os:setup` (see [its README](https://github.com/conversionxl/cxl-personal-os-plugins)). It is recommended, not required.
 
 1. In Claude (claude.ai or the desktop app), open **Settings → Plugins**, click **Add → Add marketplace**, and choose the GitHub repo option. Enter `conversionxl/cxl-marketing-brain`, then add **Marketing brain**. It then shows under **From marketplaces you added**. This is its own marketplace, separate from the one you added for personal-os.
-2. Open your personal OS folder (or any folder for this project) in Cowork, or in the desktop app's Code tab with Environment: Local, and type `/marketing-brain:setup`.
+2. Open your personal OS folder in Cowork, or in the desktop app's Code tab with Environment: Local, and type `/marketing-brain:setup`. Use the same folder for every module. Setup then coaches you through the three exercises, on the Acme example, a public brand, or your own data. Type it again any time: it picks up where you left off.
 
 The plugin is saved to your claude.ai account and Claude syncs it to chat, Cowork, the desktop app, VS Code and the terminal. You install it once, and you never download this repository for it.
 
