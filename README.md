@@ -144,7 +144,9 @@ New versions don't install themselves on a personal marketplace. To update: **Se
 ## Credits
 
 - **ICP workflow and the Acme Deals example data:** Nick Christensen, [ship-icp-ads-automate-monitoring](https://github.com/nickyc1/ship-icp-ads-automate-monitoring), MIT license (copy in `raw/voc/example/LICENSE`). The method: [Find your rich avatar](https://www.nickbuilds.ai/blog/find-your-rich-avatar-matt-appsumo).
-- **Positioning and messaging hub, brand voice approach, fluff matrix:** Diane Wiredu, [Lion Words](https://www.lionwords.com/).
+- **Positioning and messaging hub, brand voice approach, fluff matrix:** Diane Wiredu, [Lion Words](https://www.lionwords.com/) ([LinkedIn](https://www.linkedin.com/in/dianewiredu/)). CXL's hub and voice guide templates are built on top of her spreadsheet and docs, and the hub and voice guide pages credit her in a footer byline.
+
+**Already have your own ICP, messaging or voice doc?** Each exercise asks first whether to use CXL's template or yours. Choose yours and Claude files it as is, checks it against your sources, and flags what our template would have added, so you don't do the work twice.
 - **Personal OS:** [conversionxl/cxl-personal-os](https://github.com/conversionxl/cxl-personal-os).
 
 ## What's inside

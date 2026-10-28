@@ -27,6 +27,7 @@ Add the Marketing Brain module to the personal OS in this folder, then coach the
 4. **Long sessions.** Each exercise reads a lot. If this session has already run an exercise, offer to carry on here or to start a new chat in this folder and type `/marketing-brain:setup`, which picks up at the next step. Recommend the new chat after two exercises.
 5. **"Don't know" and "skip" are fine answers.** Missing inputs become (inferred) lines, which is how the method is meant to work.
 6. Plain words, short messages, no em dashes.
+7. **Our template or theirs.** Before each exercise, say which template it uses: the ICP dossier is CXL's, built on Nick Christensen's method; the positioning and messaging hub and the voice guide are CXL's, built on top of Diane Wiredu's (Lion Words) spreadsheet and docs. Say they are free to use their own if they already have one, so they don't do the work twice. The exercise asks the question itself (step 0, "Template: ours or yours"); don't ask it twice. In example mode, always use ours.
 
 ### Where they are
 

@@ -1,6 +1,6 @@
 ---
 type: framework
-version: 3
+version: 4
 source: Lion Words, Diane Wiredu
 used_by: /positioning-messaging, wiki/brand/positioning-messaging.md
 tags: [marketing-brain, positioning, messaging]
@@ -8,7 +8,7 @@ tags: [marketing-brain, positioning, messaging]
 
 # Positioning and messaging hub
 
-> **Credit:** Diane Wiredu, [Lion Words](https://www.lionwords.com/). This is her Lite Positioning & Messaging Hub, with three items added from her Messaging House template: the owned key message (OKM), customer words, and the differentiation snapshot. Taught in the CXL AI Native Marketer cohort, Marketing Brain workshop. The credit lives here, in the framework. The hub and the hub page this produces carry the brand's name only: no Lion Words or Diane Wiredu name, logo, link or credit in any output.
+> **Credit:** Diane Wiredu, [Lion Words](https://www.lionwords.com/). This is her Lite Positioning & Messaging Hub, with three items added from her Messaging House template: the owned key message (OKM), customer words, and the differentiation snapshot. Taught in the CXL AI Native Marketer cohort, Marketing Brain workshop. The credit lives here, in the framework. The hub page this produces credits her in one footer byline, linked to her [LinkedIn](https://www.linkedin.com/in/dianewiredu/); the Markdown hub carries the brand's name only.
 
 The hub is the single page every other piece of copy draws from. Part 1 decides where you stand. Part 2 decides what you say about it. Exercise 2 fills it into [[wiki/brand/positioning-messaging|positioning-messaging]].
 
