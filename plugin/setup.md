@@ -115,7 +115,7 @@ Then: **"Ready for your brand voice?"** On a yes, run the brand voice exercise.
 - Every "this, not that" pair is the same kind of copy (headline for headline) with the same message, and the wrong version is one someone on the team might actually write.
 - Could a competitor's page pass this guide unchanged? Could a new hire write in this voice from the guide alone?
 
-**Tell me when:** "voice done".
+**Tell me when:** "voice done". Then step E, the close-out.
 
 ### After every step
 
@@ -124,11 +124,19 @@ Say these once, the first time, in three lines:
 - Keep the file names in `wiki/brand/` as they are: the Campaign Engine reads these exact files.
 - A file with open (inferred) tags is not finished. The red chips on the pages say what to fix.
 
-### Step E: test it and share it
+### Step E: close out
 
-1. **Test it on real copy.** Ask them to name one customer-facing piece (a LinkedIn post, a landing page section) and write it from the brain. Check it with "How, exactly?" and "Would a buyer say this out loud?" Where a line fails, fix the brain (add a source or a customer quote), not only the draft.
-2. **Sharing for review:** share the page link or the full HTML page, never a cropped screenshot. A brand that isn't in English: offer an English copy of the pages for reviewers. Use `share-output` for the link.
-3. **Done for the workshop:** all three files exist and the (inferred) list has been reviewed. Say so plainly, and that more customer data later moves the ICP up a stage.
-4. **Next module:** if `/campaign-engine:setup` is available in this session, offer to start it now (in a new chat after a long session). If it isn't, say the Campaign Engine plugin is the next one to add, at https://github.com/conversionxl/cxl-campaign-engine (Customize › Plugins › + Add › Add from a repository; after Sync, click **Add**).
+As soon as the voice checkpoint is done, close out. Show this, and nothing after it:
 
-If the user has done all of this already, say so in one line, show the table from "Where they are", and stop.
+   > **You're finished with the Marketing Brain.** Your ICP, messaging hub and voice guide are in `wiki/brand/`, and the Campaign Engine reads them from there.
+   >
+   > Before you go, two optional things: ask me to write one customer-facing piece from the brain (a LinkedIn post, a landing page section) to test it; and to share for review, send the page link or the full page, never a cropped screenshot.
+   >
+   > **Next: the Campaign Engine.**
+   > 1. Not added yet? In the Claude app or on claude.ai: **Customize › Plugins › + Add › Add from a repository**, paste `https://github.com/conversionxl/cxl-campaign-engine`, click **Sync**, then click **Add**.
+   > 2. Start a new session in this same folder.
+   > 3. Type `/campaign-engine:setup`.
+
+If they ask for the test piece, write it, check it with "How, exactly?" and "Would a buyer say this out loud?", fix the brain where a line fails, then show the **Next** block again. Never start the Campaign Engine in this session.
+
+If the user has done all of this already, say so in one line, show the table from "Where they are", and show the close-out again.
