@@ -30,6 +30,10 @@ Works in any folder. For daily logs, memory and the personal OS commands, also s
 
 The plugin is saved to your claude.ai account and Claude syncs it to chat, Cowork, the desktop app, VS Code and the terminal. You install it once, and you never download this repository for it.
 
+**No "Add marketplace" under Add, only "Upload plugin" and "Create with Claude"?** You're in the desktop app's **Code** mode. Switch to **Chat** mode (top left), then open **Settings → Plugins → Add** again. Add marketplace shows there. The plugin still syncs to the Code tab afterwards.
+
+**Still no "Add marketplace"? Upload the ZIP.** Download **[marketing-brain.zip](https://github.com/conversionxl/cxl-marketing-brain/releases/download/plugin-zips/marketing-brain.zip)** and upload it in **Settings → Plugins → Add → Upload plugin** as it is: don't unzip it. Don't use the green **Code → Download ZIP** button for this: that ZIP puts everything inside a `cxl-marketing-brain-main` folder, so the upload fails with "The archive must contain a .claude-plugin/plugin.json manifest". An uploaded plugin doesn't update itself: for a new version, remove it in **Settings → Plugins**, download the ZIP again and upload it.
+
 **Only if you can't use Settings → Plugins:** in the Claude chat in VS Code or a terminal (start `claude` first), type `/plugin marketplace add conversionxl/cxl-marketing-brain`, then `/plugin install marketing-brain@cxl-marketing-brain`. This makes a second, local copy on this computer only. Never use it as well as the Settings → Plugins route.
 
 **Not using Claude?** Use the starter repo instead of the plugin: download this repository (**Code → Download ZIP**), unzip it, open the folder in any editor with an AI chat (VS Code, Cursor, Antigravity), and ask in plain words: "Run the setup command from `plugin/setup.md`", then "Run the ICP dossier command from `.claude/commands/icp-dossier.md`", and so on. Nothing gets uploaded to claude.ai; the files stay in the folder.
