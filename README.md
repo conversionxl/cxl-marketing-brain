@@ -6,14 +6,14 @@ Claude starts every session knowing nothing about the last one. The personal OS 
 
 The Marketing Brain adds a **brand brain**: four files that Claude reads before it writes anything customer-facing, so drafts come out on-brand and in your customers' words instead of generic. You fill them in three exercises: your ICP, your positioning and messaging, and your brand voice.
 
-## Plugin or repository: pick one
+## Install the plugin, or download and customize
 
-This repository is two different things, and you use **one of them per folder**:
+**Installing the plugin is the recommended route.** The plugin is a working example of a full build, and a base to copy from. Downloading this repository is the advanced route, for people who want to change how the module works and repurpose it for themselves. Use **one of them per folder**:
 
-| | The **marketing-brain** plugin (recommended) | The starter repo |
+| | The **marketing-brain** plugin (recommended) | Download and customize (advanced) |
 |---|---|---|
 | What it is | The Marketing Brain commands and skills, installed into Claude | The personal OS with the Marketing Brain built in, as a folder of files |
-| How you get it | Install it from **Settings → Plugins** in Claude (below). **Don't download or clone this repository** | **Use this template** to make your own private copy (see [Set up](#set-up-10-minutes)) |
+| How you get it | Install it from **Settings → Plugins** in Claude (below). You don't download anything | **Use this template** to make your own private copy (see [Download and customize](#download-and-customize-advanced)) |
 | Your work lives in | A folder of your own, where you run `/marketing-brain:setup` | Your copy of the repo |
 | Needs | Claude (desktop app, Cowork, VS Code or terminal) | Claude Code in VS Code or a terminal |
 
@@ -21,7 +21,7 @@ This repository is two different things, and you use **one of them per folder**:
 
 Already set up the personal OS repo and want to keep your logs and projects? Skip to [Add the module to your existing repo](#add-the-module-to-your-existing-repo).
 
-## Plugin route
+## Install the plugin (recommended)
 
 Works in any folder. For daily logs, memory and the personal OS commands, also set up the **personal-os** plugin with `/personal-os:setup` (see [its README](https://github.com/conversionxl/cxl-personal-os-plugins)). It is recommended, not required.
 
@@ -54,7 +54,9 @@ Setup adds `raw/voc/`, `raw/brand/`, `wiki/brand/`, the frameworks, the project 
 - **Not showing up after you added it?** After you add the marketplace, the plugin isn't installed until you click **Add** next to it. This step is easy to miss. In VS Code or the terminal, the sync can take a few minutes: fully quit and reopen. Don't fix it by adding the local copy: that's how you end up with two.
 
 
-## Set up (10 minutes)
+## Download and customize (advanced)
+
+This route gives you every command, hook and skill as plain files in your own copy, to edit as you like. Choose it when you want to change how the module works. Your copy no longer updates with the plugin: you own it. If you only want to use the module, install the plugin above.
 
 **1. Make your own private copy.** Your logs and projects are private, so do not work in a public fork. (No GitHub? Click **Code → Download ZIP** and unzip it. Everything works on one machine; see [Without GitHub](#without-github).)
 - Click **Use this template → Create a new repository**, choose **Private**, and create it.
